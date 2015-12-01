@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\player;
-
+use Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\sportsentry;
+use App\healthentry;
 class PlayerController extends Controller
 {
     /**
@@ -17,7 +18,8 @@ class PlayerController extends Controller
     public function index()
     {
         //
-        return view('player.index');
+        $health_entries = healthentry::where('user_id',Auth::user()->id);
+        return view('player.index',['health_entries' => $health_entries]);
     }
 
     /**

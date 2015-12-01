@@ -44,7 +44,7 @@ $factory->define(App\healthentry::class, function (Faker\Generator $faker) {
         'user_id' => 1,
         'device_id' => 2,
         'timescale' => 1,
-        'level' => 1,
+        'level' => rand(1,3),
         'type' => 1,
         'begin_time' => $time,
         'end_time' => $time,

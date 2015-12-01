@@ -68,7 +68,10 @@ class DatabaseSeeder extends Seeder
             'id'      => 4,
             'privilege'      => 1,
         ]);//~
-        
+        // HealthData
+        factory('App\healthentry',50)->create();
+        // Sports
+        factory('App\sportsentry',50)->create();
         Model::reguard();
     }
 }
