@@ -25,6 +25,11 @@ $factory->define(App\sportsentry::class, function (Faker\Generator $faker) {
         'user_id' => 1,
         'device_id' => 1,
         'type' => 1,
-        'remember_token' => str_random(10),
+        'timescale' => 1,
+        'level' => 1,
+        'last_time' => rand(60,7200) ,
+        'calories' => rand(300,1000),
+        'value' => rand(3000,5000),
+        'start_time' => $faker->dateTimeBetween('2015-12-1 00:00:01'),
     ];
 });
