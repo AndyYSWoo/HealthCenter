@@ -17,7 +17,7 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
 
 // coach路由
 Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
-    Route::resource('/','CoacchController');    
+    Route::resource('/','CoachController');    
 });
 // doctor路由
 Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
