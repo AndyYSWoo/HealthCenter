@@ -12,14 +12,15 @@ class Healthentry extends Migration
      */
     public function up()
     {
-        Schema::create('healthsentry', function (Blueprint $table) {
+        Schema::create('healthentry', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('device_id');
             $table->integer('timescale');
             $table->integer('level');
             $table->integer('type');
-            $table->datetime('time');
+            $table->datetime('begin_time');
+            $table->datetime('end_time');
             $table->integer('last_time');
             $table->float('value');
             $table->string('description');
@@ -34,6 +35,6 @@ class Healthentry extends Migration
      */
     public function down()
     {
-        Schema::drop('healthsentry');
+        Schema::drop('healthentry');
     }
 }

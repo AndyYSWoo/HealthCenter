@@ -15,7 +15,10 @@ class User extends Model implements AuthenticatableContract,
                                     CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
-
+    const TYPE_ADMIN    = 0;
+    const TYPE_PLAYER   = 1;
+    const TYPE_COACH    = 2;
+    const TYPE_DOCTOR   = 3;
     /**
      * The database table used by the model.
      *

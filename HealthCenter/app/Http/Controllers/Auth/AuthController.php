@@ -78,8 +78,11 @@ class AuthController extends Controller
         if(Auth::attempt(['email' => $request->input('email'),'password'=>$request->input('password')])){
             // 成功登陆
             switch($user->type){
-                case 0:// 管理员主界面
-                    return "hi";
+                case User::TYPE_PLAYER:
+                    return Redirect::to('/player');
+                    break;
+                case User::TYPE_COACH:
+                    return Redirect::to('/coach');
                     break;
             }
         }else{
