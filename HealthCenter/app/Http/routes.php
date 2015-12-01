@@ -19,6 +19,14 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
 Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
     Route::resource('/','CoacchController');    
 });
+// doctor路由
+Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
+    Route::resource('/','DoctorController');    
+});
+// admin路由
+Route::group(['prefix'=> 'admin','namespace' => 'admin'],function(){
+    Route::resource('/','AdminController');    
+});
 
 Route::get('/', 'Auth\AuthController@getLogin');
 
