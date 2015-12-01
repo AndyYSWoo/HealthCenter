@@ -12,7 +12,7 @@ class Healthentry extends Migration
      */
     public function up()
     {
-        Schema::create('healthsentry', function (Blueprint $table) {
+        Schema::create('healthentry', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('device_id');
@@ -34,6 +34,6 @@ class Healthentry extends Migration
      */
     public function down()
     {
-        Schema::drop('healthsentry');
+        Schema::drop('healthentry');
     }
 }
