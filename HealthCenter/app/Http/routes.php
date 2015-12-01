@@ -15,6 +15,7 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
 });
 Route::get('/', 'Auth\AuthController@getLogin');
+
 // 认证路由
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login','Auth\AuthController@postLogin');

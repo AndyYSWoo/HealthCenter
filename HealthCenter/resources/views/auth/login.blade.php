@@ -14,24 +14,20 @@
 			-o-background-size: cover;
 			background-size: cover;
 		}
-		
 		h1 {
 			font-family : "Abel",Arial,sans-serif;
 			font-weight: 400;
 			font-size: 40px;
 		}
-		
 		body{
 			padding-top: 20px;
 			font-size: 16px;
 			font-family: "Open Sans",serif;
 			background: transparent;
 		}
-		
 		.panel {
 			background-color: rgba(255,255,255,0.5);
 		}
-		
 		.margin-base-vertical{
 			margin: 40px 0;
 		}
