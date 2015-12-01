@@ -19,7 +19,8 @@ class Healthentry extends Migration
             $table->integer('timescale');
             $table->integer('level');
             $table->integer('type');
-            $table->datetime('time');
+            $table->datetime('begin_time');
+            $table->datetime('end_time');
             $table->integer('last_time');
             $table->float('value');
             $table->string('description');
