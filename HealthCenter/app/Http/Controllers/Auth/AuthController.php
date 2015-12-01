@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-use App\User;
+use Auth;
+use Redirect;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use Illuminate\Http\Request;
+use App\Http\Requests;
 class AuthController extends Controller
 {
     /*
@@ -62,4 +63,30 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    
+    public function getLogin(){
+        if(Auth::check()){
+            return "Already logged in";
+        }else{
+            return view('auth.login');
+        }
+    }
+    public function postLogin(Request $request){
+    $user = User::where('email',$request->input('email'))->first();
+    if($user){
+        if(Auth::attempt(['email' => $request->input('email'),'password'=>$request->input('password')])){
+            // 成功登陆
+            switch(AuthController::getUserType($user)){
+                case 0:// 管理员主界面
+                    return "hi";
+                    break;
+            }
+        }else{
+            return "Wrong Password";// 登陆失败
+        }
+    }else{
+        // 用户不存在
+        return "User Not Exist";
+    }
+}
 }

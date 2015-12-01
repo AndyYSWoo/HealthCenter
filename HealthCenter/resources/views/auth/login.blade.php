@@ -52,22 +52,17 @@
 					I have other plans.
 				</p>
 			
-				<form action="/login" method="post" class="margin-base-vertical">
+				<form action="/auth/login" method="post" class="margin-base-vertical">
+					{!! csrf_field() !!}
 					<p class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
 						<input type="email" class="form-control input-lg" name="email" placeholder="beste@bf.org" />
 					</p>
 					<p class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-						<input type="password" class="form-control input-lg" name="email" placeholder="Password" />
+						<input type="password" class="form-control input-lg" name="password" placeholder="Password" />
 					</p>
-					<p class="input-group">
-						<div class="checkbox">
-							<label >
-							<input type="checkbox" > Remember me </ input>
-							</label>
-						</div>
-					</p>
+
 					<p class="text-center">
 						<button type="submit" class="btn btn-success btn-lg">Sign in</button>
 						<button type="submit" class="btn btn-primary btn-lg">Sign up</button>
