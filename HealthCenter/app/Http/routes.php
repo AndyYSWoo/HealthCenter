@@ -10,7 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+// player路由
+Route::group(['prefix' => 'player','namespace' => 'player'], function() {
+    Route::resource('/', 'PlayerController');
+});
 Route::get('/', 'Auth\AuthController@getLogin');
 // 认证路由
 Route::get('auth/login', 'Auth\AuthController@getLogin');

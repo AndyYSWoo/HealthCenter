@@ -11,12 +11,6 @@ class PlayerTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('player')->insert([
-            'name'      => 'andy',
-            'type'      => 0,
-            'true_name' => 'Yongshang Wu',
-            'email'     => 'andyyswoo@gmail.com',
-            'password'  => bcrypt('123456'),
-        ]);
+
     }
 }
