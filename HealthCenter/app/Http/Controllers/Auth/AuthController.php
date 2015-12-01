@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\User;
 class AuthController extends Controller
 {
     /*
@@ -76,7 +77,7 @@ class AuthController extends Controller
     if($user){
         if(Auth::attempt(['email' => $request->input('email'),'password'=>$request->input('password')])){
             // 成功登陆
-            switch(AuthController::getUserType($user)){
+            switch($user->type){
                 case 0:// 管理员主界面
                     return "hi";
                     break;
