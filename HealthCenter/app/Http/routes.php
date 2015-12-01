@@ -14,6 +14,12 @@
 Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
 });
+
+// coach路由
+Route::group(['prefix'=> 'coach','namespace' => 'coach',function(){
+    Route::resource('/','CoacchController');    
+}]);
+
 Route::get('/', 'Auth\AuthController@getLogin');
 
 // 认证路由

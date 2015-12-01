@@ -17,6 +17,7 @@ class CoachController extends Controller
     public function index()
     {
         //
+        return view('coach.coach_index');
     }
 
     /**
