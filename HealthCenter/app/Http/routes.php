@@ -23,8 +23,14 @@ Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
 });
 // doctor路由
 Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
+    // 主页
     Route::resource('/','DoctorController');
+    // 日历操作
     Route::resource('/calendar','CalendarController');
+    // 用户相关
+    Route::get('/playersports/{id}','PlayerController@getSports');
+    Route::get('/playerhealth/{id}','PlayerController@getHealth');
+    // 用户申请
     Route::get('/accept/{id}','PlayerController@accept');
     Route::get('/deny/{id}','PlayerController@deny');
 });

@@ -28,14 +28,22 @@ class DoctorController extends Controller
                                         ->where('status',player_has_doctor::STATUS_PENDING)
                                         ->get();
         // Calendar
-        $events = calendarevent::where('doctor_id',Auth::user()->id)
+        $cal_events = calendarevent::where('doctor_id',Auth::user()->id)
+                                    ->where('type',calendarevent::TYPE_SHORT)
+                                    ->where('status','<>',calendarevent::STATUS_PENDING)
+                                    ->get();
+        $event_requests = calendarevent::where('doctor_id', Auth::user()->id)
+                                    ->where('type',calendarevent::TYPE_SHORT)
+                                    ->where('status',calendarevent::STATUS_PENDING)
                                     ->get();
         return view('doctor.doctor_home',[
                                           'clients' => $clients
                                          ,'requests'=> $requests
-                                            ]);
+                                         ,'cal_events'  => $cal_events
+                                         ,'event_requests' => $event_requests
+                                          ]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

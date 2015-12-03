@@ -60,6 +60,19 @@ class CalendarController extends Controller
             'data'      => 'sucess'
         ));
     }
+    
+    public function getJsonEvents(){
+        // Calendar
+        $events = calendarevent::where('doctor_id',Auth::user()->id)
+                                    ->where('type',calendarevent::TYPE_SHORT)
+                                    ->where('status','<>',calendarevent::STATUS_PENDING)
+                                    ->get();
+        $event_jsons = [];
+        foreach($events as $event){
+            $event_jsons[] = json_encode(array('title'=>$event->title,'start'=>$event->start_time,'end'=>$event->end_time));
+        }
+        return $event_jsons;
+    }
 
     /**
      * Display the specified resource.

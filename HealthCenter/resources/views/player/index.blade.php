@@ -512,10 +512,10 @@
                       <div class="row">
 						<div class="col s12">
 					    <div class="comment">
-							 <div style="padding:2%;font-size:1.25rem;">医生建议</div>
-					 <div class="divider"></div>
-					 <div class="comment-content">
-					<div class="row">
+                        <div style="padding:2%;font-size:1.25rem;">医生建议</div>
+                        <div class="divider"></div>
+                        <div class="comment-content">
+                        <div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
 								<img class="responsive-img" src="/img/user1.jpg">
 							</div>
@@ -527,7 +527,6 @@
 							2015/11/11 11:11:11
 							</div>
 						</div>	
-							
 					</div>
 					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
 					<div style="text-align:right;margin-top:-0px;padding-right:2%;">

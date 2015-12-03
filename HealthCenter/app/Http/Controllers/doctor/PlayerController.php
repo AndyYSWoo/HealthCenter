@@ -10,6 +10,15 @@ use App\player_has_doctor;
 use Redirect;
 class PlayerController extends Controller
 {
+    
+    public function getHealth($id){
+        return view('doctor.player.user_health');
+    }
+    
+    public function getSports($id){
+        return view('doctor.player.user_act');
+    }
+    
     /**
      * Display a listing of the resource.
      *

@@ -104,8 +104,8 @@
                                     </p>
                                     </div>
                                     <div class="card-action">
-                                        <a href="#" style="color:#fff;">查看详情</a>
-                                        <a href="#" style="color:#fff;">更改备忘</a>
+                                        <a href="#" style="color:#fff;">健康情况</a>
+                                        <a href="#" style="color:#fff;">运动情况</a>
                                     </div>
                                 </div>
                             </div>
@@ -133,10 +133,9 @@
                 <h5>客户日程请求</h5>
                 <hr class="colorgraph">
                 <div id="external-events">
-                    <div class='fc-event'>陈先生: 腹痛, 门诊诊断</div>
-                    <div class='fc-event'>高小姐: 失眠, 电话咨询</div>
-                    <div class='fc-event'>高小姐: 失眠, 视频咨询</div>
-                    <div class='fc-event'>黄太太: 皮肤问题, 图文描述诊断</div>
+                    @foreach($event_requests as $r)
+                        <div class='fc-event'>{{ $r->user->name }}请求{{ $r->start_time }}到{{ $r->end_time }} : {{ $r->title }}</div>
+                    @endforeach
                 </div>
                 <hr class="colorgraph">
             </div>
@@ -164,9 +163,17 @@
 				revert: true,      // will cause the event to go back to its
 				revertDuration: 0  //  original position after the drag
 			});
-
 		});
-            
+        var ces =[];
+ 
+        @foreach( $cal_events as $event )
+            ces.push({
+                title: '{{ $event->title }}',
+                start: '{{ $event->start_time }}',
+                end:   '{{ $event->end_time }}'
+            });
+        @endforeach
+
         $('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
@@ -194,8 +201,8 @@
                         url     : "/doctor/calendar",
                         dataType: "html",
                         data    : { title       : title,
-                                    start       : start.format('YYYY-MM-DD')+'T'+start.format('h:mm:ss'),
-                                    end         : end.format('YYYY-MM-DD')+'T'+end.format('h:mm:ss'),
+                                    start       : start.format('YYYY-MM-DD')+'T'+start.format('HH:mm:ss'),
+                                    end         : end.format('YYYY-MM-DD')+'T'+end.format('HH:mm:ss'),
                                     _token      : CSRF_TOKEN 
                                    },
                         dataType: 'JSON',
@@ -214,66 +221,9 @@
             drop: function() {
 					$(this).remove();
 			},
-			eventLimit: true, // allow "more" link when too many events
-			events: [
-				{
-					title: 'All Day Event',
-					start: '2015-02-01'
-				},
-				{
-					title: 'Long Event',
-					start: '2015-02-07',
-					end: '2015-02-10'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2015-02-09T16:00:00'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2015-02-16T16:00:00'
-				},
-				{
-					title: 'Conference',
-					start: '2015-02-11',
-					end: '2015-02-13'
-				},
-				{
-					title: 'Meeting',
-					start: '2015-02-12T10:30:00',
-					end: '2015-02-12T12:30:00'
-				},
-				{
-					title: 'Lunch',
-					start: '2015-02-12T12:00:00'
-				},
-				{
-					title: 'Meeting',
-					start: '2015-02-12T14:30:00'
-				},
-				{
-					title: 'Happy Hour',
-					start: '2015-02-12T17:30:00'
-				},
-				{
-					title: 'Dinner',
-					start: '2015-02-12T20:00:00'
-				},
-				{
-					title: 'Birthday Party',
-					start: '2015-02-13T07:00:00'
-				},
-				{
-					title: 'Click for Google',
-					url: 'http://google.com/',
-					start: '2015-02-28'
-				}
-			],
-                eventColor: "rgb(30, 128,240)"
+            events: ces,
+            eventColor: "rgb(30, 128,240)"
 		});
-		
 	});
     </script>
 	</body>
