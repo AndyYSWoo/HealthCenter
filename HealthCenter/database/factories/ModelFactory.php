@@ -55,3 +55,18 @@ $factory->define(App\healthentry::class, function (Faker\Generator $faker) {
         'description' => $faker->sentence()
     ];
 });
+
+$factory->define(App\activity::class, function (Faker\Generator $faker) {
+    $dateTime = $faker->dateTimeBetween('now','+1 years');
+    return [
+        'name' => $faker->sentence(3),
+        'type' => rand(1,3),
+        'author_id' => 1,
+        'place' => $faker->address,
+        'description' => $faker->sentence(50),
+        'poster' => '/img/activity/poster'.rand(1,3).'.jpg',
+        'date' => $dateTime->format('Y-m-d'),
+        'time' => $faker->time ,
+        'contact' => 'Phone:'.$faker->phoneNumber.'email:'.$faker->email,
+    ];
+});

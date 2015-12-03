@@ -158,25 +158,25 @@
         		<div style="margin-top:4%;background-color:white;padding:1%;">
         			<div class="row">
         				<div class="col s5" style="text-align:center;">
-        					<img src="./img/poster.jpg" alt="poster" class="responsive-img" style="width:300px;">
+        					<img src="{{ $activity->poster }}" alt="poster" class="responsive-img" style="width:300px;">
         				</div>
         				<div class="col s5" style="border-top:1px solid #ddd;">
         					<div>
         						<div>
-        							<h5>千里之行，始于足下</h5>
+        							<h5>{{ $activity->name }}</h5>
         						</div>
         						<div style="margin-top:2%;color:grey;">
         						<div>
-        							时间： 12月06日 周日 20:00-22:00
+        							时间： {{ $activity->date }} {{ $activity->time }}
         						</div>
         						<div>
-									地点： 玄武区 玄武湖
+									地点： {{ $activity->place }}
 								</div>
 								<div>
-									发起： 其其
+									发起： {{ $activity->author->name }}
 								</div>
 								<div style="background-color:#ddd;width:18%;text-align:center;">
-									90 人参与
+									{{ $activity->members->count() }} 人参与
 								</div>
 								<div style="margin-top:3%;">
 									<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;font-size:0.5rem;">我要参加</a></div>
@@ -187,18 +187,13 @@
         				<div style="padding:2%;border-top:1px solid #ddd;">
         					<div style="font-size:1.25rem;color:#408eba">活动详情</div>
         					<div style="width:64%;font-size:0.75rem;">
-        						活动从玄武门出发，途经集庆门、水西门、汉中门、清凉门、草场门、定淮门、挹江门和仪凤门八大明城墙遗址及美丽的秦淮河风光带；从孙权定都南京修建的石头城，到标志着近代史开端的静海寺，再到青奥轴线的奥体中心、双子塔、南京眼、青奥村等
+								{{ $activity->description }}
         					</div>
         					<div style="font-size:1.25rem;color:#408eba;margin-top:2%;">
         						联系方式
         					</div>
         					<div style="font-size:0.75rem;">
-        						咨询电话：1585 055 2856<br>
-        						场地支持：TINGOO青果<br>
-        						活动组织：琪琪<br>
-        						费用情况：完全免费，请直接空降<br>
-        						报名方式：点击“我要参加”即可<br>
-        						乘车路线：地铁直达<br>
+								{{ $activity->contact }}
         					</div>
         				</div>
         			</div>

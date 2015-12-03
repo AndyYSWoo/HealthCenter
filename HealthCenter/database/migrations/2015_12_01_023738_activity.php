@@ -12,7 +12,19 @@ class Activity extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('activity', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('name');
+            $table->integer('type');
+            $table->integer('author_id');
+            $table->string('place');
+            $table->text('description');
+            $table->string('poster');
+            $table->date('date');
+            $table->string('time')->nullable();
+            $table->string('contact');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +34,6 @@ class Activity extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('activity');
     }
 }

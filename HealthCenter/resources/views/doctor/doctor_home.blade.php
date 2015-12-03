@@ -212,7 +212,6 @@
                             console.log(e.responseText);
                         }
                     });
-                    
 				}
 				$('#calendar').fullCalendar('unselect');
 			},

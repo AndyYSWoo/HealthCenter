@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Activity Release</title>
+	<title>Activity Info</title>
 	<meta charset="utf-8">
-	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
+	<link type="text/css" rel="stylesheet" href="/custom-font/font-awesome.css">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style type="text/css">
 			#header_img{
@@ -63,45 +63,11 @@
 				box-shadow: none;
 				background-color: #50b5ee;
 			}
-			input[type=text]{
-				border: 2px solid #ddd;
-				padding: 2%;
-				border-radius: 5px;
-				margin-bottom: -20px;
-				height: 1rem;
-			}
-			input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-				border: 2px solid #408eba;
-				border-bottom: 2px solid #408eba;
-				box-shadow: none;
-				height: 1rem;
-			}
-			textarea.materialize-textarea{
-				border: 2px solid #ddd;
-				padding: 2%;
-				border-radius: 5px;
-				height: 5rem;
-				margin-bottom: -20px;
-				min-height: 5rem; 
-			}
-			textarea {
-			    width: 100%;
-			    height: 5rem;
-			    background-color: transparent; 
-			}
-			.blank{
-				/*background-image: url(icon_add.png);*/
-				width: 128px;
-				height: 128px;
-				background-repeat: no-repeat;
-				max-width: 100%;
-	  			height: auto;
-			}
 	</style>
 </head>
 <body>
 	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
+             <div id="header"><img class="circle responsive-img" src="/img/image.jpg" id ="header_img"></div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
   				<li><a href="index.html">首页</a></li>
 				<li><a href="#!" class="collapsible-header">体质数据</a>
@@ -123,7 +89,7 @@
 							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -136,7 +102,7 @@
                               <a href="index.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
+                                        <img src="/img/user1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -153,7 +119,7 @@
 							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -170,7 +136,7 @@
 							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
+                                        <img src="/img/user1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -184,107 +150,82 @@
         </div>
         <div style="padding-left:16%;">
         	<div class="topbar">
-        		<div>
-        		</div>
+        		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+	        	活动信息
+	        	</div>
         	</div>
-        	<div >
-        		<div class="container" >
-        			<div class="row" style="margin-top:4%;margin-left:6%;">
-						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
-					<div style="font-size:1.25rem;padding:2%;">发布活动</div>
-					<div class="divider"></div>
+        	<div class="container">
+        		<div style="margin-top:4%;background-color:white;padding:1%;">
 					<div class="row">
-						<div class="col s3"style="padding-top:4%;"><b>活动名称<b></div>
-						<div class="input-field col s8 text">
-							<input  type="text">
-						</div>
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-						<div class="col s3"style="padding-top:4%;"><b>活动地点<b></div>
-						<div class="input-field col s8 text">
-							<input  type="text">
-						</div>
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-					<div class="col s3" style="padding-top:4%;"><b>活动详情</b></div>
-					<div class="col s8 " style="padding-top:2%;">
-						<div class="input-field">
-							<textarea class="materialize-textarea"></textarea>
-						</div>
-					</div>						
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-						<div class="col s3" style="padding-top:3%;">活动海报</div>
-						<div class="col s8">
-							<div class="col s8">
-							<div class="file-field input-field" id="i_file">
-							<div class="blank">
-								<input type="file">
-								<img src="./img/icon_add.png"class="responsive-img" id="preview">
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-						<div class="col s3" style="padding-top:3%;">
-							活动时间
-						</div>
-						
-						<div class="input-field col s8">
-							<div class="row">
-                            <div class="col s6"><input type="date" class="datepicker"placeholder="选择日期"></div>
-                            <div class="col s4">
-                            	<!--time-->
-                            </div>
-                            </div>
-                        </div>
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-					<div class="col s3" style="padding-top:4%;"><b>联系方式</b></div>
-					<div class="col s8 " style="padding-top:2%;">
-						<div class="input-field">
-							<textarea class="materialize-textarea"></textarea>
-						</div>
-					</div>						
-					</div>
-					<div class="divider"></div>
-					<div class="row">
-						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
-						<a class="waves-effect waves-light btn" >发布</a>
-						</div>
-						<div class="col s3" style="padding-top:2%;">
-						<a class="waves-effect waves-light btn" >取消</a>
-						</div>
-					</div>
-				</div>
-				
-			</div>
+        				<div class="col s5" style="text-align:center;">
+        					<img src="{{ $activity->poster }}" alt="poster" class="responsive-img" style="width:300px;">
+        				</div>
+        				<div class="col s5" style="border-top:1px solid #ddd;">
+        					<div>
+        						<div>
+        							<h5>{{ $activity->name }}</h5>
+        						</div>
+        						<div style="margin-top:2%;color:grey;">
+        						<div>
+        							时间： {{ $activity->date }} {{ $activity->time }}
+        						</div>
+        						<div>
+									地点： {{ $activity->place }}
+								</div>
+								<div>
+									发起： {{ $activity->author->name }}
+								</div>
+								<div style="background-color:#ddd;width:18%;text-align:center;">
+									{{ $activity->members->count() }} 人参与
+								</div>
+								<div style="margin-top:3%;">
+									@if($join == 0)
+									<a id="join" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;font-size:0.5rem;" onclick="join()">我要参加</a></div>
+									@else
+									<a id="join" class="waves-effect waves-light btn disabled" style="background-color:#ddd;color:black;height:24px;line-height: 24px;padding: 0 1rem;font-size:0.5rem;">已经参加</a></div>
+									@endif
+								</div>
+								</div>
+        					</div>
+        				</div>
+        				<div style="padding:2%;border-top:1px solid #ddd;">
+        					<div style="font-size:1.25rem;color:#408eba">活动详情</div>
+        					<div style="width:64%;font-size:0.75rem;">
+								{{ $activity->description }}
+        					</div>
+        					<div style="font-size:1.25rem;color:#408eba;margin-top:2%;">
+        						联系方式
+        					</div>
+        					<div style="font-size:0.75rem;">
+								{{ $activity->contact }}
+        					</div>
+        				</div>
+        			</div>
+        			
         		</div>
         	</div>
         </div>
-	<script type="text/javascript" src="js/jquery_min.js"></script>	
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script type="text/javascript">
-		var filePath;
-	          $('#i_file').change( function(event) {
-	          filePath = URL.createObjectURL(event.target.files[0]);
-	          if(filePath!=""){
-	          	var img = document.getElementById("preview");
-	          	img.setAttribute("src",filePath);
-	          }
-	          });
-	</script>
+    <script type="text/javascript" src="/js/jquery_min.js"></script>	
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script>
-            $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15 // Creates a dropdown of 15 years to control year
-        });
-    </script>
+		function join(){
+			$.ajax({
+                        type    : "GET",
+                        url     : "{{ "/player/activity/".$activity->id."/join" }}",
+                        dataType: "JSON",
+                        success :function(data){
+							var join_btn = document.getElementById("join");
+							join_btn.innerHTML="已经参与"
+							join_btn.class="waves-effect waves-light btn disabled";
+							join_btn.onclick="";
+							join_btn.style.background="#ddd";
+							join_btn.style.color="black";
+                        },
+                        error: function(e) {
+                            console.log(e.responseText);
+                        }
+                    });
+		}
+	</script>
 </body>
 </html>

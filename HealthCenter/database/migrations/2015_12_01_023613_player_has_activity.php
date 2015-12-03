@@ -12,7 +12,12 @@ class PlayerHasActivity extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('player_has_activity', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('player_id');
+            $table->integer('activity_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +27,6 @@ class PlayerHasActivity extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('player_has_activity');
     }
 }

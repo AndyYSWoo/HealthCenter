@@ -268,6 +268,7 @@
                         </ul>
                     </div>
                 </li>
+				<li><a href="/player/activity">活动</a>
 				<li><a href="group_index.html">兴趣组</a>
 				<li><a href="#!"class="collapsible-header">好友</a>
 					<div class="collapsible-body">
@@ -396,30 +397,29 @@
           <div>
 					<div class="row">
 						<div class="col s12">
-					    <div class="comment">
-							 <div style="padding:2%;font-size:1.25rem;">教练建议</div>
-					 <div class="divider"></div>
-					 <div class="comment-content">
-					<div class="row">
-							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="/img/user1.jpg">
-							</div>
-						<div class="test"style="padding-left:15%;">
-							<div style="float:left;">
-							Alexander Pierce
-							</div>
-							<div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
-							2015/11/11 11:11:11
-							</div>
-						</div>	
-							
-					</div>
-					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
-					<div style="text-align:right;margin-top:-0px;padding-right:2%;">
-							<a style="color:black;">回复</a>
-						</div>
-					<div class="divider" style="margin-top:1%;"></div>
-				</div>
+					       <div class="comment">
+                                <div style="padding:2%;font-size:1.25rem;">教练建议</div>
+                                <div class="divider"></div>
+                                <div class="comment-content">
+                                    <div class="row">
+                                        <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+                                        <img class="responsive-img" src="/img/user1.jpg">
+                                        </div>
+                                        <div class="test"style="padding-left:15%;">
+                                            <div style="float:left;">
+                                                Alexander Pierce
+                                            </div>
+                                            <div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
+                                                2015/11/11 11:11:11
+                                            </div>
+                                        </div>	
+                                    </div>
+                                    <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+                                    <div style="text-align:right;margin-top:-0px;padding-right:2%;">
+                                        <a style="color:black;">回复</a>
+                                    </div>
+                                    <div class="divider" style="margin-top:1%;"></div>
+                                </div>
 				 <div class="comment-content">
 					<div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">

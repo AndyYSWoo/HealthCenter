@@ -14,6 +14,8 @@
 Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
     Route::resource('/friend', 'FriendController');
+    Route::resource('/activity', 'ActivityController');
+    Route::get('/activity/{id}/join','ActivityController@join');
 });
 
 // coach路由

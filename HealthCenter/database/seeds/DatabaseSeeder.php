@@ -81,6 +81,8 @@ class DatabaseSeeder extends Seeder
         factory('App\healthentry',50)->create();
         // Sports
         factory('App\sportsentry',50)->create();
+        // Activity
+        factory('App\activity',50)->create();
         Model::reguard();
         // doctor
         DB::table('player_has_doctor')->insert([

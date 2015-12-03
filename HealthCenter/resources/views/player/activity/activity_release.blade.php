@@ -3,8 +3,8 @@
 <head>
 	<title>Activity Release</title>
 	<meta charset="utf-8">
-	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
+	<link type="text/css" rel="stylesheet" href="/custom-font/font-awesome.css">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style type="text/css">
 			#header_img{
@@ -101,7 +101,7 @@
 </head>
 <body>
 	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
+             <div id="header"><img class="circle responsive-img" src="/img/image.jpg" id ="header_img"></div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
   				<li><a href="index.html">首页</a></li>
 				<li><a href="#!" class="collapsible-header">体质数据</a>
@@ -123,7 +123,7 @@
 							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -136,7 +136,7 @@
                               <a href="index.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
+                                        <img src="/img/user1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -153,7 +153,7 @@
 							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -170,7 +170,7 @@
 							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
+                                        <img src="/img/user1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -223,7 +223,7 @@
 							<div class="file-field input-field" id="i_file">
 							<div class="blank">
 								<input type="file">
-								<img src="./img/icon_add.png"class="responsive-img" id="preview">
+								<img src="/img/icon_add.png"class="responsive-img" id="preview">
 							</div>
 							</div>
 						</div>
@@ -239,7 +239,6 @@
 							<div class="row">
                             <div class="col s6"><input type="date" class="datepicker"placeholder="选择日期"></div>
                             <div class="col s4">
-                            	<!--time-->
                             </div>
                             </div>
                         </div>
@@ -268,8 +267,8 @@
         		</div>
         	</div>
         </div>
-	<script type="text/javascript" src="js/jquery_min.js"></script>	
-	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="/js/jquery_min.js"></script>	
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		var filePath;
 	          $('#i_file').change( function(event) {
