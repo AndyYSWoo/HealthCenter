@@ -4,36 +4,51 @@
 		<meta charset="utf-8">
 		<title>coach</title>
 		<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
+		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/> 
 		<link type="text/css" rel="stylesheet" href="/css/index.css"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		<style type="text/css">
-		   #header_img{
-				width:  50%;
-				padding-top: 5%;
-				padding-bottom: 5%;
-			}
-			#header{
-				text-align: center;
-				height: 24%;
-				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-			}
-			.side-nav{
-				background-color: white;
-				width: 16%;
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-			}
-			.side-nav .collapsible-header{
+		#header_img{
+			width:  50%;
+			padding-top: 5%;
+			padding-bottom: 5%;
+		}
+		#header{
+			text-align: center;
+			height: 24%;
+			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+		}
+		.side-nav{
+			background-color: white;
+			width: 16%;
+			box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+		}
+		.side-nav .collapsible-header{
 			background-color: transparent;
-			 float: none;
-			 padding: 0 15px;
-			 display: block;
-			 font-size: 1rem;
-			 height: 48px;
-    		 line-height: 48px;
+			float: none;
+			margin-left:0px;
+			padding: 0 15px;
+			display: block;
+			font-size: 1rem;
+			height: 48px;
+			line-height: 48px;
 		}	
+
+		.side-nav li {
+			float: none;
+			padding: 0 15px;
+			border-bottom: 1 px; 
+		}
 		
+		.side-nav a {
+			color: #fff3e0;
+			display: block;
+			font-size: 1rem;
+			height: 48px;
+			line-height: 48px;
+			padding: 0 15px; 
+		}
 		.profile{
 			background-color:white;
 			padding:3%;
@@ -134,19 +149,19 @@
 		
 	    <div class="side-nav fixed">
 	    <div id="header">
-			<img class="circle responsive-img" src="user.jpg" id ="header_img">
+			<img class="circle responsive-img" src="/img/user.jpg" id ="header_img">
 			<div>Nina Mcintire</div>
 		</div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
   				<li class="side-title"><a href="#!">首页</a></li>
-				<li class="side-title"><a href="coach_train.html">发布训练</a></li>
+				<li class="side-title"><a href="/coach/coach_train">发布训练</a></li>
 				<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
 					<div class="collapsible-body">
 						<ul>
 							<li><a href="coach_trainer.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -158,7 +173,7 @@
 							<li> <a href="coach_trainer.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
+                                        <img src="/img/user1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -193,7 +208,7 @@
 					<div class="profile">
 					<div style="text-align:center">
 					<div >
-						<img src="user.jpg" class="circle responsive-img">
+						<img src="/img/user.jpg" class="circle responsive-img">
 					</div>
 					<div style="font-size:2rem;">Nina Mcintire</div>
 					<div style="color:grey;">健身教练</div>
@@ -284,12 +299,12 @@
 								<div>
 									<div class="row" style="margin-top:2%;padding-top:1%;width:64%;background-color:#ddd;margin-left:0%;">
 										<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 									<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
-									<div class="col s4"><img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<div class="col s4"><img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 								  </div>
 								</div>
@@ -298,8 +313,8 @@
 										共有932位学员参加了训练
 									</div>
 									<div>
-										<img src="user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
-									    <img src="user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+									    <img src="/img/user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
 										...
 									</div>
 								</div>
@@ -319,12 +334,12 @@
 								<div>
 									<div class="row" style="margin-top:2%;padding-top:1%;width:64%;background-color:#ddd;margin-left:0%;">
 										<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 									<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
-									<div class="col s4"><img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<div class="col s4"><img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 								  </div>
 								</div>
@@ -333,8 +348,8 @@
 										共有932位学员参加了训练
 									</div>
 									<div>
-										<img src="user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
-									    <img src="user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+									    <img src="/img/user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
 										...
 									</div>
 								</div>
@@ -354,12 +369,12 @@
 								<div>
 									<div class="row" style="margin-top:2%;padding-top:1%;width:64%;background-color:#ddd;margin-left:0%;">
 										<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 									<div class="col s4">
-									<img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
-									<div class="col s4"><img src="train1.jpg" style="width:100%;height:100%;" class="responsive-img">
+									<div class="col s4"><img src="/img/train1.jpg" style="width:100%;height:100%;" class="responsive-img">
 									</div>
 								  </div>
 								</div>
@@ -368,8 +383,8 @@
 										共有932位学员参加了训练
 									</div>
 									<div>
-										<img src="user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
-									    <img src="user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+									    <img src="/img/user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
 										...
 									</div>
 								</div>
@@ -388,7 +403,7 @@
 					 <div class="comment-content">
 					<div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="user1.jpg">
+								<img class="responsive-img" src="/img/user1.jpg">
 							</div>
 						<div class="test"style="padding-left:10%;">
 							<div style="float:left;">
@@ -409,7 +424,7 @@
 				 <div class="comment-content">
 					<div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="user1.jpg">
+								<img class="responsive-img" src="/img/user1.jpg">
 							</div>
 						<div class="test"style="padding-left:10%;">
 							<div style="float:left;">
@@ -430,7 +445,7 @@
 				<div>
 					<div class="row">
 					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
-						<img class="responsive-img" src="user.jpg">
+						<img class="responsive-img" src="/img/user.jpg">
 					</div>
 					<div class="input-field col s8">
 					<textarea id="textarea1" class="materialize-textarea"></textarea>

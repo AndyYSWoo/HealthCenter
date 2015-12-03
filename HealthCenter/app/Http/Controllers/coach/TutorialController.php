@@ -16,7 +16,8 @@ class TutorialController extends Controller
      */
     public function index()
     {
-        //
+        //TODO
+        return view('coach.coach_train');
     }
 
     /**

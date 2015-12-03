@@ -5,7 +5,7 @@
 		<title>coach</title>
 		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
-		<link type="text/css" rel="stylesheet" href="/css/animate.min.css">
+		<link type="text/css" rel="stylesheet" href="/css/animate/animate.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		
@@ -29,10 +29,25 @@
 			background-color: transparent;
 			 float: none;
 			 padding: 0 15px;
+			 margin-left:0px;
 			 display: block;
 			 font-size: 1rem;
 			 height: 48px;
     		 line-height: 48px;
+		}
+		.side-nav li {
+			float: none;
+			padding: 0 15px;
+			border-bottom: 1 px; 
+		}
+		
+		.side-nav a {
+			color: #fff3e0;
+			display: block;
+			font-size: 1rem;
+			height: 48px;
+			line-height: 48px;
+			padding: 0 15px; 
 		}
 		.topbar{
 			background-color: #408eba;
@@ -110,7 +125,7 @@
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
 		<div class="side-nav fixed">
 	    <div id="header">
-			<img class="circle responsive-img" src="user.jpg" id ="header_img">
+			<img class="circle responsive-img" src="/img/user.jpg" id ="header_img">
 			<div>Nina Mcintire</div>
 		</div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
@@ -122,7 +137,7 @@
 							<li><a href="coach_trainer.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
+                                        <img src="/img/user.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Sarah Bullock
@@ -134,7 +149,7 @@
 							<li><a href="coach_trainer.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
+                                        <img src="/imguser1.jpg" class="responsive-img">
                                     </div>
                                     <div style="margin-left:30%;margin-top:-2%;">
                                          Alexander Pierc
@@ -159,7 +174,7 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:4%;"><b>训练名称<b></div>
 						<div class="input-field col s8 text">
-							<input  type="text">
+							<input  type="text" style="height:1rem;">
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -174,14 +189,14 @@
 						<div class="col s4">
 								  <div class="train-content">
 									  <div style="text-align:center;">
-										  <img src="train1.jpg" style="width:48%;height:48%;" class="responsive-img">
+										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
 									  </div>
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
 								  <div class="train-content">
 									  <div style="text-align:center;">
-										  <img src="train1.jpg" style="width:48%;height:48%;" class="responsive-img">
+										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
 									  </div>
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
@@ -190,7 +205,7 @@
 						 <div class="col s4">
 							 <div class="train-content">
 									  <div style="text-align:center;">
-										  <img src="train1.jpg" style="width:48%;height:48%;" class="responsive-img">
+										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
 									  </div>
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
@@ -199,7 +214,7 @@
 						 <div class="col s4">
 							 <div class="train-content">
 									  <div style="text-align:center;">
-										  <img src="train1.jpg" style="width:48%;height:48%;" class="responsive-img">
+										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
 									  </div>
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
@@ -226,7 +241,7 @@
 							<div class="file-field input-field" id="i_file">
 							<div class="blank">
 								<input type="file">
-								<img src="icon_add.png"class="responsive-img" id="preview">
+								<img src="/img/icon_add.png"class="responsive-img" id="preview">
 							</div>
 							</div>
 							<div style="margin-top:2%;padding-right:5%;">
