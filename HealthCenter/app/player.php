@@ -18,5 +18,5 @@ class player extends Model
      *
      * @var array
      */
-    protected $fillable = ['id', 'birthday'];
+    protected $fillable = ['id', 'birthday','age'];
 }

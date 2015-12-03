@@ -15,6 +15,7 @@ class Player extends Migration
         Schema::create('player', function (Blueprint $table) {
             $table->integer('id');
             $table->date('birthday');
+            $table->integer('age');
         });
     }
 

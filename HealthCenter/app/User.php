@@ -15,10 +15,15 @@ class User extends Model implements AuthenticatableContract,
                                     CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
+    // Type
     const TYPE_ADMIN    = 0;
     const TYPE_PLAYER   = 1;
     const TYPE_COACH    = 2;
     const TYPE_DOCTOR   = 3;
+    
+    // Gender
+    const GENDER_MALE   = 1;
+    const GENDER_FEMALE = 2;
     /**
      * The database table used by the model.
      *
@@ -31,7 +36,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','type','true_name'];
+    protected $fillable = ['name', 'email', 'password','type','true_name','gender','birthday'];
 
     /**
      * The attributes excluded from the model's JSON form.

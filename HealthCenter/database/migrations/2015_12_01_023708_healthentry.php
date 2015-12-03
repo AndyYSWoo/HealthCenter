@@ -23,6 +23,7 @@ class Healthentry extends Migration
             $table->datetime('end_time');
             $table->integer('last_time');
             $table->float('value');
+            $table->float('value2');
             $table->string('description');
             $table->timestamps();
         });

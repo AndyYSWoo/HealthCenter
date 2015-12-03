@@ -22,6 +22,7 @@ class Sportsentry extends Migration
             $table->integer('last_time');
             $table->float('calories');
             $table->float('value');
+            $table->float('value2');
             $table->datetime('start_time');
             $table->datetime('end_time');
             $table->string('description');

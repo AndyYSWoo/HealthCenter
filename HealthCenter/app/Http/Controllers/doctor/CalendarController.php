@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\doctor;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-class doctorDoctorController extends Controller
+use Input;
+use Response;
+use App\calendarevent;
+class CalendarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +19,7 @@ class doctorDoctorController extends Controller
     public function index()
     {
         //
+        return 'test';
     }
 
     /**
@@ -38,6 +41,17 @@ class doctorDoctorController extends Controller
     public function store(Request $request)
     {
         //
+        // return $request->input('title');
+        $title = Input::get('title');
+        $start = Input::get('start');
+        $end = Input::get('end');
+        
+        $event = new calendarevent;
+        
+        return Response::json(array(
+            'success'   => true,
+            'data'      => 'sucess'
+        ));
     }
 
     /**

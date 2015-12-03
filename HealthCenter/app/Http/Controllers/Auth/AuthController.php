@@ -84,6 +84,9 @@ class AuthController extends Controller
                 case User::TYPE_COACH:
                     return Redirect::to('/coach');
                     break;
+                case User::TYPE_DOCTOR:
+                    return Redirect::to('/doctor');
+                    break;
             }
         }else{
             return "Wrong Password";// 登陆失败
