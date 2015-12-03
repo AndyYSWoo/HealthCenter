@@ -189,23 +189,13 @@
 					};
 					$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
                     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-                    // $.post('/doctor/calendar',
-                    // {
-                    //     title: title,
-                    //     start: start,
-                    //     end: end,
-                    //     _token: CSRF_TOKEN
-                    // },
-                    // function(data,status){
-                    //     alert("Data: "+data );
-                    // });
                     $.ajax({
                         type    : "POST",
                         url     : "/doctor/calendar",
                         dataType: "html",
                         data    : { title       : title,
-                                    start       : start,
-                                    end         : end,
+                                    start       : start.format('YYYY-MM-DD'),
+                                    end         : end.format('YYYY-MM-DD'),
                                     _token      : CSRF_TOKEN 
                                    },
                         dataType: 'JSON',

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
 use Response;
+use Auth;
 use App\calendarevent;
 class CalendarController extends Controller
 {
@@ -47,7 +48,13 @@ class CalendarController extends Controller
         $end = Input::get('end');
         
         $event = new calendarevent;
-        
+        $event->doctor_id = Auth::user()->id;
+        $event->title = $title;
+        $event->start_time = $start;
+        $event->end_time = $end;
+        $event->status = calendarevent::STATUS_NONE;
+        $event->type = calendarevent::TYPE_SHORT;
+        $event->save();
         return Response::json(array(
             'success'   => true,
             'data'      => 'sucess'
