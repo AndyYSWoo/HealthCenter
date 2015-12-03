@@ -31,6 +31,7 @@ $factory->define(App\sportsentry::class, function (Faker\Generator $faker) {
         'last_time' => rand(60,7200) ,
         'calories' => rand(300,1000),
         'value' => rand(3000,5000),
+        'value2' => rand(3000,5000),
         'start_time' => $faker->dateTimeBetween('2015-12-1 00:00:01',$time),
         'end_time' => $faker->dateTimeBetween($time),
         'description' => $faker->sentence()
@@ -45,11 +46,12 @@ $factory->define(App\healthentry::class, function (Faker\Generator $faker) {
         'device_id' => 2,
         'timescale' => 1,
         'level' => rand(1,3),
-        'type' => 1,
+        'type' => rand(1,6),
         'begin_time' => $time,
         'end_time' => $time,
         'last_time' => $value ,
         'value' => $value,
+        'value2' => rand(18000,28800),
         'description' => $faker->sentence()
     ];
 });

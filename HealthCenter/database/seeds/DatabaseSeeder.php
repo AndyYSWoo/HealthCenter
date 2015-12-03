@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'true_name' => 'Yongshang Wu',
             'email'     => 'andyyswoo@gmail.com',
             'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
@@ -29,6 +31,8 @@ class DatabaseSeeder extends Seeder
             'true_name' => 'MaoPeng',
             'email'     => 'coach@gmail.com',
             'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
@@ -38,6 +42,8 @@ class DatabaseSeeder extends Seeder
             'true_name' => 'Doctor',
             'email'     => 'doctor@gmail.com',
             'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),            
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
@@ -47,12 +53,15 @@ class DatabaseSeeder extends Seeder
             'true_name' => 'TrueAdmin',
             'email'     => 'admin@gmail.com',
             'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),            
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
         DB::table('player')->insert([
             'id'      => 1,
             'birthday'      => '1995-5-28',
+            'age'     => 20
         ]);
         DB::table('coach')->insert([
             'id'      => 2,
@@ -73,5 +82,24 @@ class DatabaseSeeder extends Seeder
         // Sports
         factory('App\sportsentry',50)->create();
         Model::reguard();
+        // doctor
+        DB::table('player_has_doctor')->insert([
+            'player_id'      => 1,
+            'doctor_id'      => 3,
+            'status'         => 1,
+            'message'        => '大夫您好！我是陈先生推荐来的！',
+            'created_at'     => time(),
+            'updated_at'     => time(),
+        ]);
+        DB::table('calendarevent')->insert([
+            'client_id'      => 1,
+            'doctor_id'      => 3,
+            'title'          => '大夫一起吃个饭吧！',
+            'type'           => 2,
+            'status'         =>  1,
+            'start_time'     => '2015-12-3T12:00:00',
+            'end_time'       => '2015-12-3T14:00:00',
+        ]);
+        
     }
 }

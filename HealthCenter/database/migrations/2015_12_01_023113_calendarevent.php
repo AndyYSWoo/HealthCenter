@@ -12,7 +12,18 @@ class Calendarevent extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('calendarevent', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('doctor_id');
+            $table->integer('client_id');
+            $table->string('title');
+            $table->integer('status');
+            $table->integer('type');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->datetime('start_time')->nullable();
+            $table->datetime('end_time')->nullable();
+        });
     }
 
     /**
@@ -22,6 +33,6 @@ class Calendarevent extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('calendarevent');
     }
 }

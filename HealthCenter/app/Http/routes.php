@@ -13,6 +13,7 @@
 // player路由
 Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
+    Route::resource('/friend', 'FriendController');
 });
 
 // coach路由
@@ -22,7 +23,10 @@ Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
 });
 // doctor路由
 Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
-    Route::resource('/','DoctorController');    
+    Route::resource('/','DoctorController');
+    Route::resource('/calendar','CalendarController');
+    Route::get('/accept/{id}','PlayerController@accept');
+    Route::get('/deny/{id}','PlayerController@deny');
 });
 // admin路由
 Route::group(['prefix'=> 'admin','namespace' => 'admin'],function(){

@@ -13,5 +13,5 @@ class sportsentry extends Model
     const LEVEL_FIERCE  = 3;
     
     protected $table = 'sportsentry';
-    protected $fillable = ['user_id', 'device_id','type','timescale','level','last_time','calories','value','start_time','end_time','description'];
+    protected $fillable = ['user_id', 'device_id','type','timescale','level','last_time','calories','value','value2','start_time','end_time','description'];
 }

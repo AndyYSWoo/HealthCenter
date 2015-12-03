@@ -1,13 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\player\health;
+namespace App\Http\Controllers\doctor;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-class DataController extends Controller
+use App\player_has_doctor;
+use App\calendarevent;
+use App\User;
+use Auth;
+use Redirect;
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +21,16 @@ class DataController extends Controller
     public function index()
     {
         //
+        $clients = player_has_doctor::where('doctor_id',Auth::user()->id)
+                                        ->where('status',player_has_doctor::STATUS_ACCEPTED)
+                                        ->get();
+        $requests = player_has_doctor::where('doctor_id',Auth::user()->id)
+                                        ->where('status',player_has_doctor::STATUS_PENDING)
+                                        ->get();
+        return view('doctor.doctor_home',[
+                                          'clients' => $clients
+                                         ,'requests'=> $requests
+                                            ]);
     }
 
     /**

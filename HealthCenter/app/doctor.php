@@ -19,4 +19,8 @@ class doctor extends Model
      * @var array
      */
     protected $fillable = ['id', 'type', 'level'];
+    
+    public function event(){
+        return $this->hasMany('App\calendarevent','doctor_id');
+    }
 }

@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\player_has_doctor;
+use Redirect;
 class PlayerController extends Controller
 {
     /**
@@ -83,5 +84,14 @@ class PlayerController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function accept($id){
+        player_has_doctor::find($id)->update(['status' => player_has_doctor::STATUS_ACCEPTED]);
+        return Redirect::back();
+    }
+    public function deny($id){
+        player_has_doctor::find($id)->update(['status' => player_has_doctor::STATUS_DENIED]);
+        return Redirect::back();
     }
 }
