@@ -194,13 +194,12 @@
                         url     : "/doctor/calendar",
                         dataType: "html",
                         data    : { title       : title,
-                                    start       : start.format('YYYY-MM-DD'),
-                                    end         : end.format('YYYY-MM-DD'),
+                                    start       : start.format('YYYY-MM-DD')+'T'+start.format('h:mm:ss'),
+                                    end         : end.format('YYYY-MM-DD')+'T'+end.format('h:mm:ss'),
                                     _token      : CSRF_TOKEN 
                                    },
                         dataType: 'JSON',
                         success :function(data){
-                            alert(data.data);
                         },
                         error: function(e) {
                             console.log(e.responseText);

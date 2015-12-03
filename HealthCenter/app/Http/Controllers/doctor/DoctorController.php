@@ -20,13 +20,16 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        // Clients
         $clients = player_has_doctor::where('doctor_id',Auth::user()->id)
                                         ->where('status',player_has_doctor::STATUS_ACCEPTED)
                                         ->get();
         $requests = player_has_doctor::where('doctor_id',Auth::user()->id)
                                         ->where('status',player_has_doctor::STATUS_PENDING)
                                         ->get();
+        // Calendar
+        $events = calendarevent::where('doctor_id',Auth::user()->id)
+                                    ->get();
         return view('doctor.doctor_home',[
                                           'clients' => $clients
                                          ,'requests'=> $requests

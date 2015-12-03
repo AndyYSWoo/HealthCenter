@@ -15,7 +15,7 @@ class Calendarevent extends Migration
         Schema::create('calendarevent', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('doctor_id');
-            $table->integer('client_id');
+            $table->integer('client_id')->nullable();
             $table->string('title');
             $table->integer('status');
             $table->integer('type');

@@ -19,6 +19,7 @@ class calendarevent extends Model
      * @var string
      */
     protected $table = 'calendarevent';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
