@@ -175,8 +175,8 @@
 								<div>
 									发起： {{ $activity->author->name }}
 								</div>
-								<div style="background-color:#ddd;width:18%;text-align:center;">
-									{{ $activity->members->count() }} 人参与
+								<div  style="background-color:#ddd;width:18%;text-align:center;">
+									<div id="cnt">{{ $activity->members->count() }}</div> 人参与
 								</div>
 								<div style="margin-top:3%;">
 									@if($join == 0)
@@ -220,6 +220,9 @@
 							join_btn.onclick="";
 							join_btn.style.background="#ddd";
 							join_btn.style.color="black";
+							
+							var cnt = document.getElementById("cnt");
+							cnt.innerHTML = parseInt(cnt.innerHTML)+1;
                         },
                         error: function(e) {
                             console.log(e.responseText);

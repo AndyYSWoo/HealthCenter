@@ -49,7 +49,25 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newac  = new activity;
+        $newac->name = $request->input('name');
+        $newac->type = $request->input('group1');
+        $newac->author_id = Auth::user()->id;
+        $newac->place = $request->input('place');
+        $newac->description = $request->input('desc');
+        $newac->poster = '/img/activity/poster1.jpg';
+        $newac->date = $request->input('date');
+        $newac->time = $request->input('time');
+        $newac->contact = $request->input('contact');
+        $newac->save();
+        if($request->hasFile('poster')){
+            $pos_file = $request->file('poster');
+            $pos_name = 'activity_'.$newac->id.'.'.$pos_file->getClientOriginalExtension();
+            $pos_file->move(base_path().'/public/img/activity/',$pos_name);
+            $newac->poster = '/img/activity/'.$pos_name;
+            $newac->save();           
+        }
+        return Redirect::to('/player/activity');
     }
 
     /**
