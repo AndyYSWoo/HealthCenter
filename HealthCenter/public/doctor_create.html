@@ -195,6 +195,16 @@
 	<script type="text/javascript" src="js/jquery_min.js"></script>	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
+		var filePath;
+	          $('#i_file').change( function(event) {
+	          filePath = URL.createObjectURL(event.target.files[0]);
+	          if(filePath!=""){
+	          	var img = document.getElementById("preview");
+	          	img.setAttribute("src",filePath);
+	          }
+	          });
+	</script>
+	<script type="text/javascript">
 		function checkValid(){
 			var password1 = document.getElementById("newPassword1").value.trim();
 			var password2 = document.getElementById("newPassword2").value.trim();
