@@ -56,15 +56,7 @@
 				float:left;
 				margin-left: 5%;
 			}
-			.side-nav .collapsible-header{
-				background-color: transparent;
-				 float: none;
-				 padding: 0 15px;
-				 display: block;
-				 font-size: 1rem;
-				 height: 48px;
-	    		 line-height: 48px;
-			}
+			
 			.topbar{
 				background-color: #408eba;
 				height: 56px;
@@ -117,6 +109,37 @@
 				max-width: 100%;
 	  			height: auto;
 			}
+			.collapsible-header {
+				  display: block;
+				  cursor: pointer;
+				  width: 140px;
+				  padding-top:-10px;
+				  min-height: 1rem;
+  				  line-height: 1rem;
+  				  padding-top: 1%;
+  				  /*text-align: center;*/
+  				  padding: .25rem 1.5rem;
+
+				  background-color: #fff;
+				  border-bottom: 1px solid #ddd; 
+			}
+		    .collapsible-header i {
+		    		width: auto;
+				    font-size: 1rem;
+				    line-height: 1rem;
+				    display: block;
+				    /*text-align: center;*/
+			}
+			.collapsible{
+				border: none;
+				margin: 0px;
+				padding-left: 0px;
+				padding-right: 0px;
+				box-shadow: none;
+			}
+			.collapsible-body{
+				border-bottom: none;
+			}
 			.btn{
 				background-color: #408eba;
 				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
@@ -136,6 +159,32 @@
 				border-radius:15px;
 			}
 			.like:hover{
+				cursor: pointer;
+			}
+			.comments{
+				background-color: #ddd;
+				height: 24px;
+				margin-left: 15%;
+				text-align: center;
+				-moz-border-radius: 15px; 
+				-webkit-border-radius: 15px; 
+				border-radius:15px;
+			}
+			.comments:hover{
+				cursor: pointer;
+			}
+			.comment-content{
+				padding-top:2%;
+				background-color: #f0f0f0;
+			}
+			.replyBtn{
+				color:black;
+				font-size:0.75rem;
+				background-color:#bfbfbf;
+				padding:1%;
+				-moz-border-radius: 5px; 
+				-webkit-border-radius: 5px; 
+				border-radius:5px;
 				cursor: pointer;
 			}
 		   </style>
@@ -272,8 +321,52 @@
 						Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at
 						</div>
 					</div>
-					<div class="like" style="padding-left:2%;padding-bottom:2%;">
-						<a style="color:black;font-size:0.75rem"><i class="fa fa-thumbs-o-up" style="font-size:1rem;"></i>Like</a>
+					<div>
+					<div class="like" style="padding-left:2%;padding-bottom:2%;float:left;">
+						<a id="likeIcon" style="color:black;font-size:0.75rem" onclick="changeIcon(this)"><i class="fa fa-thumbs-o-up" style="font-size:1rem;"></i>Like</a>
+					</div>
+					<ul class="collapsible" data-collapsible="accordion">
+					<li>
+					<div class="collapsible-header comments">
+						<a style="color:black;font-size:0.75rem"><i class="fa fa-comments-o" style="font-size:1rem;"></i>Comments</a>
+					</div>
+					<div class="collapsible-body" >
+					<div style="margin-top:2%;background-color:#f7f7f7;">
+						<div class="comment-content">
+							<div class="row">
+							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+								<img class="responsive-img" src="./img/user1.jpg">
+							</div>
+								<div style="padding-left:12%;">
+									<div style="float:left;">
+										Alexander Pierce
+									</div>
+								<div style="text-align:right;padding-right:5%;padding-top:1%;color:grey;font-size:0.75rem;">
+									2015/11/11 11:11:11
+								</div>
+								</div>	
+							
+							</div>
+					<div style="margin-left:10%;margin-top:-5%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+					<div style="text-align:right;margin-top:-10px;padding-right:2%;">
+							<a class="replyBtn" onclick="replyTo(this)">Reply</a>
+						</div>
+					<div class="divider" style="margin-top:1%;"></div>
+				</div>
+					</div>
+					<div>
+						<div class="row">
+						<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+								<img class="circle responsive-img" src="./img/user.jpg">
+							</div>
+						<div class="input-field col s9 text">
+							<input  type="text" placeholder="Press enter to post comment" id="reply">
+						</div>
+					</div>
+					</div>
+					</div>
+					</li>
+					</ul>
 					</div>
 				</div>
 				<div class="news" style="background-color:white;width:72%;">
@@ -331,6 +424,36 @@
 	
 	<script type="text/javascript" src="js/jquery_min.js"></script>	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript">
+		var isLike = false;
+		function changeIcon(icon){
+			var icon = document.getElementById("icon.id");
+			if(!isLike){
+				isLike = true;
+				document.getElementById("likeIcon").style.color = '#d13d3d';
+			}else{
+				isLike = false;
+				document.getElementById("likeIcon").style.color = 'black';
+			}
+		}
+
+	</script>
+	<script type="text/javascript">
+		document.onkeydown = function(event){
+			var e = event || window.event || arguments.callee.caller.arguments[0];
+			if(e && e.keyCode==13){ // enter 
+                 var reply = document.getElementById("reply").value;
+                 alert(reply);
+                 document.getElementById("reply").value = "";
+            }
+		};
+	</script>
+	<script type="text/javascript">
+		function replyTo(reply){
+			var comment = document.getElementById(reply.id);
+			document.getElementById("reply").value = ("Reply to :");
+		}
+	</script>
 	<script type="text/javascript">
 		var filePath;
 	          $('#i_file').change( function(event) {
