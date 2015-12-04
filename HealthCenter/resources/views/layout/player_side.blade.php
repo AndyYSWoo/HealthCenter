@@ -16,8 +16,9 @@
                     </div>
                 </li>
 				<li><a href="/player/activity">活动</a></li>
-				<li><a href="group_index.html">兴趣组</a></li>
-				<li><a href="#!"class="collapsible-header">好友</a>
+				<li><a href="">兴趣组</a></li>
+				<li><a href="/player/social">朋友圈</a>
+				<li><a href="/player/social"class="collapsible-header">好友</a>
 					<div class="collapsible-body">
 						<ul>
 							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">

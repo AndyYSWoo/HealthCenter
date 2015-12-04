@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Friendship extends Migration
+class CreateFeedcommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class Friendship extends Migration
      */
     public function up()
     {
-        Schema::create('friendship', function (Blueprint $table) {
+        Schema::create('feedcomment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('followee_id');
-            $table->integer('follower_id');
-            $table->integer('status');
+            $table->integer('feed_id');
+            $table->integer('author_id');
+            $table->string('content');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class Friendship extends Migration
      */
     public function down()
     {
-        Schema::drop('friendship');
+        Schema::drop('feedcomment');
     }
 }

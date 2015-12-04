@@ -15,7 +15,9 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
     Route::get('/{id}/edit', 'PlayerController@edit');// why not found?
     Route::put('/{id}', 'PlayerController@update');// why not found?
+    
     Route::resource('/friend', 'FriendController');
+    Route::resource('/social','SocialController');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
 });

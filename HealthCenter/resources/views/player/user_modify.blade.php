@@ -225,12 +225,6 @@
 						return;
 				};
 			};
-			// if ((password1.length!=0)&&(password2.length!=0)){
-
-			// }else{
-			// 	alert("密码为空");
-			// 	return;
-			// }   
 			if (password1 === password2) {
 
 			}else{

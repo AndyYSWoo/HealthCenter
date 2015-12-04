@@ -103,5 +103,8 @@ class DatabaseSeeder extends Seeder
             'end_time'       => '2015-12-3T14:00:00',
         ]);
         factory('App\healthadvice',3)->create();
+        // social
+        factory('App\feed',10)->create();
+        factory('App\feedcomment',20)->create();
     }
 }
