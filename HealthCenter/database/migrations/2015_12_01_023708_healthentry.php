@@ -15,16 +15,16 @@ class Healthentry extends Migration
         Schema::create('healthentry', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('device_id');
-            $table->integer('timescale');
-            $table->integer('level');
+            $table->integer('device_id')->nullable();
+            $table->integer('timescale')->nullable();
+            $table->integer('level')->nullable();
             $table->integer('type');
-            $table->datetime('begin_time');
-            $table->datetime('end_time');
-            $table->integer('last_time');
+            $table->datetime('begin_time')->nullable();
+            $table->datetime('end_time')->nullable();
+            $table->integer('last_time')->nullable();
             $table->float('value');
-            $table->float('value2');
-            $table->string('description');
+            $table->float('value2')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\player;
 use Auth;
+use Redirect;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\sportsentry;
 use App\healthentry;
+use App\User;
+use App\player;
 class PlayerController extends Controller
 {
     /**
@@ -138,7 +141,20 @@ class PlayerController extends Controller
     public function edit($id)
     {
         //
-        return view('player.user_modify');
+        $height = healthentry::where('user_id',$id)
+                                ->where('type',healthentry::TYPE_HEIGHT)
+                                ->orderBy('created_at','desc')
+                                ->first();
+        $weight = healthentry::where('user_id',$id)
+                                ->where('type',healthentry::TYPE_WEIGTH)
+                                ->orderBy('created_at','desc')
+                                ->first();
+        return view('player.user_modify',[
+                                     'user' => User::find($id)
+                                    ,'player'=> player::find($id)
+                                    ,'height' => $height
+                                    ,'weight' => $weight
+        ]);
     }
 
     /**
@@ -151,7 +167,39 @@ class PlayerController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return "fuck";
+        if($request->hasFile('portrait')){
+            $portrait = $request->file('portrait');
+            $por_name = 'user_portrait_'.$id.'.'.$portrait->getClientOriginalExtension();
+            $portrait->move(base_path().'/public/img/portrait/',$por_name);
+        }
+        
+        $user = User::find($id);
+        $user->name=$request->input('name');
+        $user->email=$request->input('email');
+        if(strlen($request->input('password'))!=0){
+            $user->password=bcrypt($request->input('password'));
+        }
+        $user->save();
+        
+        $height = new healthentry;
+        $height->user_id = $id;
+        $height->timescale = 1;
+        $height->level = 2;
+        $height->type = healthentry::TYPE_HEIGHT;
+        $height->begin_time = date('Y-m-d H:m:s');
+        $height->value = $request->input('height');
+        $height->save();
+
+        $weight = new healthentry;
+        $weight->user_id = $id;
+        $weight->timescale = 1;
+        $weight->level = 2;
+        $weight->type = healthentry::TYPE_WEIGTH;
+        $weight->begin_time = date('Y-m-d H:m:s');
+        $weight->value = $request->input('weight');
+        $weight->save();
+        
+        return Redirect::to('/player');
     }
 
     /**

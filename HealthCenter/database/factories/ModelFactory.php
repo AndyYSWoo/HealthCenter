@@ -70,3 +70,27 @@ $factory->define(App\activity::class, function (Faker\Generator $faker) {
         'contact' => 'Phone:'.$faker->phoneNumber.'email:'.$faker->email,
     ];
 });
+
+$factory->define(App\healthadvice::class, function (Faker\Generator $faker) {
+    return [
+        'doctor_id' => 3,
+        'player_id' => 1,
+        'content' => $faker->sentence(100),
+    ];
+});
+
+$factory->define(App\feed::class, function (Faker\Generator $faker) {
+    return [
+        'author_id' => 1,
+        'content' => $faker->sentence(30),
+        'photo' => '/img/activity/poster'.rand(1,3).'.jpg'
+    ];
+});
+
+$factory->define(App\feedcomment::class, function (Faker\Generator $faker) {
+    return [
+        'feed_id' => rand(1,10),
+        'author_id' => 1,
+        'content' => $faker->sentence(20)
+    ];
+});

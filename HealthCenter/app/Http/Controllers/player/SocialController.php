@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\doctor;
+namespace App\Http\Controllers\player;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\healthadvice;
-
 use Auth;
 use Redirect;
+use App\feed;
+use App\feedcomment;
+use App\User;
 use Response;
-class AdviceController extends Controller
+class SocialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,6 +22,7 @@ class AdviceController extends Controller
     public function index()
     {
         //
+        return view('player.social');
     }
 
     /**
@@ -41,20 +43,19 @@ class AdviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $advice = new healthadvice;
-        $advice->doctor_id = Auth::user()->id;
-        $advice->player_id = $request->input('player_id');
-        $advice->content = $request->input('content');
-        $advice->save();
-        
-        return Response::json(array(
-            'success'   => true,
-            'doctor_id'      => $advice->doctor_id,
-            'doctor_name'    => Auth::user()->true_name,
-            'time'           => $advice->created_at->format('Y-m-d H:m:s'),
-            'content'        => $advice->content
-        ));   
+        $feed = new feed;
+        $feed->author_id    = Auth::user()->id;
+        $feed->content      = $request->input('post_content');
+        $feed->photo        = 'null';
+        $feed->save();
+        if($request->hasFile('post_photo')){
+            $photo = $request->file('post_photo');
+            $photo_name = 'feed_'.$feed->id.'.'.$photo->getClientOriginalExtension();
+            $photo->move(base_path().'/public/img/feed/',$photo_name);
+            $feed->photo = '/img/feed/'.$photo_name;
+            $feed->save();
+        }
+        return Redirect::back();
     }
 
     /**

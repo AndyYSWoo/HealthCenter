@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Healthadvice extends Migration
+class CreateFeedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class Healthadvice extends Migration
      */
     public function up()
     {
-        Schema::create('healthadvice', function (Blueprint $table) {
+        Schema::create('feed', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('doctor_id');
-            $table->integer('player_id');
-            $table->text('content');
+            $table->integer('author_id');
+            $table->string('content');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class Healthadvice extends Migration
      */
     public function down()
     {
-        Schema::drop('healthadvice');
+        Schema::drop('feed');
     }
 }

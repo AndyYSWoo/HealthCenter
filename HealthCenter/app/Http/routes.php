@@ -15,7 +15,9 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
     Route::get('/{id}/edit', 'PlayerController@edit');// why not found?
     Route::put('/{id}', 'PlayerController@update');// why not found?
+    
     Route::resource('/friend', 'FriendController');
+    Route::resource('/social','SocialController');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
 });
@@ -29,6 +31,8 @@ Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
 Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
     // 主页
     Route::resource('/','DoctorController');
+    // 建议
+    Route::resource('/advice','AdviceController');
     // 日历操作
     Route::resource('/calendar','CalendarController');
     // 用户相关
