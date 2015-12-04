@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Modify</title>
+	<title>Create Coach</title>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
 	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
@@ -97,30 +97,115 @@
 				max-width: 100%;
 	  			height: auto;
 			}
+			.select-label {
+			  	position: absolute; }
+
+			.select-wrapper {
+			  	position: relative; }
+			.select-wrapper input.select-dropdown {
+			    position: relative;
+			    cursor: pointer;
+			    background-color: transparent;
+			    border: none;
+			    border-bottom: 1px solid #9e9e9e;
+			    outline: none;
+			    height: 2rem;
+			    line-height: 2rem;
+			    width: 100%;
+			    font-size: 0.75rem;
+			    margin: 0 0 15px 0;
+			    padding: 0;
+			    display: block; }
+			.select-wrapper span.caret {
+			    color: initial;
+			    position: absolute;
+			    right: 0;
+			    top: 16px;
+			    font-size: 10px; 
+			}
+			.select-wrapper span.caret.disabled {
+			    color: rgba(0, 0, 0, 0.26); 
+			}
+			.select-wrapper + label {
+			    position: absolute;
+			    top: -14px;
+			    font-size: 0.8rem; 
+			}
+
+			select {
+			  	display: none; 
+			}
+
+			select.browser-default {
+			  	display: block; 
+			}
+
+			select:disabled {
+			  	color: rgba(0, 0, 0, 0.3); 
+			}
+
+			.select-wrapper input.select-dropdown:disabled {
+				  color: rgba(0, 0, 0, 0.3);
+				  cursor: default;
+				  -webkit-user-select: none;
+				  /* webkit (safari, chrome) browsers */
+				  -moz-user-select: none;
+				  /* mozilla browsers */
+				  -ms-user-select: none;
+				  /* IE10+ */
+				  border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+
+			.select-wrapper i {
+			  	color: rgba(0, 0, 0, 0.3); }
+
+			.select-dropdown li.disabled {
+				  color: rgba(0, 0, 0, 0.3);
+				  background-color: transparent; 
+			}
+			.dropdown-content{
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+			}
+			.dropdown-content li {
+			    clear: both;
+			    color: rgba(0, 0, 0, 0.87);
+				color: #408eba;
+			    cursor: pointer;
+			    line-height: 1.5rem;
+			    width: 100%;
+			    text-align: left;
+			    text-transform: none; 
+			}
+			.tip:hover{
+				cursor: pointer;
+			}
+			.tip{
+
+				display:inline;
+				font-size:0.75rem;
+				padding:4%;
+				background-color:#E4E4E4;
+				color:black;
+				-moz-border-radius: 15px; 
+				-webkit-border-radius: 15px; 
+				border-radius:15px;
+				margin-right: 3%; 
+			}
 	</style>
 </head>
 <body>
-	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
+		<div class="side-nav fixed">
+	    <div id="header">
+			<img class="circle responsive-img" src="./img/user.jpg" id ="header_img">
+			<div>Nina Mcintire</div>
+		</div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a href="#!" class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="#!" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
+  				<li class="side-title"><a href="coach_index.html">首页</a></li>
+				<li class="side-title"><a href="#!">发布训练</a></li>
+				<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
 					<div class="collapsible-body">
 						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
+							<li><a href="coach_trainer.html" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
                                         <img src="./img/user.jpg" class="responsive-img">
@@ -132,8 +217,7 @@
 									</div>
 									</a>
                             </li>
-                            <li>
-                              <a href="index.html" style="margin:0;"><div style="height:48px;">
+							<li><a href="coach_trainer.html" style="margin:0;"><div style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
                                         <img src="./img/user1.jpg" class="responsive-img">
@@ -147,49 +231,17 @@
 						</ul>
 					</div>
 				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
   			</ul>
-        </div>
-        <div style="padding-left:16%;">
-        	<div class="topbar">
-        		
-        	</div>
-        	<div class="container" >
+	    </div>
+	    <div style="padding-left:16%">
+	    	<div class="topbar">
+	    		
+	    	</div>
+	    	<div>
+	    		<div class="container" >
         			<div class="row" style="margin-top:4%;margin-left:6%;">
 						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
-					<div style="font-size:1.25rem;padding:2%;">个人信息修改</div>
+					<div style="font-size:1.25rem;padding:2%;">创建教练用户</div>
 					<div class="divider"></div>
 					<div class="row">
 					<div class="col s3" style="padding-top:4%;text-align:center;">头像</div>
@@ -234,37 +286,64 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
-						<div><b>身高</b></div>
+					<div class="col s3" style="padding-top:4%;text-align:center;"><b>个人简介</b></div>
+					<div class="col s8 " style="padding-bottom:1%;">
+						<div class="input-field">
+							<textarea class="materialize-textarea"></textarea>
 						</div>
-						<div class="input-field col s3 text" >
-							<div class="row">
-								<div class="col s8">
-								<input  type="number" id="height">
-								</div>
-								<div>
-									CM
-								</div>
-							</div>
-						</div>
+					</div>						
 					</div>
-					<div class="divider" style="margin-top:-20px;"></div>
+					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
-						<div><b>体重</b></div>
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>地点<b></div>
+						<div class="input-field col s3 text">
+							<select id="province">
+								<option>江苏</option>
+								<option>上海</option>
+							</select>
 						</div>
 						<div class="input-field col s3 text">
-							<div class="row">
-								<div class="col s8">
-								<input  type="number" id="weight">
-								</div>
-								<div>
-									KG
-								</div>
-							</div>
+							<select id="city">
+								<option>南京</option>
+							</select>
 						</div>
 					</div>
-					<div class="divider" style="margin-top:-20px;"></div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>训练方向<b></div>
+						<div class="col s8" id="trainTip" style="margin-top:4%;"></div>
+					</div>
+					<div class="divider"></div>
+					<div class="row" style="margin-top:4%;">
+						<div class="col s8 offset-s3" id="tipList">
+							<div class="tip" id="tip1" onclick="addTips(this)"><a style="color:black;padding-right:1%;"><i class="fa fa-tag"></i></a>健身</div>
+							<div class="tip" id="tip2" onclick="addTips(this)"><a style="color:black;padding-right:1%;"><i class="fa fa-tag"></i></a>游泳</div>
+							<div class="tip" id="tip3" onclick="addTips(this)"><a style="color:black;padding-right:1%;"><i class="fa fa-tag"></i></a>羽毛球</div>
+							<div class="tip" id="tip4" onclick="addTips(this)"><a style="color:black;padding-right:1%;"><i class="fa fa-tag"></i></a>减肥</div>
+						</div>
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+					<div class="col s3" style="padding-top:4%;text-align:center;"><b>个人签名</b></div>
+					<div class="col s8 " style="padding-bottom:1%;">
+						<div class="input-field">
+							<textarea class="materialize-textarea"></textarea>
+						</div>
+					</div>						
+					</div>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>评级<b></div>
+						<div class="input-field col s3 text">
+							<select id="level">
+								<option>初级教练</option>
+								<option>专业教练</option>
+							</select>
+						</div>
+					</div>
+					<div class="divider"></div>
+					
+					
 					<div class="row">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
 						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
@@ -277,17 +356,32 @@
 				
 			</div>
         		</div>
-        </div>
-    <script type="text/javascript" src="js/jquery_min.js"></script>	
+	    	</div>
+	    </div>
+	<script type="text/javascript" src="js/jquery_min.js"></script>	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
+		function addTips(tip){
+			var coachTip = document.getElementById(tip.id).innerHTML;
+			var tiplist = "<div class = \"tip\">" + coachTip + "</div>";
+			alert(tiplist);
+			var coachTips = document.getElementById("trainTip");
+			coachTips.innerHTML = coachTips.innerHTML + tiplist;
+			var list = document.getElementById("tipList");
+			var childTip = document.getElementById(tip.id);
+			list.removeChild(childTip);
+			// coachTips.appendChild(tiplist);
+		}
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+    		$('select').material_select();
+  		});
+
 		function checkValid(){
 			var password1 = document.getElementById("newPassword1").value.trim();
 			var password2 = document.getElementById("newPassword2").value.trim();
 			var mailAddr  = document.getElementById("mailaddr").value.trim();
-			var height    = document.getElementById("height").value;
-			var weight    = document.getElementById("weight").value;
-			
 			if (mailAddr!=0) {
 				var validMailAddr = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 				if (!validMailAddr.test(mailAddr)) {
@@ -304,15 +398,15 @@
 			}else{
 				alert("两次输入的密码不相同")
 			};
-			if (height>=300||height<=10) {
-				alert("乖，憋xjb写");
-			};
-			if (weight>=400||weight<=0) {
-				alert("乖，憋xjb写")
-			};
+			
+			var province = document.getElementById("province");
+			var city     = document.getElementById("city");
+			var level    = document.getElementById("level");
+			var index    = province.selectedIndex;
+			var text     = province.options[index].text;
+			alert(text);
 
 		} 
 	</script>
-
 </body>
 </html>
