@@ -138,6 +138,7 @@ class PlayerController extends Controller
     public function edit($id)
     {
         //
+        return view('player.user_modify');
     }
 
     /**
@@ -150,6 +151,7 @@ class PlayerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return "fuck";
     }
 
     /**

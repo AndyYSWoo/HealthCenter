@@ -73,27 +73,35 @@ class AuthController extends Controller
         }
     }
     public function postLogin(Request $request){
-    $user = User::where('email',$request->input('email'))->first();
-    if($user){
-        if(Auth::attempt(['email' => $request->input('email'),'password'=>$request->input('password')])){
-            // 成功登陆
-            switch($user->type){
-                case User::TYPE_PLAYER:
-                    return Redirect::to('/player');
-                    break;
-                case User::TYPE_COACH:
-                    return Redirect::to('/coach');
-                    break;
-                case User::TYPE_DOCTOR:
-                    return Redirect::to('/doctor');
-                    break;
+        $user = User::where('email',$request->input('email'))->first();
+        if($user){
+            if(Auth::attempt(['email' => $request->input('email'),'password'=>$request->input('password')])){
+                // 成功登陆
+                switch($user->type){
+                    case User::TYPE_PLAYER:
+                        return Redirect::to('/player');
+                        break;
+                    case User::TYPE_COACH:
+                        return Redirect::to('/coach');
+                        break;
+                    case User::TYPE_DOCTOR:
+                        return Redirect::to('/doctor');
+                        break;
+                }
+            }else{
+                return "Wrong Password";// 登陆失败
             }
         }else{
-            return "Wrong Password";// 登陆失败
+            // 用户不存在
+            return "User Not Exist";
         }
-    }else{
-        // 用户不存在
-        return "User Not Exist";
     }
-}
+    
+    public function getReg(){
+        return view('auth.register');
+    }
+    
+    public function postReg(Request $request){
+        
+    }
 }

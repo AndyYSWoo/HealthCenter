@@ -61,7 +61,7 @@
 
 					<p class="text-center">
 						<button type="submit" class="btn btn-success btn-lg">Sign in</button>
-						<button type="submit" class="btn btn-primary btn-lg">Sign up</button>
+						<a class="btn btn-primary btn-lg" href= "/auth/register">Sign up</a>
 					</p>
 				</form>
 			</div>

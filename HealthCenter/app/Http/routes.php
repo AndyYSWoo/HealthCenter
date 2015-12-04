@@ -13,6 +13,8 @@
 // player路由
 Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
+    Route::get('/{id}/edit', 'PlayerController@edit');// why not found?
+    Route::put('/{id}', 'PlayerController@update');// why not found?
     Route::resource('/friend', 'FriendController');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
@@ -38,7 +40,7 @@ Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
 });
 // admin路由
 Route::group(['prefix'=> 'admin','namespace' => 'admin'],function(){
-    Route::resource('/','AdminController');    
+    // Route::resource('/','AdminController');    
 });
 
 Route::get('/', 'Auth\AuthController@getLogin');
@@ -47,3 +49,5 @@ Route::get('/', 'Auth\AuthController@getLogin');
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login','Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/register','Auth\AuthController@getReg');
+Route::post('auth/register','Auth\AuthController@postReg');

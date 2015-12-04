@@ -99,88 +99,7 @@
 	</style>
 </head>
 <body>
-	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="/img/image.jpg" id ="header_img"></div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a href="#!" class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="#!" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="/img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-                            <li>
-                              <a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="/img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="/img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="/img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-        </div>
+	@include('layout.player_side')
         <div style="padding-left:16%;">
         	<div class="topbar">
         		<div>
@@ -307,39 +226,39 @@
 			var date = document.getElementById("date").value;
 			var time = document.getElementById("time").value;
 			var contact = document.getElementById("contact").value;
+			if(name.length == 0){
+				alert('请输入活动名称');
+				return;
+			}
+			if(typeof type == 'undefined'){
+				alert('请选择活动类型');
+				return;
+			}
+			if(place.length == 0){
+				alert('请输入活动地点');
+				return;
+			}
+			if(desc.length == 0){
+				alert('请输入活动名称');
+				return;
+			}
+			if(poster.length == 0){
+				alert('请上传活动海报');
+				return;				
+			}
+			if(date.length == 0){
+				alert('请选择活动日期');
+				return;				
+			}
+			if(time.length == 0){
+				alert('请输入活动时间');
+				return;				
+			}
+			if(contact.length == 0){
+				alert('请输入活动联系方式');
+				return;				
+			}		
 			document.getElementById('postform').submit();
-			// if(name.length == 0){
-			// 	alert('请输入活动名称');
-			// 	return;
-			// }
-			// if(typeof type == 'undefined'){
-			// 	alert('请选择活动类型');
-			// 	return;
-			// }
-			// if(place.length == 0){
-			// 	alert('请输入活动地点');
-			// 	return;
-			// }
-			// if(desc.length == 0){
-			// 	alert('请输入活动名称');
-			// 	return;
-			// }
-			// if(poster.length == 0){
-			// 	alert('请上传活动海报');
-			// 	return;				
-			// }
-			// if(date.length == 0){
-			// 	alert('请选择活动日期');
-			// 	return;				
-			// }
-			// if(time.length == 0){
-			// 	alert('请输入活动时间');
-			// 	return;				
-			// }
-			// if(contact.length == 0){
-			// 	alert('请输入活动联系方式');
-			// 	return;				
-			// }		
 		}
 	</script>
 	<script>
