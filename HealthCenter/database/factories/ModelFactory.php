@@ -70,3 +70,11 @@ $factory->define(App\activity::class, function (Faker\Generator $faker) {
         'contact' => 'Phone:'.$faker->phoneNumber.'email:'.$faker->email,
     ];
 });
+
+$factory->define(App\healthadvice::class, function (Faker\Generator $faker) {
+    return [
+        'doctor_id' => 3,
+        'player_id' => 1,
+        'content' => $faker->sentence(100),
+    ];
+});

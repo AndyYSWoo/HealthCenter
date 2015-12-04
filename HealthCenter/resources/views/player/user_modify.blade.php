@@ -117,8 +117,8 @@
 						<div class="col s6">
 						<div class="file-field input-field" id="i_file">
 						<div class="blank">
-							<input type="file" name="potrait">
-							<img src="/img/user_normal.jpg"class="responsive-img" id="preview">
+							<input type="file" name="portrait">
+							<img src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg"class="responsive-img" id="preview">
 						</div>
 						</div>
 					</div>
@@ -128,14 +128,14 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:center;"><b>昵称<b></div>
 						<div class="input-field col s5 text">
-							<input  type="text" name="name">
+							<input  type="text" name="name" value="{{ $user->name }}">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:center;"><b>邮箱<b></div>
 						<div class="input-field col s5 text">
-							<input  type="email" id="mailaddr" name="email">
+							<input  type="email" id="mailaddr" name="email" value="{{ $user->email }}">
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -160,7 +160,7 @@
 						<div class="input-field col s3 text" >
 							<div class="row">
 								<div class="col s8">
-								<input  type="number" id="height" name="height">
+								<input  type="number" id="height" name="height" value="{{ $height->value }}">
 								</div>
 								<div>
 									CM
@@ -176,7 +176,7 @@
 						<div class="input-field col s3 text">
 							<div class="row">
 								<div class="col s8">
-								<input  type="number" id="weight" name="weight">
+								<input  type="number" id="weight" name="weight" value="{{ $weight->value }}">
 								</div>
 								<div>
 									KG
@@ -203,6 +203,14 @@
     <script type="text/javascript" src="/js/jquery_min.js"></script>	
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
+		var filePath;
+			$('#i_file').change( function(event) {
+			filePath = URL.createObjectURL(event.target.files[0]);
+			if(filePath!=""){
+			var img = document.getElementById("preview");
+			img.setAttribute("src",filePath);
+			}
+			});
 		function checkValid(){
 			var password1 = document.getElementById("newPassword1").value.trim();
 			var password2 = document.getElementById("newPassword2").value.trim();
@@ -217,12 +225,12 @@
 						return;
 				};
 			};
-			if ((password1.length!=0)&&(password2.length!=0)){
+			// if ((password1.length!=0)&&(password2.length!=0)){
 
-			}else{
-				alert("密码为空");
-				return;
-			}   
+			// }else{
+			// 	alert("密码为空");
+			// 	return;
+			// }   
 			if (password1 === password2) {
 
 			}else{

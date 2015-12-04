@@ -8,11 +8,21 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\player_has_doctor;
 use Redirect;
+use Auth;
+use App\healthadvice;
+use App\player;
 class PlayerController extends Controller
 {
     
     public function getHealth($id){
-        return view('doctor.player.user_health');
+        $advices = healthadvice::where('doctor_id', Auth::user()->id)
+                                    ->where('player_id',$id)
+                                    ->get();
+        $player  = player::find($id);
+        return view('doctor.player.user_health',[
+                                                'advices' => $advices
+                                               ,'player'  => $player
+        ]);
     }
     
     public function getSports($id){

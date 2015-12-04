@@ -29,6 +29,8 @@ Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
 Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
     // 主页
     Route::resource('/','DoctorController');
+    // 建议
+    Route::resource('/advice','AdviceController');
     // 日历操作
     Route::resource('/calendar','CalendarController');
     // 用户相关

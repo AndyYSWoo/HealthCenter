@@ -12,7 +12,13 @@ class Healthadvice extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('healthadvice', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('doctor_id');
+            $table->integer('player_id');
+            $table->text('content');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +28,6 @@ class Healthadvice extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('healthadvice');
     }
 }

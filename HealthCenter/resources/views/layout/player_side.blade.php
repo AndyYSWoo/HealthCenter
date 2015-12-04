@@ -1,5 +1,5 @@
 <div class="side-nav fixed">
-            <div id="header"><img class="circle responsive-img" src="/img/image.jpg" id ="header_img"></div>
+            <div id="header"><img class="circle responsive-img" src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg" id ="header_img"></div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
   				<li><a href="/player">首页</a></li>
 				<li>
@@ -86,7 +86,6 @@
 						</ul>
 					</div>
 				</li>
-				<!--<li><a href={{ "/player/".Auth::user()->id."/edit" }}>个人资料</a></li>-->
 				<li><a href="/player/{{ Auth::user()->id }}/edit">个人资料</a></li>
   			</ul>
         </div>

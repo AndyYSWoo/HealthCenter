@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>user</title>
-		<link type="text/css" rel="stylesheet" href="/custom-font/font-awesome.css">
+		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
 		<link type="text/css" rel="stylesheet" href="/css/animate/animate.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		<style type="text/css">
-			 #header_img{
+			#header_img{
 				width:  50%;
 				padding-top: 5%;
 				padding-bottom: 5%;
@@ -19,119 +19,89 @@
 				height: 24%;
 				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 			}
-			.side-nav{
-				background-color: white;
-				width: 16%;
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-			}
+            .side-nav{
+                background-color: white;
+                width: 16%;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+            }
+
 			.side-nav .collapsible-header{
-				background-color: transparent;
-				float: none;
-				padding: 0 15px;
-				display: block;
-				font-size: 1rem;
-				height: 48px;
-				line-height: 48px;
-			}
+                background-color: transparent;
+                float: none;
+                padding: 0 15px;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                margin-left: 0px;
+            }
+            .side-nav li {
+                float: none;
+                padding: 0 15px;
+                border-bottom: 1 px; 
+            }
+            .side-nav a {
+                color: #fff3e0;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                padding: 0 15px; 
+            }
 			body{
-			background-color: #ecf0f5;
-		}
-		.topbar{
-			background-color: #408eba;
-			height: 56px;
-		}
-		.chart {
-    min-width: 320px;
-    max-width: 800px;
-    height: 220px;
-    margin: 0 auto;
-}
+			    background-color: #ecf0f5;
+		    }
+		    .topbar{
+    			background-color: #408eba;
+    			height: 56px;
+		    }
+		    .chart {
+                min-width: 320px;
+                max-width: 800px;
+                height: 220px;
+                margin: 0 auto;
+            }
+            .comment{
+                margin-top:2%;
+                padding-bottom:1%;
+                border-top:2px solid #408eba;
+                border-left:1px solid #ddd;
+                border-right:1px solid #ddd;
+                background-color: white;
+            }
+            .comment-content{
+                padding-top:2%;
+                background-color: #f0f0f0;
+            }
+            input[type=text]{
+                border: 2px solid #ddd;
+                padding: 2%;
+                height: 3rem;
+                margin-bottom: -20px;
+            }
+            input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+                border: 2px solid #408eba;
+                border-bottom: 2px solid #408eba;
+                box-shadow: none;
+            }
+            textarea.materialize-textarea{
+                border: 2px solid #ddd;
+                padding: 2%;
+                height: 3rem;
+                margin-bottom: -20px;
+            }
+            .btn{
+                background-color: #408eba;
+            }
+            .btn:hover{
+                box-shadow: none;
+                background-color: #50b5ee;
+            }
 		</style>
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
-	    <div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="/img/image.jpg" id ="header_img"></div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a  class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="user_act.html" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-                            <li>
-                             <a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="player_see_doctor.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-        </div>
+        @include('layout.doctor_side');
 		<div style="padding-left:16%;">
 			<div class="topbar">
 				
@@ -204,7 +174,57 @@
 									运动时状况分析
 								</div>
 							</div>
+                <div>
+                    <div class="row">
+                        <div class="col s12">
+                        <div class="comment">
+                            <div style="padding:2%;font-size:1.25rem;">医生建议</div>
+                            <div class="divider"></div>
+                            @foreach($advices as $advice)
+                                <div class="comment-content">
+                                    <div class="row">
+                                        <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+                                            <img class="responsive-img" src="/img/user1.jpg">
+                                        </div>
+                                        <div class="test"style="padding-left:10%;">
+                                            <div style="float:left;">
+                                                {{ $advice->docUser->true_name }}
+                                            </div>
+                                            <div style="text-align:right;padding-right:2%;padding-top:1%;color:grey;font-size:0.75rem;">
+                                                {{ $advice->created_at }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left:10%;margin-top:-4%;font-size:0.75rem;">{{ $advice->content }}</div>
+                                    <div style="text-align:right;margin-top:-10px;padding-right:2%;">
+                                        <a style="color:black;">回复</a>
+                                    </div>
+                                    <div class="divider" style="margin-top:1%;"></div>
+                                </div>
+                            @endforeach
+                            <div>
+                            <div class="row">
+                                <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
+                                    <img class="responsive-img" src="/img/user.jpg">
+                                </div>
+                                {!! Form::open(array('url'=>'/doctor/advice','method'=>'POST')) !!}
+                                <div class="input-field col s8">
+                                    <textarea id="textarea1" class="materialize-textarea" name="content"></textarea>
+                                </div>
+                                <input type="text" value="{{ $player->id }}" name="player_id" style="display:none;">
+                                <div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-1.25%;padding-left:78%;">
+                                    <a type="submit" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;" onclick="sub()">发送</a>
+                                </div>
+                                {{ csrf_field() }}
+                                {!! Form::close()  !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 						</div>
+                        
 						<div class="col s4">
 							<div id="compare" style="max-width:inherit; height: 400px; margin: 0 auto;border-top:2px solid #ddd;border-bottom:2px solid #ddd;"></div>
 							<div style="margin-top:5%;background-color:white;">
@@ -224,45 +244,6 @@
 							</div>
 							
 					</div>  
-					<div class="row">
-						<div class="col s12">
-					       <div class="comment">
-                                <div style="padding:2%;font-size:1.25rem;">教练建议</div>
-                                <div class="divider"></div>
-                                <div class="comment-content">
-                                    <div class="row">
-                                        <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-                                        <img class="responsive-img" src="/img/user1.jpg">
-                                        </div>
-                                        <div class="test"style="padding-left:15%;">
-                                            <div style="float:left;">
-                                                Alexander Pierce
-                                            </div>
-                                            <div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
-                                                2015/11/11 11:11:11
-                                            </div>
-                                        </div>	
-                                    </div>
-                                    <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
-                                    <div style="text-align:right;margin-top:-0px;padding-right:2%;">
-                                        <a style="color:black;">回复</a>
-                                    </div>
-                                    <div class="divider" style="margin-top:1%;"></div>
-                                </div>
-                                <div>
-                                    <div class="row">
-                                    <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
-                                        <img class="responsive-img" src="/img/user.jpg">
-                                    </div>
-                                    <div class="input-field col s8">
-                                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                    </div>
-                                    <div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-2%;padding-left:80%;">
-                                        <a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 						             
 				</div>
@@ -502,6 +483,27 @@ $(function () {
 });
 		</script>
 		<script src="/js/highcharts/highcharts.js"></script>
-		
+		<script>
+
+            function sub(){
+                $.ajax({
+                    type    : "POST",
+                    url     : "/doctor/advice",
+                    data    : {'player_id':$('input[name=player_id]').val(),
+                            'content':$('textarea[name=content]').val(),
+                            '_token':$('input[name=_token]').val()},
+                    success :function(data){
+                        var docName = data.doctor_name;
+                        var time = data.time;
+                        var content = data.content;
+                        $('textarea#textarea1').val('');
+                        $("div.comment-content:last").append('<div class="comment-content"><div class="row"><div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;"><img class="responsive-img" src="/img/user1.jpg"></div><div class="test"style="padding-left:10%;"><div style="float:left;">'+docName+'</div><div style="text-align:right;padding-right:2%;padding-top:1%;color:grey;font-size:0.75rem;">'+time+'</div></div></div><div style="margin-left:10%;margin-top:-4%;font-size:0.75rem;">'+content+'</div><div style="text-align:right;margin-top:-10px;padding-right:2%;"><a style="color:black;">回复</a></div><div class="divider" style="margin-top:1%;"></div></div>');
+                    },
+                    error: function(e) {
+                        console.log(e.responseText);
+                    }
+                });
+                }
+        </script>
 	</body>
 </html>

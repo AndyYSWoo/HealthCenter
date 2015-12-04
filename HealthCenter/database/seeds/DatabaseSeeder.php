@@ -102,6 +102,6 @@ class DatabaseSeeder extends Seeder
             'start_time'     => '2015-12-3T12:00:00',
             'end_time'       => '2015-12-3T14:00:00',
         ]);
-        
+        factory('App\healthadvice',3)->create();
     }
 }
