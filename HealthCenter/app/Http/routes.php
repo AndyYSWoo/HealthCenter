@@ -19,13 +19,20 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/friend', 'FriendController');
     Route::get('/friend/accept/{id}','FriendController@accept');
     Route::get('/friend/deny/{id}','FriendController@deny');
+    
     // doctor
     Route::resource('/doctor','DoctorController');
+    
     // social
     Route::resource('/social','SocialController');
     Route::post('/social/comment','SocialController@comment');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
+    
+    // group
+    Route::resource('/group','GroupController');
+    Route::resource('/post','PostController');
+    
     // health
     Route::resource('/health/data','health\DataController');
     // sports

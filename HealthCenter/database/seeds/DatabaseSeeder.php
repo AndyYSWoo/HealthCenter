@@ -130,5 +130,8 @@ class DatabaseSeeder extends Seeder
             'created_at'=> date('Y-m-d H:m:s'),
             'updated_at'=> date('Y-m-d H:m:s'),           
         ]);
+        factory('App\group',5)->create();
+        factory('App\post',10)->create();
+        factory('App\postcomment',20)->create();
     }
 }

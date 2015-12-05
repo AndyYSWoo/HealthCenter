@@ -119,7 +119,7 @@
 		<div style="padding-left:16%;">
 			<div class="topbar">
                 <div class="uploadBtn" style="float:right;margin-right:4%;">
-                    <a style="color:white;"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
+                    <a style="color:white;" href="/player/health/data/create"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
                 </div>
 			</div>
 			<div>
@@ -225,7 +225,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div style="margin-left:10%;margin-top:-4%;font-size:0.75rem;">{{ $health_advice->content }}</div>
+                                <div style="margin-left:10%;margin-top:-4%;font-size:0.75rem;"><br>{{ $health_advice->content }}</div>
 
                                 <div class="divider" style="margin-top:1%;"></div>
                             </div>
@@ -381,8 +381,6 @@ $(function () {
         });
     }
 
-    // Get the data. The contents of the data file can be viewed at
-    // https://github.com/highslide-software/highcharts.com/blob/master/samples/data/activity.json
     $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=activity.json&callback=?', function (activity) {
         $.each(activity.datasets, function (i, dataset) {
 

@@ -3,8 +3,8 @@
 <head>
 	<title>Group Index</title>
 	<meta charset="utf-8">
-	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
+	<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style type="text/css">
 			#header_img{
@@ -114,88 +114,7 @@
 	</style>
 </head>
 <body>
-	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a href="#!" class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="#!" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-                            <li>
-                              <a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-        </div>
+@include('layout.player_side')
         <div style="padding-left:16%;">
         	<div class="topbar">
         		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
@@ -206,21 +125,19 @@
         		<div style="margin-top:2%;">
 						<div class="row">
 							<div class="col s5" style="text-align:center;">
-								<img style="height:120px;" src="./img/poster.jpg" alt="poster" class="responsive-img">
+								<img style="height:120px;" src="{{ $group->poster }}" alt="poster" class="responsive-img">
 							</div>
 							<div class="col s7" style="color:grey;font-size:0.75rem;"> 
 								<div style="font-size:1.25rem;">
-									<a style="color:#408eba;">步行小组</a><span style="font-size:0.75rem;margin-left:2%;">千里之行，始于足下</span>
+									<a style="color:#408eba;">{{ $group->name }}</a><span style="font-size:0.75rem;margin-left:2%;">{{ $group->motto }}</span>
 								</div>
 								<div style="margin-top:2%;">
 								<div style="width:72%;background-color:#fff4e9;color:black;padding:1%">
-									步行组：一直低调的混迹于豆瓣小组之中。 
-									传说中豆瓣最著名快速有效蒸友小组！！！为什么？？？因为我们有微信！！！ 
-									请你优雅的掏出手机，为什么？？？因为你要加微信！！！ 
+									{{ $group->description }} 
 								</div>
 								<div class="row">
 									<div class="col s2" style="background-color:#ddd;text-align:center;margin-top:1%;">
-										90 人参与
+										{{ App\player_in_group::where('group_id',$group->id)->count() }} 人参与
 									</div>
 									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;margin-left:2%;cursor:pointer;" onclick="joinGroup()">
 										我要参加
@@ -276,7 +193,7 @@
 												<div class="file-field input-field" id="i_file">
 													<div class="blank">
 														<input type="file" id="f_path">
-															<img src="./img/icon_add.png"class="responsive-img" id="preview" style="weight:96px;height:96px;">
+															<img src="/img/icon_add.png"class="responsive-img" id="preview" style="weight:96px;height:96px;">
 													</div>
 												</div>
 											</div>
@@ -307,21 +224,13 @@
 						        </thead>
 
 						        <tbody>
-						          <tr>
-						            <td><span style="cursor:pointer;" id="topicId">T恤图案创意设计</span></td>
-						            <td>Eclair</td>
-						            <td>2015-1-2 11:21:11</td>
-						          </tr>
-						          <tr>
-						            <td>平面设计学习资料免费下载</td>
-						            <td>Jellybean</td>
-						            <td>2014-1-2 11:21:11</td>
-						          </tr>
-						          <tr>
-						            <td>头发问题怎么办？</td>
-						            <td>Lollipop</td>
-						            <td>2013-1-2 11:11:11</td>
-						          </tr>
+									@foreach($posts as $post)
+									<tr>
+										<td><span style="cursor:pointer;" id="topicId"><a href="/player/post/{{ $post->id }}" style="color:black;">{{ $post->title }}</a></span></td>
+										<td>{{ $post->author->name }}</td>
+										<td>{{ $post->comments->sortByDesc('created_at')->first()->created_at }}</td>
+						          	</tr>
+									@endforeach
 						        </tbody>
 						      	</table>
 							</div>
@@ -365,8 +274,8 @@
     		$('#tipmodal2').closeModal();
     	}
     </script>
-	<script type="text/javascript" src="js/jquery_min.js"></script>	
-	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="/js/jquery_min.js"></script>	
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
 			var filePath;
             $('#i_file').change(function(event) {

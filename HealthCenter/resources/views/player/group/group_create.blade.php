@@ -3,8 +3,8 @@
 <head>
 	<title>Create Group</title>
 	<meta charset="utf-8">
-	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
+	<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style type="text/css">
 			#header_img{
@@ -100,88 +100,7 @@
 	</style>
 </head>
 <body>
-	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a href="#!" class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="#!" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-                            <li>
-                              <a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-        </div>
+@include('layout.player_side')
         <div style="padding-left:16%;">
         	<div class="topbar">
         		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
@@ -225,19 +144,19 @@
 								<div class="file-field input-field" id="i_file">
 									<div class="blank">
 										<input type="file">
-											<img src="./img/icon_add.png"class="responsive-img" id="preview">
+											<img src="/img/icon_add.png"class="responsive-img" id="preview">
 									</div>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="divider"></div>
 						<div class="row">
 							<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
 								<a class="waves-effect waves-light btn" >发布</a>
 							</div>
 							<div class="col s3" style="padding-top:2%;">
-								<a class="waves-effect waves-light btn" >取消</a>
+								<a class="waves-effect waves-light btn" href="/player/group">取消</a>
 							</div>
 						</div>
 
@@ -245,8 +164,8 @@
         		</div>
         	</div>
         </div>
-    <script type="text/javascript" src="js/jquery_min.js"></script>	
-	<script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery_min.js"></script>	
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		var filePath;
 	          $('#i_file').change( function(event) {

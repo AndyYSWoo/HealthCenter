@@ -94,3 +94,31 @@ $factory->define(App\feedcomment::class, function (Faker\Generator $faker) {
         'content' => $faker->sentence(20)
     ];
 });
+
+$factory->define(App\group::class, function (Faker\Generator $faker) {
+    return [
+        'author_id' => 1,
+        'name'     => $faker->sentence(4),
+        'motto'     => $faker->sentence(5),
+        'description' => $faker->sentence(50),
+        'poster' => '/img/group/poster/poster'.rand(1,3).'.jpg',
+    ];
+});
+
+$factory->define(App\post::class, function (Faker\Generator $faker) {
+    return [
+        'author_id' => 1,
+        'group_id'     => rand(1,5),
+        'title' => $faker->sentence(5),
+        'content' => $faker->sentence(200),
+        'photo' => '/img/group/poster/poster'.rand(1,3).'.jpg',
+    ];
+});
+
+$factory->define(App\postcomment::class, function (Faker\Generator $faker) {
+    return [
+        'post_id' => rand(1,10),
+        'player_id'     => 1,
+        'content' => $faker->sentence(50),
+    ];
+});

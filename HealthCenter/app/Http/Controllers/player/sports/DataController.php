@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\sportsentry;
-use Auth;
+use Auth,Redirect;
 class DataController extends Controller
 {
     /**
@@ -70,6 +70,7 @@ class DataController extends Controller
     public function create()
     {
         //
+        return view('player.sports.user_input_actdata');
     }
 
     /**
@@ -81,6 +82,26 @@ class DataController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->hasFile('sports_file')){// 上传文件
+            $xml = $request->file('sports_file');
+            if($xml->getClientOriginalExtension() != 'xml'){
+                return 'File extension not xml!';
+            }
+            $new_name = 'xml_'.date('Y-m-d H:m:s').Auth::user()->id.'.xml';
+            $xml->move(base_path().'/public/file/',$new_name);
+            $obj = simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/file/'.$new_name);
+            return $obj->getName();
+        }else{ // 手动输入
+            $entry = new sportsentry;
+            $entry->user_id     = Auth::user()->id;
+            $entry->type        = sportsentry::TYPE_RUN;
+            $entry->value       = $request->input('dis');
+            $entry->last_time   = $request->input('l_h')*3600+$request->input('l_m')*60+$request->input('l_s'); 
+            $entry->calories    = $request->input('cal');
+            $entry->start_time  = $request->input('date').' '.$request->input('s_h').':'.$request->input('s_m').':'.$request->input('s_s');
+            $entry->save();
+        }
+        return Redirect::to('/player/sports/data');
     }
 
     /**
