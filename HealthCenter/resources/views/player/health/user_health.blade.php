@@ -97,6 +97,15 @@
                 box-shadow: none;
                 background-color: #50b5ee;
             }
+            .uploadBtn{
+                cursor: pointer;
+                height: 100%;
+                padding-top: 1%;
+                padding-right:1%;
+            }
+            .uploadBtn:hover{
+                background-color: #67acd3;
+            }
 		</style>
 	</head>
 	<body>
@@ -104,6 +113,9 @@
 @include('layout.player_side')
 		<div style="padding-left:16%;">
 			<div class="topbar">
+                <div class="uploadBtn" style="float:right;margin-right:4%;">
+                    <a style="color:white;"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
+                </div>
 			</div>
 			<div>
 				<div class="row" style="margin-top:5%;">
