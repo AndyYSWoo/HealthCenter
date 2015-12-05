@@ -198,7 +198,7 @@
                                     <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                     </p>
-                                    <p><a href="#!">查看详细</a></p>
+                                    <!--<p><a href="#!">查看详细</a></p>-->
                                 </div>
                             </li>
                         </ul>                        
@@ -211,7 +211,7 @@
                                     <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                     </p>
-                                    <p><a href="#!">查看详细</a></p>
+                                    <!--<p><a href="#!">查看详细</a></p>-->
                                 </div>
                             </li>
                         </ul>
@@ -227,7 +227,7 @@
                                 <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                 </p>
-                                <p><a href="#!">查看全文</a></p>
+                                <!--<p><a href="#!">查看全文</a></p>-->
                             </div>
                         </li>
                         <li>
@@ -236,7 +236,7 @@
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                 </p>
-                                <p><a href="#!">查看全文</a></p>
+                                <!--<p><a href="#!">查看全文</a></p>-->
                             </div>
                         </li>
                         <li>
@@ -245,7 +245,7 @@
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                                 </p>
-                                <p><a href="#!">查看全文</a></p>
+                                <!--<p><a href="#!">查看全文</a></p>-->
                             </div>
                         </li>
                     </ul>

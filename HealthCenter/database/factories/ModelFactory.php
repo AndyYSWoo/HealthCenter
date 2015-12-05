@@ -21,7 +21,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\sportsentry::class, function (Faker\Generator $faker) {
-    $time = $faker->dateTimeBetween('2015-12-1 00:00:01');
+    $time = $faker->dateTimeBetween('2015-01-01 00:00:01');
     return [
         'user_id' => 1,
         'device_id' => 1,
@@ -32,7 +32,7 @@ $factory->define(App\sportsentry::class, function (Faker\Generator $faker) {
         'calories' => rand(300,1000),
         'value' => rand(3000,5000),
         'value2' => rand(3000,5000),
-        'start_time' => $faker->dateTimeBetween('2015-12-1 00:00:01',$time),
+        'start_time' => $faker->dateTimeBetween('2015-01-01 00:00:01',$time),
         'end_time' => $faker->dateTimeBetween($time),
         'description' => $faker->sentence()
     ];
