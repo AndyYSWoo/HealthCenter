@@ -40,9 +40,9 @@ class DataController extends Controller
                                     ->where('type',healthentry::TYPE_WEIGTH)
                                     ->orderBy('begin_time')
                                     ->get();
-        // Good&avg:h,w,bph,bpl,hr
-        $goods  = [185,70,140,90,70];
-        $avgs   = [170,64,150,95,80];
+        // Good&avg:h,w,bpl,bph,hr
+        $goods  = [185,70,90,140,70];
+        $avgs   = [170,64,95,150,80];
                                     
         $health_advices = healthadvice::where('player_id',Auth::user()->id)->get();
         return view('player.health.user_health',[
@@ -78,7 +78,27 @@ class DataController extends Controller
     {
         //
         if($request->hasFile('health_file')){// 上传文件
-            
+            $xml = $request->file('health_file');
+            if($xml->getClientOriginalExtension() != 'xml'){
+                return 'File extension is not xml!';
+            }
+            $new_name = 'xml_'.date('Y-m-d H:m:s').Auth::user()->id.'.xml';
+            $xml->move(base_path().'/public/file/health/',$new_name);
+            $obj = simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/file/health/'.$new_name);
+            for($i = 0 ; $i < count($obj->xpath('healthentry'));++$i){
+                $e = $obj->xpath('healthentry')[$i];
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = $e->xpath('type')[0];
+                $entry->level       = $e->xpath('level')[0];
+                $entry->value       = $e->xpath('value')[0];
+                $entry->value2      = $e->xpath('value2')[0];
+                $entry->last_time   = $e->xpath('last_time')[0];
+                $entry->begin_time  = $e->xpath('begin_time')[0];
+                $entry->end_time    = $e->xpath('end_time')[0];
+                $entry->description = $e->xpath('description')[0];
+                $entry->save();
+            }
         }else{ // 手动输入
             if($request->input('temp')){
                 $entry = new healthentry;

@@ -232,7 +232,7 @@
 					    	<div class="file-field input-field" style="margin-left:24%;">
 						      <div class="btn">
 						        <span>File</span>
-							{!! Form::open(array('url' => "/player/sports/data",'files' => true,'method' => 'POST')) !!}
+							{!! Form::open(array('url' => "/player/health/data",'files' => true,'method' => 'POST')) !!}
 						        <input type="file" id="health_file" name="health_file">
 							{{ csrf_field() }}
 							{!! Form::close() !!}
