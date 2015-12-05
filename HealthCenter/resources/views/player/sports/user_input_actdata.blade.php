@@ -168,7 +168,7 @@
 					<div class="divider"></div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:center;"><b>开始时间<b></div>
-						<input type="date" class="datepicker col s2" placeholder="选择日期" id="date" name="date" style="padding-top:3%">
+						<input type="date" class="datepicker col s2" placeholder="选择日期" id="date" name="date" style="height:1rem;margin-top:3%">
 						<div class="input-field col s1 text" style="padding-top:1%">
 							<input  type="number" id="s_h" name="s_h">
 						</div>
