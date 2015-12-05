@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\player\health;
-use Auth;
+use Auth,Redirect;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -65,6 +65,7 @@ class DataController extends Controller
     public function create()
     {
         //
+        return view('player.health.user_input_healthdata');
     }
 
     /**
@@ -76,6 +77,77 @@ class DataController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->hasFile('health_file')){// 上传文件
+            
+        }else{ // 手动输入
+            if($request->input('temp')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_TEMPERATURE;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('temp');
+                $entry->save();
+            }
+            if($request->input('height')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_HEIGHT;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('height');
+                $entry->save();
+            }
+            if($request->input('weight')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_WEIGTH;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('weight');
+                $entry->save();
+            }
+            if($request->input('hr')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_HEARTRATE;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('hr');
+                $entry->save();
+            }
+            if($request->input('bph')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_BLOODPRESSURE;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('bph');
+                $entry->value2      = $request->input('bpl');
+                $entry->save();
+            }
+            if($request->input('dh')){
+                $entry = new healthentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = healthentry::TYPE_SLEEP;
+                $entry->level       = healthentry::LEVEL_GOOD;
+                $entry->begin_time  = date('Y-m-d H:m:s');
+                $entry->value       = $request->input('dh')*3600+$request->input('dm')*60+$request->input('ds');
+                $entry->save();
+                
+                $entry2 = new healthentry;
+                $entry2->user_id     = Auth::user()->id;
+                $entry2->type        = healthentry::TYPE_SLEEP;
+                $entry2->level       = healthentry::LEVEL_MID;
+                $entry2->begin_time  = date('Y-m-d H:m:s');
+                $entry2->value       = $request->input('mh')*3600+$request->input('mm')*60+$request->input('ms');
+                $entry2->save();
+                
+                $entry3 = new healthentry;
+                $entry3->user_id     = Auth::user()->id;
+                $entry3->type        = healthentry::TYPE_SLEEP;
+                $entry3->level       = healthentry::LEVEL_GOOD;
+                $entry3->begin_time  = date('Y-m-d H:m:s');
+                $entry3->value       = $request->input('bh')*3600+$request->input('bm')*60+$request->input('bs');
+                $entry3->save();
+            }
+        }
+        return Redirect::to('/player/health/data');
     }
 
     /**

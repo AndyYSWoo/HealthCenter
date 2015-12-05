@@ -345,7 +345,7 @@
                                             </div>
                                         </div>	
                                     </div>
-                                    <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+                                    <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;"><br>有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
                                     <div style="text-align:right;margin-top:-0px;padding-right:2%;">
                                         <a style="color:black;">回复</a>
                                     </div>
@@ -366,7 +366,7 @@
 						</div>	
 							
 					</div>
-					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;"><br>有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
 					<div style="text-align:right;margin-top:-0px;padding-right:2%;">
 							<a style="color:black;">回复</a>
 						</div>
@@ -464,7 +464,7 @@
                                     </div>
                                 </div>	
                             </div>
-                            <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">{{ $health_advice->content }}</div>
+                            <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;"><br>{{ $health_advice->content }}<br></div>
 
                             <div class="divider" style="margin-top:1%;"></div>
                         </div>

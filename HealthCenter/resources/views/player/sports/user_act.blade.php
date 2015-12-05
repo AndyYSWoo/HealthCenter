@@ -109,7 +109,7 @@
 		<div style="padding-left:16%;">
 			<div class="topbar">
 				<div class="uploadBtn" style="float:right;margin-right:4%;">
-					<a style="color:white;"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
+					<a style="color:white;" href="/player/sports/data/create"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
 				</div>
 			</div>
 			
@@ -297,7 +297,7 @@
 							<div class="row" style="background-color:white;padding-top:2%;border-right:2px solid #ddd;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 18%</div>
-								<div style="font-size:1.25rem;"><b>{{ $total_dis }}</b></div>
+								<div style="font-size:1.25rem;"><b>{{ $total_dis }}米</b></div>
 								<div>运动总距离</div>
 								</div>
 							</div>
@@ -306,7 +306,7 @@
 							<div class="row" style="background-color:white;padding-top:2%;border-right:2px solid #ddd;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 15%</div>
-								<div style="font-size:1.25rem;"><b>{{ $total_cal }}</b></div>
+								<div style="font-size:1.25rem;"><b>{{ $total_cal }}卡</b></div>
 								<div>运动总消耗</div>
 								</div>
 							</div>
@@ -315,7 +315,7 @@
 							<div class="row" style="background-color:white;padding-top:2%;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 13%</div>
-								<div style="font-size:1.25rem;"><b>{{ round($total_time/3600,0) }}时{{ $total_time%3600 }}分</b></div>
+								<div style="font-size:1.25rem;"><b>{{ round($total_time/3600,0) }}时{{ round($total_time%3600/60,0) }}分</b></div>
 								<div>运动总时间</div>
 								</div>
 							</div>
