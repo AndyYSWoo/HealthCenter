@@ -49,7 +49,11 @@ class PlayerController extends Controller
         foreach($t_entries as $t_entry){
             $avg_t += $t_entry->value;
         }
-        $avg_t = round($avg_t/$t_entries->count(),1);
+        if($t_entries->count()==0){
+            $avg_t = 0;
+        }else{
+            $avg_t = round($avg_t/$t_entries->count(),1);
+        }
         // heartrate
         $hr_entries         = healthentry::where('user_id', Auth::user()->id)
                                             ->where('type', healthentry::TYPE_HEARTRATE)
@@ -58,7 +62,11 @@ class PlayerController extends Controller
         foreach($hr_entries as $hr_entry){
             $avg_hr += $hr_entry->value;
         }
-        $avg_hr = round($avg_hr/$hr_entries->count(),1);
+        if($hr_entries->count()==0){
+            $avg_hr = 0;
+        }else{
+            $avg_hr = round($avg_hr/$hr_entries->count(),1);
+        }
         // blood_pressure
         $bp_entries         = healthentry::where('user_id', Auth::user()->id)
                                             ->where('type', healthentry::TYPE_BLOODPRESSURE)
@@ -69,8 +77,13 @@ class PlayerController extends Controller
             $avg_bp_high += $bp_entry->value;
             $avg_bp_low  += $bp_entry->value2;
         }
-        $avg_bp_high = round($avg_bp_high/$bp_entries->count(),1);
-        $avg_bp_low = round($avg_bp_low/$bp_entries->count(),1);
+        if($bp_entries->count() == 0 ){
+            $avg_bp_high = 0;
+            $avg_bp_low =0;
+        }else{
+            $avg_bp_high = round($avg_bp_high/$bp_entries->count(),1);
+            $avg_bp_low = round($avg_bp_low/$bp_entries->count(),1);            
+        }
         // sports
         $sports_entries     = sportsentry::where('user_id',Auth::user()->id)->orderBy('id')->get();
         $running_distance   = 0;
@@ -83,7 +96,11 @@ class PlayerController extends Controller
             }
             $calories += $sports_entry->calories;
         }
-        $running_speed      = round($running_distance/$running_time * 3.6,2);
+        if($running_time == 0){
+            $running_speed = 0;
+        }else{
+            $running_speed      = round($running_distance/$running_time * 3.6,2);
+        }
         return view('player.index',[
                                     // 'health_entries' => $health_entries
                                    'sports_entries' => $sports_entries
@@ -167,13 +184,14 @@ class PlayerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::find($id);
         if($request->hasFile('portrait')){
             $portrait = $request->file('portrait');
             $por_name = 'user_portrait_'.$id.'.'.$portrait->getClientOriginalExtension();
             $portrait->move(base_path().'/public/img/portrait/',$por_name);
+            $user->portrait = '/img/portrait/'.$por_name;
         }
         
-        $user = User::find($id);
         $user->name=$request->input('name');
         $user->email=$request->input('email');
         if(strlen($request->input('password'))!=0){

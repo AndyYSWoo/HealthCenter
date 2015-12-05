@@ -18,6 +18,7 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     
     Route::resource('/friend', 'FriendController');
     Route::resource('/social','SocialController');
+    Route::post('/social/comment','SocialController@comment');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
 });

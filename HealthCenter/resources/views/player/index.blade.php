@@ -397,7 +397,11 @@
                         </div>
                         <div class="col s7">
                             今日深度睡眠占比
+                            @if(($good_sleep+$mid_sleep+$bad_sleep)!=0)
                             <div>{{ round($good_sleep/($good_sleep+$mid_sleep+$bad_sleep) * 100,1) }}%</div>
+                            @else
+                            <div>No data</div>
+                            @endif
                         </div>
                     </div>
                 </div>

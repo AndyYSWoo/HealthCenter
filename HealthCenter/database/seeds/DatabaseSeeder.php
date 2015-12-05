@@ -58,6 +58,17 @@ class DatabaseSeeder extends Seeder
             'created_at'=> time(),
             'updated_at'=> time(),
         ]);
+        DB::table('users')->insert([
+            'name'      => 'real_cmp',
+            'type'      => User::TYPE_PLAYER,
+            'true_name' => 'Maopeng chan',
+            'email'     => 'player@gmail.com',
+            'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),
+            'created_at'=> time(),
+            'updated_at'=> time(),
+        ]);
         DB::table('player')->insert([
             'id'      => 1,
             'birthday'      => '1995-5-28',
@@ -76,6 +87,11 @@ class DatabaseSeeder extends Seeder
         DB::table('admin')->insert([
             'id'      => 4,
             'privilege'      => 1,
+        ]);
+        DB::table('player')->insert([
+            'id'      => 5,
+            'birthday'      => '1995-5-28',
+            'age'     => 20
         ]);//~
         // HealthData
         factory('App\healthentry',50)->create();

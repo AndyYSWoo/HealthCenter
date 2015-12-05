@@ -118,7 +118,7 @@
 						<div class="file-field input-field" id="i_file">
 						<div class="blank">
 							<input type="file" name="portrait">
-							<img src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg"class="responsive-img" id="preview">
+							<img src="{{ Auth::user()->portrait }}"class="responsive-img" id="preview">
 						</div>
 						</div>
 					</div>
@@ -160,7 +160,11 @@
 						<div class="input-field col s3 text" >
 							<div class="row">
 								<div class="col s8">
+								@if($height)
 								<input  type="number" id="height" name="height" value="{{ $height->value }}">
+								@else
+								<input  type="number" id="height" name="height">
+								@endif
 								</div>
 								<div>
 									CM
@@ -176,7 +180,11 @@
 						<div class="input-field col s3 text">
 							<div class="row">
 								<div class="col s8">
+								@if($weight)
 								<input  type="number" id="weight" name="weight" value="{{ $weight->value }}">
+								@else
+								<input  type="number" id="weight" name="weight">
+								@endif
 								</div>
 								<div>
 									KG

@@ -102,4 +102,19 @@ class SocialController extends Controller
     {
         //
     }
+    
+    public function comment(Request $request){
+        $comment = new feedcomment;
+        $comment->feed_id = $request->input('feed_id');
+        $comment->content = $request->input('content');
+        $comment->author_id = Auth::user()->id;
+        $comment->save();
+        return Response::json(array(
+            'success'   => true,
+            'name'      => Auth::user()->name,
+            'time'      => $comment->created_at->format('Y-m-d H:m:s'),
+            'author_id'   => $comment->author_id
+            
+        ));
+    }
 }

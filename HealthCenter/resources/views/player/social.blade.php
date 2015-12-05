@@ -5,7 +5,8 @@
 		<title>social</title>
 		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link type="text/css" rel="stylesheet" href="/css/box.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		   <style type="text/css">
 		   #slide-out{
@@ -187,6 +188,14 @@
 				border-radius:5px;
 				cursor: pointer;
 			}
+			.addFriends{
+				width:100%;
+				height: 360px;
+				overflow: auto;
+				border-top: 2px solid #408eba;
+				background-color:white;
+				margin-top:4%;
+			}
 		   </style>
 	</head>
 	<body>
@@ -198,8 +207,10 @@
         			朋友圈
         		</div>	
 			</div>
+			<div class="row">
+			<div class="col s8">
 			<div class="container" style="margin-top:4%;">
-				<div style="width:72%;background-color:white;">
+				<div style="width:100%;background-color:white;">
 					<div class="row">
 						<div class="col s2" style="padding-top:3%;text-align:center;font-size:0.75rem"><b>说些什么吧</b></div>
 						<div class="col s9 " style="padding-bottom:1%;">
@@ -221,7 +232,7 @@
 					<div class="divider"></div>
 				</div>
 				@foreach(Auth::user()->feed->sortByDesc('id') as $feed)
-				<div class="news" style="background-color:white;width:72%;">
+				<div class="news" style="background-color:white;width:100%;">
 					<div class="row">
 						<div style="text-align:center;float:left;margin-left:5%;margin-top:2%;">
 							<div style="width:36px;height:36px;">
@@ -254,11 +265,11 @@
 							</div>
 							<div class="collapsible-body" >
 							@foreach($feed->comment as $comment)
-								<div style="margin-top:2%;background-color:#f7f7f7;">
+								<div style="margin-top:2%;background-color:#f7f7f7;" class="com{{ $feed->id }}">
 									<div class="comment-content">
 										<div class="row">
 											<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-												<img class="responsive-img" src="/img/user1.jpg">
+												<img class="responsive-img" src="/img/portrait/user_portrait_{{ $comment->author_id }}.jpg">
 											</div>
 											<div style="padding-left:12%;">
 												<div style="float:left;">
@@ -281,10 +292,10 @@
 								<div>
 									<div class="row">
 										<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
-												<img class="circle responsive-img" src="/img/user.jpg">
+												<img class="circle responsive-img" src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg">
 										</div>
 										<div class="input-field col s9 text">
-											<input  type="text" placeholder="Press enter to post comment" id="reply">
+											<input class="com_content" type="text" placeholder="Press enter to post comment" id="{{ $feed->id }}">
 										</div>
 									</div>
 								</div>
@@ -293,8 +304,170 @@
 					</ul>
 				</div>
 				@endforeach
+				@foreach(Auth::user()->followee as $f)
+					@if($f->pivot->status == App\friendship::STATUS_ACCEPTED)
+					@foreach($f->feed->sortByDesc('id') as $feed)
+					<div class="news" style="background-color:white;width:72%;">
+						<div class="row">
+							<div style="text-align:center;float:left;margin-left:5%;margin-top:2%;">
+								<div style="width:36px;height:36px;">
+								<img src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg" alt="img" class="circle responsive-img">
+								</div>
+							</div>
+							<div class="col s3" style="margin-top:2%;">
+								<div style="font-size:0.75rem"> {{ $feed->user->name }}</div>
+								<div style="font-size:0.5rem;color:grey">{{$feed->created_at}}</div>
+							</div>
+						</div>
+						<div class="divider" style="margin-top:-10px;"></div>
+						<div>
+							@if($feed->photo != 'null')
+							<div style="padding:2%;">
+							<img src="{{ $feed->photo }}" class="responsive-img"> 
+							</div>
+							@endif
+							<div style="font-size:0.75rem;padding:2%;">
+								{{ $feed->content }}
+							</div>
+						</div>
+						<div class="like" style="padding-left:2%;padding-bottom:2%;float:left;">
+							<a id="likeIcon" style="color:black;font-size:0.75rem" onclick="changeIcon(this)"><i class="fa fa-thumbs-o-up" style="font-size:1rem;"></i>Like</a>
+						</div>
+						<ul class="collapsible" data-collapsible="accordion">
+							<li>
+								<div class="collapsible-header comments">
+									<a style="color:black;font-size:0.75rem"><i class="fa fa-comments-o" style="font-size:1rem;"></i>Comments</a>
+								</div>
+								<div class="collapsible-body" >
+								@foreach($feed->comment as $comment)
+									<div style="margin-top:2%;background-color:#f7f7f7;">
+										<div class="comment-content">
+											<div class="row">
+												<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+													<img class="responsive-img" src="/img/user1.jpg">
+												</div>
+												<div style="padding-left:12%;">
+													<div style="float:left;">
+														{{ $comment->user->name }}
+													</div>
+													<div style="text-align:right;padding-right:5%;padding-top:1%;color:grey;font-size:0.75rem;">
+														{{ $comment->created_at }}
+													</div>
+												</div>
+											</div>
+											<div style="margin-left:10%;margin-top:-5%;font-size:0.75rem;">{{ $comment->content }}</div>
+											<br>
+											<div style="text-align:right;margin-top:-10px;padding-right:2%;">
+												<a class="replyBtn" onclick="replyTo(this)">Reply</a>
+											</div>
+											<div class="divider" style="margin-top:1%;"></div>
+										</div>
+									</div>
+								@endforeach
+									<div>
+										<div class="row">
+											<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+													<img class="circle responsive-img" src="/img/user.jpg">
+											</div>
+											<div class="input-field col s9 text">
+												<input  type="text" placeholder="Press enter to post comment" id="reply">
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					@endforeach
+					@endif
+				@endforeach
 			</div>
 		</div>
+		<div class="col s3" style="margin-top:2%;padding-left:0px;">
+				<div style="margin-top:2%;">
+					<div class="box-body no-padding addFriends">
+					  <div style="margin-left:3%;font-size:0.75rem;padding:2%;">可能认识的朋友:</div>
+					  <div class="divider"></div>
+                      <ul class="users-list clearfix">
+                        <li>
+                          <img src="/img/user1.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Alexander Pierce</a>
+                          <a ><div style="font-size:0.25rem;color:grey;cursor:pointer;"onclick="addFriends(this)" id="add">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Norman</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user2.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Jane</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user1.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">John</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Alexander</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user1.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Sarah</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user2.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Nora</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user1.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Nadia</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        <li>
+                          <img src="/img/user1.jpg" alt="User Image">
+                          <a class="users-list-name" href="#">Nadia</a>
+                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+				</div>
+				<div class="addFriends" >
+					<div style="margin-left:3%;font-size:0.75rem;padding:2%;">申请列表:</div>
+					  <div class="divider"></div>
+					  <div id="applicationId">
+					  <div class="row">
+					  	<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+								<img class="circle responsive-img" src="/img/user.jpg">
+						</div>
+						<div style="margin-top:5%;margin-left:4%;float:left;">Jellybean</div>
+						<div style="float:right;margin-top:5%;margin-right:8%;">
+							<a style="color:black;font-size:0.75rem;" onclick="agree(this)" id="applicationIdcheck"><i class="fa fa-check"></i></a>&nbsp;&nbsp;&nbsp;<a style="color:black;font-size:0.75rem;" onclick="deny(this)" id="applicationIdclose"><i class="fa fa-close"></i></a>
+						</div>
+					    </div>
+						<div class="divider" style="margin-top:-15px;"></div>
+					  </div>
+						<div class="row">
+					  	<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+								<img class="circle responsive-img" src="/img/user.jpg">
+						</div>
+						<div style="margin-top:5%;margin-left:4%;float:left;">Jellybean Nani</div>
+						<div style="float:right;margin-top:5%;margin-right:8%;">
+							<a style="color:black;font-size:0.75rem;"><i class="fa fa-check"></i></a>&nbsp;&nbsp;&nbsp;<a style="color:black;font-size:0.75rem;"><i class="fa fa-close"></i></a>
+						</div>
+					    </div>
+						<div class="divider" style="margin-top:-15px;"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
 	
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
@@ -315,9 +488,30 @@
 		document.onkeydown = function(event){
 			var e = event || window.event || arguments.callee.caller.arguments[0];
 			if(e && e.keyCode==13){ // enter 
-                 var reply = document.getElementById("reply").value;
-                 alert(reply);
-                 document.getElementById("reply").value = "";
+				var contents = $('input.com_content');
+				for(var i =0; i < contents.length; ++i){
+					var content = contents[i].value;
+					if(content.length!=0){
+						$.ajax({
+							type    : "POST",
+							url     : "/player/social/comment",
+							data    : {'feed_id':contents[i].id,
+									'content':content,
+									'_token':$('input[name=_token]').val()},
+							success :function(data){
+								var uName = data.name;
+								var time = data.time;
+								contents[i].value='';
+								var loc = "div.com"+contents[i].id+":last";
+								$(loc).append('<div style="margin-top:2%;background-color:#f7f7f7;" class="com"><div class="comment-content"><div class="row"><div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;"><img class="responsive-img" src="/img/portrait/user_portrait_'+data.author_id+'.jpg"></div><div style="padding-left:12%;"><div style="float:left;">'+uName+'</div><div style="text-align:right;padding-right:5%;padding-top:1%;color:grey;font-size:0.75rem;">'+time+'</div></div></div><div style="margin-left:10%;margin-top:-5%;font-size:0.75rem;">'+content+'</div><br><div style="text-align:right;margin-top:-10px;padding-right:2%;"><a class="replyBtn" onclick="replyTo(this)">Reply</a></div><div class="divider" style="margin-top:1%;"></div></div></div>');
+							},
+							error: function(e) {
+								console.log(e.responseText);
+							}
+						});
+						return;
+					}
+				}
             }
 		};
 	</script>
