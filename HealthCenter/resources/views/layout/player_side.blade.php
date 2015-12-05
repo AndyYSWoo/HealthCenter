@@ -16,7 +16,7 @@
                     </div>
                 </li>
 				<li><a href="/player/activity">活动</a></li>
-				<li><a href="">兴趣组</a></li>
+				<li><a href="/player/group">兴趣组</a></li>
 				<li><a href="/player/social">朋友圈</a>
 				<li>
                     <a href="#!" class="collapsible-header">教练</a>

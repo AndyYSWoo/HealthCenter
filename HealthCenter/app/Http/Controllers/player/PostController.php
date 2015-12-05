@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\player;
-use Auth,Redirect;
+use Auth, Redirect;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\group;
-use App\player_in_group;
 use App\post;
-class GroupController extends Controller
+use App\postcomment;
+
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +19,6 @@ class GroupController extends Controller
     public function index()
     {
         //
-        $groups = group::all();
-        return view('player.group.group',[
-            'groups' => $groups
-        ]);
     }
 
     /**
@@ -33,7 +29,6 @@ class GroupController extends Controller
     public function create()
     {
         //
-        return view('player.group.group_create');
     }
 
     /**
@@ -55,12 +50,9 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        //
-        $posts = post::where('group_id',$id)->get();
-        $group = group::find($id);
-        return view('player.group.group_index',[
-            'group' => $group,
-            'posts' => $posts
+        $post = post::find($id);
+        return view('player.post.group_topic',[
+            'post'  => $post
         ]);
     }
 
