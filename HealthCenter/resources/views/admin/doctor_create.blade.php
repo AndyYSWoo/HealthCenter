@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Modify</title>
+	<title>Create Doctor</title>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 	<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
@@ -100,25 +100,26 @@
 	</style>
 </head>
 <body>
-@include('layout.player_side')
-        <div style="padding-left:16%;">
-        	<div class="topbar">
-        		
+@include('layout.admin_side')
+	    <div style="padding-left:16%">
+	    	<div class="topbar">
+        		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        			管理员
+        		</div>
         	</div>
-        	<div class="container" >
+			<div class="container" >
         			<div class="row" style="margin-top:4%;margin-left:6%;">
 						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
-					<div style="font-size:1.25rem;padding:2%;">个人信息修改</div>
+					<div style="font-size:1.25rem;padding:2%;">创建医生用户</div>
 					<div class="divider"></div>
 					<div class="row">
-					{!! Form::open(array('url' => "/player/".Auth::user()->id,'files' => true,'method' => 'put')) !!}
 					<div class="col s3" style="padding-top:4%;text-align:center;">头像</div>
 					<div class="col s8">
 						<div class="col s6">
 						<div class="file-field input-field" id="i_file">
 						<div class="blank">
-							<input type="file" name="portrait">
-							<img src="{{ Auth::user()->portrait }}"class="responsive-img" id="preview">
+							<input type="file">
+							<img src="/img/user_normal.jpg"class="responsive-img" id="preview">
 						</div>
 						</div>
 					</div>
@@ -126,23 +127,23 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>昵称<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>姓名<b></div>
 						<div class="input-field col s5 text">
-							<input  type="text" name="name" value="{{ $user->name }}">
+							<input  type="text">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:center;"><b>邮箱<b></div>
 						<div class="input-field col s5 text">
-							<input  type="email" id="mailaddr" name="email" value="{{ $user->email }}">
+							<input  type="email" id="mailaddr">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:center;"><b>密码<b></div>
 						<div class="input-field col s5 text">
-							<input  type="password" id="newPassword1" name="password">
+							<input  type="password" id="newPassword1">
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -154,47 +155,20 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
-						<div><b>身高</b></div>
-						</div>
-						<div class="input-field col s3 text" >
-							<div class="row">
-								<div class="col s8">
-								@if($height)
-								<input  type="number" id="height" name="height" value="{{ $height->value }}">
-								@else
-								<input  type="number" id="height" name="height">
-								@endif
-								</div>
-								<div>
-									CM
-								</div>
-							</div>
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>就职医院<b></div>
+						<div class="input-field col s5 text">
+							<input  type="text">
 						</div>
 					</div>
-					<div class="divider" style="margin-top:-20px;"></div>
+					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
-						<div><b>体重</b></div>
-						</div>
-						<div class="input-field col s3 text">
-							<div class="row">
-								<div class="col s8">
-								@if($weight)
-								<input  type="number" id="weight" name="weight" value="{{ $weight->value }}">
-								@else
-								<input  type="number" id="weight" name="weight">
-								@endif
-								</div>
-								<div>
-									KG
-								</div>
-							</div>
+						<div class="col s3"style="padding-top:3%;text-align:center;"><b>职位<b></div>
+						<div class="input-field col s5 text">
+							<input  type="text">
 						</div>
 					</div>
-					<div class="divider" style="margin-top:-20px;"></div>
-					{{ csrf_field() }}
-					{!! Form::close() !!}
+					<div class="divider"></div>
+					
 					<div class="row">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
 						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
@@ -207,49 +181,49 @@
 				
 			</div>
         		</div>
-        </div>
-    <script type="text/javascript" src="/js/jquery_min.js"></script>	
+	    </div>
+	<script type="text/javascript" src="/js/jquery_min.js"></script>	
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		var filePath;
-			$('#i_file').change( function(event) {
-			filePath = URL.createObjectURL(event.target.files[0]);
-			if(filePath!=""){
-			var img = document.getElementById("preview");
-			img.setAttribute("src",filePath);
-			}
-			});
+	          $('#i_file').change( function(event) {
+	          filePath = URL.createObjectURL(event.target.files[0]);
+	          if(filePath!=""){
+	          	var img = document.getElementById("preview");
+	          	img.setAttribute("src",filePath);
+	          }
+	          });
+	</script>
+	<script type="text/javascript">
 		function checkValid(){
 			var password1 = document.getElementById("newPassword1").value.trim();
 			var password2 = document.getElementById("newPassword2").value.trim();
 			var mailAddr  = document.getElementById("mailaddr").value.trim();
-			var height    = document.getElementById("height").value;
-			var weight    = document.getElementById("weight").value;
-			
 			if (mailAddr!=0) {
 				var validMailAddr = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 				if (!validMailAddr.test(mailAddr)) {
 						alert("邮箱格式不正确");
-						return;
 				};
 			};
+			if ((password1.length!=0)&&(password2.length!=0)){
+
+			}else{
+				alert("密码为空");
+			}   
 			if (password1 === password2) {
 
 			}else{
-				alert("两次输入的密码不相同");
-				return;
+				alert("两次输入的密码不相同")
 			};
-			if (height>=300||height<=10) {
-				alert("乖，憋xjb写");
-				return;
-			};
-			if (weight>=400||weight<=0) {
-				alert("乖，憋xjb写");
-				return;
-			};
-			document.getElementsByTagName('form')[0].submit();
-		} 
-	</script>
+			
+			var province = document.getElementById("province");
+			var city     = document.getElementById("city");
+			var level    = document.getElementById("level");
+			var index    = province.selectedIndex;
+			var text     = province.options[index].text;
+			alert(text);
 
+		}
+	</script>
 </body>
 </html>

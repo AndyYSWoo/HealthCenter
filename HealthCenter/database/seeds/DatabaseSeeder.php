@@ -22,8 +22,9 @@ class DatabaseSeeder extends Seeder
             'password'  => bcrypt('123456'),
             'gender'    => 1,
             'birthday'  => strtotime('May 1 1995'),
-            'created_at'=> time(),
-            'updated_at'=> time(),
+            'portrait'  => '/img/portrait/user_portrait_1.jpg',
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),
         ]);
         DB::table('users')->insert([
             'name'      => 'cindy',
@@ -33,8 +34,8 @@ class DatabaseSeeder extends Seeder
             'password'  => bcrypt('123456'),
             'gender'    => 1,
             'birthday'  => strtotime('May 1 1995'),
-            'created_at'=> time(),
-            'updated_at'=> time(),
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),
         ]);
         DB::table('users')->insert([
             'name'      => 'sindy',
@@ -44,8 +45,8 @@ class DatabaseSeeder extends Seeder
             'password'  => bcrypt('123456'),
             'gender'    => 1,
             'birthday'  => strtotime('May 1 1995'),            
-            'created_at'=> time(),
-            'updated_at'=> time(),
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),
         ]);
         DB::table('users')->insert([
             'name'      => 'admin',
@@ -55,8 +56,19 @@ class DatabaseSeeder extends Seeder
             'password'  => bcrypt('123456'),
             'gender'    => 1,
             'birthday'  => strtotime('May 1 1995'),            
-            'created_at'=> time(),
-            'updated_at'=> time(),
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),
+        ]);
+        DB::table('users')->insert([
+            'name'      => 'real_cmp',
+            'type'      => User::TYPE_PLAYER,
+            'true_name' => 'Maopeng chan',
+            'email'     => 'player@gmail.com',
+            'password'  => bcrypt('123456'),
+            'gender'    => 1,
+            'birthday'  => strtotime('May 1 1995'),
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),
         ]);
         DB::table('player')->insert([
             'id'      => 1,
@@ -76,6 +88,11 @@ class DatabaseSeeder extends Seeder
         DB::table('admin')->insert([
             'id'      => 4,
             'privilege'      => 1,
+        ]);
+        DB::table('player')->insert([
+            'id'      => 5,
+            'birthday'      => '1995-5-28',
+            'age'     => 20
         ]);//~
         // HealthData
         factory('App\healthentry',50)->create();
@@ -90,8 +107,8 @@ class DatabaseSeeder extends Seeder
             'doctor_id'      => 3,
             'status'         => 1,
             'message'        => '大夫您好！我是陈先生推荐来的！',
-            'created_at'     => time(),
-            'updated_at'     => time(),
+            'created_at'     => date('Y-m-d H:m:s'),
+            'updated_at'     => date('Y-m-d H:m:s'),
         ]);
         DB::table('calendarevent')->insert([
             'client_id'      => 1,
@@ -106,5 +123,12 @@ class DatabaseSeeder extends Seeder
         // social
         factory('App\feed',10)->create();
         factory('App\feedcomment',20)->create();
+        DB::table('friendship')->insert([
+            'followee_id'      => 1,
+            'follower_id'      => 5,
+            'status'          => '1',
+            'created_at'=> date('Y-m-d H:m:s'),
+            'updated_at'=> date('Y-m-d H:m:s'),           
+        ]);
     }
 }

@@ -44,10 +44,9 @@
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
-@include('layout.doctor_side')
+@include('layout.player_side')
 		<div style="padding-left:16%;">
 			<div class="topbar">
-				
 			</div>
 			
 			<div style="margin-top:5%;">
@@ -61,18 +60,21 @@
 							<div class="col s8" style="background-color:#20c1ed;color:white;">
 								<div class="row" style="border-bottom:2px solid #1a9abe;margin-top:3%;">
 									<div class="col s6" style="border-right:2px solid #1a9abe;">
-									<div style="font-size:0.64rem">今日步数</div>
-									<div style="font-size:0.5rem;">10500</div>
+									<div style="font-size:0.64rem">今日距离</div>
+									<div style="font-size:0.5rem;">{{ $distance }}</div>
 								</div>
 									<div class="col s6">
-										<div style="font-size:0.64rem">目标步数</div>
-										<div style="font-size:0.5rem;">15000<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
+										<div style="font-size:0.64rem">目标距离</div>
+										<div style="font-size:0.5rem;">{{ $target_distance }}<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
 									</div>
 								</div>
-								<div style="font-size:0.75rem;margin-top:-10px;">已完成目标70%</div>
+								@if($distance <= $target_distance)
+									<div style="font-size:0.75rem;margin-top:-10px;">已完成目标{{ round(($distance/$target_distance)*100,1) }}%</div>
+								@else
+									<div style="font-size:0.75rem;margin-top:-10px;">已完成目标100%</div>
+								@endif
 								 <div class="progress" style="background-color:#1a9abe;">
-									<div class="determinate animated slideInLeft" style="width: 70%;background-color:white;"></div>
-									
+									<div class="determinate animated slideInLeft" style="width: {{ round(($distance/$target_distance)*100,1) }}%;background-color:white;"></div>
 								</div>
 							</div>
 						</div>
@@ -86,16 +88,20 @@
 								<div class="row" style="border-bottom:2px solid #af3d32;margin-top:3%;">
 									<div class="col s6" style="border-right:2px solid #af3d32;">
 									<div style="font-size:0.64rem">今日消耗</div>
-									<div style="font-size:0.5rem;">600</div>
+									<div style="font-size:0.5rem;">{{ $calory }}</div>
 								</div>
 									<div class="col s6">
 										<div style="font-size:0.64rem">目标消耗</div>
-										<div style="font-size:0.5rem;">1000<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
+										<div style="font-size:0.5rem;">{{ $target_calory }}<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
 									</div>
 								</div>
-								<div style="font-size:0.75rem;margin-top:-10px;">已完成目标60%</div>
+								@if($calory <= $target_calory)
+									<div style="font-size:0.75rem;margin-top:-10px;">已完成目标{{ round(($calory/$target_calory)*100,1) }}%</div>
+								@else
+									<div style="font-size:0.75rem;margin-top:-10px;">已完成目标100%</div>
+								@endif
 								 <div class="progress" style="background-color:#af3d32;">
-									<div class="determinate animated slideInLeft" style="width: 60%;background-color:white;"></div>
+									<div class="determinate animated slideInLeft" style="width: {{ round(($calory/$target_calory)*100,1) }}%;background-color:white;"></div>
 									
 								</div>
 							</div>
@@ -110,16 +116,20 @@
 								<div class="row" style="border-bottom:2px solid #13844a;margin-top:3%;">
 									<div class="col s6" style="border-right:2px solid #13844a;">
 									<div style="font-size:0.64rem">运动时长</div>
-									<div style="font-size:0.5rem;">70 m</div>
+									<div style="font-size:0.5rem;">{{ round($time/60,1) }} min</div>
 								</div>
 									<div class="col s6">
 										<div style="font-size:0.64rem">目标时长</div>
-										<div style="font-size:0.5rem;">100 m<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
+										<div style="font-size:0.5rem;">{{ round($target_time/60,1) }} min<a style="color:white;margin-left:10%;"><i class="fa fa-pencil"></i></a></div>
 									</div>
 								</div>
-								<div style="font-size:0.75rem;margin-top:-10px;">已完成目标70%</div>
+								@if($time <= $target_time)
+								<div style="font-size:0.75rem;margin-top:-10px;">已完成目标{{ round(($time/$target_time)*100,1) }}%</div>
+								@else
+								<div style="font-size:0.75rem;margin-top:-10px;">已完成目标100%</div>
+								@endif
 								 <div class="progress" style="background-color:#13844a;">
-									<div class="determinate animated slideInLeft" style="width: 70%;background-color:white;"></div>
+									<div class="determinate animated slideInLeft" style="width: {{ round(($time/$target_time)*100,1) }}%;background-color:white;"></div>
 									
 								</div>
 							</div>
@@ -149,7 +159,7 @@
 												<td>1</td>
 												<td>
 													<div style="width:36px; height:36px; border-radius:50%; overflow:hidden;">
-														<img class="responsive-img" src="image.jpg">
+														<img class="responsive-img" src="/img/image.jpg">
 													</div>
 												</td>
 												<td>AC_CHAN</td>
@@ -158,7 +168,7 @@
 												<td>2</td>
 												<td>
 													<div style="width:36px; height:36px; border-radius:50%; overflow:hidden;">
-														<img class="responsive-img" src="user.jpg">
+														<img class="responsive-img" src="/img/user.jpg">
 													</div>
 												</td>
 												<td>Alexander Pierce</td>
@@ -167,7 +177,7 @@
 												<td>3</td>
 												<td>
 													<div style="width:36px; height:36px; border-radius:50%; overflow:hidden;">
-														<img class="responsive-img" src="user1.jpg">
+														<img class="responsive-img" src="/img/user1.jpg">
 													</div>
 												</td>
 												<td>Sarah Bullock</td>
@@ -182,8 +192,8 @@
 							<div class="row" style="background-color:white;padding-top:2%;border-right:2px solid #ddd;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 18%</div>
-								<div style="font-size:1.25rem;"><b>123232</b></div>
-								<div>运动总步数</div>
+								<div style="font-size:1.25rem;"><b>{{ $total_dis }}</b></div>
+								<div>运动总距离</div>
 								</div>
 							</div>
 						</div>
@@ -191,7 +201,7 @@
 							<div class="row" style="background-color:white;padding-top:2%;border-right:2px solid #ddd;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 15%</div>
-								<div style="font-size:1.25rem;"><b>5432</b></div>
+								<div style="font-size:1.25rem;"><b>{{ $total_cal }}</b></div>
 								<div>运动总消耗</div>
 								</div>
 							</div>
@@ -200,7 +210,7 @@
 							<div class="row" style="background-color:white;padding-top:2%;padding-bottom:2%;">
 								<div class="col s12">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 13%</div>
-								<div style="font-size:1.25rem;"><b>342</b></div>
+								<div style="font-size:1.25rem;"><b>{{ round($total_time/3600,0) }}时{{ $total_time%3600 }}分</b></div>
 								<div>运动总时间</div>
 								</div>
 							</div>
@@ -215,22 +225,24 @@
 		<script src="/js/highcharts/highcharts.js"></script>
 		<script type="text/javascript">
 	$(function () {
+		var disArr = []
+		@foreach($all_run as $run)
+			disArr.push({{ $run->value }});
+		@endforeach
     $('#walk_line_chart').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: '运动历史数据',
             x: -20 //center
         },
         subtitle: {
-            text: 'Source: WorldClimate.com',
             x: -20
         },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: []
         },
         yAxis: {
             title: {
-                text: 'Temperature (°C)'
+                text: 'Distance (m)'
             },
             plotLines: [{
                 value: 0,
@@ -239,7 +251,7 @@
             }]
         },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: 'm'
         },
         legend: {
             layout: 'vertical',
@@ -248,20 +260,12 @@
             borderWidth: 0
         },
         series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'New York',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-        }, {
-            name: 'Berlin',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            name: 'Running',
+            data: disArr
         }]
     });
 });
 		</script>
+		
 	</body>
 </html>

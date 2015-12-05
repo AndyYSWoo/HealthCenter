@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\player;
 
 use Illuminate\Http\Request;
-
+use Response;
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\friendship;
 class FriendController extends Controller
 {
     /**
@@ -39,6 +40,7 @@ class FriendController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -84,5 +86,29 @@ class FriendController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function accept($id){
+        $req = friendship::find($id);
+        if($req->status != friendship::STATUS_ACCEPTED){
+            $req->update(['status'=>friendship::STATUS_ACCEPTED]);
+            $rel = new friendship;
+            $rel->follower_id = $req->followee_id;
+            $rel->followee_id = $req->follower_id;
+            $rel->status = friendship::STATUS_ACCEPTED;
+            $rel->save();           
+        }
+        return Response::json(array(
+            'success'   => true,
+        ));
+    }
+    public function deny($id){
+        $req = friendship::find($id);
+        if($req){
+            $req->delete();
+        }
+        return Response::json(array(
+            'success'   => true,
+        ));
     }
 }

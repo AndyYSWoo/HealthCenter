@@ -46,7 +46,13 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     public function followee(){
-        return $this->belongsToMany('App\User','friendship','follower_id','followee_id');
+        return $this->belongsToMany('App\User','friendship','follower_id','followee_id')
+                    ->withPivot('id','status');
+    }
+    
+    public function follower(){
+        return $this->belongsToMany('App\User','friendship','followee_id','follower_id')
+                    ->withPivot('id','status');
     }
     
     public function feed(){

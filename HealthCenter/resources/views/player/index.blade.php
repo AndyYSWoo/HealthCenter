@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>index</title>
-     	<link type="text/css" rel="stylesheet" href="/custom-font/font-awesome.css">
+     	<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    		<script type="text/javascript" src="/js/jquery_min.js"></script>
@@ -397,7 +397,11 @@
                         </div>
                         <div class="col s7">
                             今日深度睡眠占比
+                            @if(($good_sleep+$mid_sleep+$bad_sleep)!=0)
                             <div>{{ round($good_sleep/($good_sleep+$mid_sleep+$bad_sleep) * 100,1) }}%</div>
+                            @else
+                            <div>No data</div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -430,60 +434,26 @@
 					    <div class="comment">
                         <div style="padding:2%;font-size:1.25rem;">医生建议</div>
                         <div class="divider"></div>
-                        <div class="comment-content">
-                        <div class="row">
-							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="/img/user1.jpg">
-							</div>
-						<div class="test"style="padding-left:15%;">
-							<div style="float:left;">
-							Alexander Pierce
-							</div>
-							<div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
-							2015/11/11 11:11:11
-							</div>
-						</div>	
-					</div>
-					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
-					<div style="text-align:right;margin-top:-0px;padding-right:2%;">
-							<a style="color:black;">回复</a>
-						</div>
-					<div class="divider" style="margin-top:1%;"></div>
-				</div>
-				 <div class="comment-content">
-					<div class="row">
-							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="/img/user1.jpg">
-							</div>
-						<div class="test"style="padding-left:15%;">
-							<div style="float:left;">
-							Alexander Pierce
-							</div>
-							<div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
-							2015/11/11 11:11:11
-							</div>
-						</div>	
-							
-					</div>
-					<div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
-					<div style="text-align:right;margin-top:-0px;padding-right:2%;">
-							<a style="color:black;">回复</a>
-						</div>
-					<div class="divider" style="margin-top:1%;"></div>
-				</div>
-				<div>
-					<div class="row">
-					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
-						<img class="responsive-img" src="/img/user.jpg">
-					</div>
-					<div class="input-field col s8">
-					<textarea id="textarea1" class="materialize-textarea"></textarea>
-					</div>
-					<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-2%;padding-left:80%;">
-						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
-				</div>
-				 </div>
-				 
+                       @foreach($health_advices as $health_advice)
+                            <div class="comment-content">
+                                <div class="row">
+                                    <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+                                        <img class="responsive-img" src="{{ $health_advice->docUser->portrait }}">
+                                    </div>
+                                <div class="test"style="padding-left:15%;">
+                                    <div style="float:left;">
+                                    {{ $health_advice->docUser->name }}
+                                    </div>
+                                    <div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
+                                    {{ $health_advice->created_at }}
+                                    </div>
+                                </div>	
+                            </div>
+                            <div style="margin-left:13%;margin-top:-8%;font-size:0.75rem;">{{ $health_advice->content }}</div>
+
+                            <div class="divider" style="margin-top:1%;"></div>
+                        </div>
+                    @endforeach
 						</div>
 					    </div>
 					</div>
