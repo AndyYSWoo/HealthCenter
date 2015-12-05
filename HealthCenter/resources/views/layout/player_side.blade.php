@@ -7,10 +7,10 @@
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="/player/sports/data" style="margin:0;">运动数据</a>
+                                <a href="/player/sports/data">运动数据</a>
                             </li>
                             <li>
-                                <a href="/player/health/data" style="margin:0;">健康数据</a>
+                                <a href="/player/health/data">健康数据</a>
                             </li>
                         </ul>
                     </div>
