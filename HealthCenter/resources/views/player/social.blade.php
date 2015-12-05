@@ -212,7 +212,7 @@
 			<div class="container" style="margin-top:4%;">
 				<div style="width:100%;background-color:white;">
 					<div class="row">
-						<div class="col s2" style="padding-top:3%;text-align:center;font-size:0.75rem"><b>说些什么吧</b></div>
+						<div class="col s2" style="padding-top:3%;padding-right:0px;font-size:0.75rem;padding-left:4%;"><b>说些什么吧</b></div>
 						<div class="col s9 " style="padding-bottom:1%;">
 						{!! Form::open(array('url' => "/player/social",'files' => true,'method' => 'POST')) !!}
 							<div class="input-field">
@@ -226,7 +226,7 @@
 							</div>
 						{{ csrf_field() }}
 						{!! Form::close() !!}
-							<div style="text-align:right;margin-top:12%;"><a class="waves-effect waves-light btn" style="width:128px;font-size:0.75rem;" onclick="publish()">发布</a></div>
+							<div style="text-align:right;margin-top:12%;"><a class="waves-effect waves-light btn" style="width:128px;font-size:1rem;" onclick="publish()">发布</a></div>
 						</div>	
 					</div>
 					<div class="divider"></div>
@@ -291,8 +291,8 @@
 							</div>
 								<div>
 									<div class="row">
-										<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
-												<img class="circle responsive-img" src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg">
+										<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:2%;">
+												<img class="responsive-img" src="/img/portrait/user_portrait_{{ Auth::user()->id }}.jpg">
 										</div>
 										<div class="input-field col s9 text">
 											<input class="com_content" type="text" placeholder="Press enter to post comment" id="{{ $feed->id }}">

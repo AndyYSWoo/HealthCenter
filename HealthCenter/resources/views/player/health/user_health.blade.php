@@ -107,6 +107,11 @@
                 background-color: #67acd3;
             }
 		</style>
+        <script type="text/javascript">
+            $(window).load(function(){  
+                $("#loading").hide();  
+            });
+        </script>
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
@@ -185,6 +190,19 @@
 								<div style="padding:2%;font-size:1.25rem;">
 									运动时状况分析
 								</div>
+                                <div id="loading" style="text-align:center;">
+                                    <div class="preloader-wrapper big active" >
+                                        <div class="spinner-layer spinner-blue-only">
+                                          <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                          </div><div class="gap-patch">
+                                            <div class="circle"></div>
+                                          </div><div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
 							</div>
                 <div>
                     <div class="row">

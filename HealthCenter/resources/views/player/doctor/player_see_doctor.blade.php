@@ -19,15 +19,11 @@
 			
 			}
 			.side-nav{
-				background-color: white;
-				width: 16%;
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-			}
-			nav {
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-                background-color: rgb(30, 128,240);
-                padding-left: 5%
-			}
+                background-color: white;
+                width: 16%;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+            }
+
             .side-nav .collapsible-header{
                 background-color: transparent;
                 float: none;
@@ -36,7 +32,27 @@
                 font-size: 1rem;
                 height: 48px;
                 line-height: 48px;
+                margin-left: 0px;
             }
+            .side-nav li {
+                float: none;
+                padding: 0 15px;
+                border-bottom: 1 px; 
+            }
+            .side-nav a {
+                color: #fff3e0;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                padding: 0 15px; 
+            }
+			nav {
+				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+                background-color: rgb(30, 128,240);
+                padding-left: 5%
+			}
+            
             .shallowblue{
                background-color:  #00c0ef;
             }
