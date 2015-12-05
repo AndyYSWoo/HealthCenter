@@ -7,10 +7,10 @@
                     <div class="collapsible-body">
                         <ul>
                             <li>
-                                <a href="user_act.html" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
+                                <a href="/player/sports/data" style="margin:0;">运动数据</a>
                             </li>
                             <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
+                                <a href="/player/health/data" style="margin:0;">健康数据</a>
                             </li>
                         </ul>
                     </div>
@@ -41,14 +41,14 @@
 					<div class="collapsible-body">
 						<ul>
 							<li>
-                                <a href="player_see_doctor.html" style="margin:0;">
+                                <a href="/player/doctor/3" style="margin:0;">
                                     <div style="height:48px;">
                                         <div style="padding-left:0%;padding-top:6px;">
                                             <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
                                                 <img src="/img/user1.jpg" class="responsive-img">
                                             </div>
                                             <div style="margin-left:30%;margin-top:-2%;">
-                                                Alexander Pierc
+                                                Doctor
                                             </div>
                                         </div>
                                     </div>

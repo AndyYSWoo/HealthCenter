@@ -10,6 +10,7 @@ use Auth;
 use Redirect;
 use App\feed;
 use App\feedcomment;
+use App\friendship;
 use App\User;
 use Response;
 class SocialController extends Controller
@@ -22,7 +23,12 @@ class SocialController extends Controller
     public function index()
     {
         //
-        return view('player.social');
+        $pendings = friendship::where('follower_id',Auth::user()->id)
+                                ->where('status',friendship::STATUS_PENDING)
+                                ->get();
+        return view('player.social',[
+                                    'pendings' => $pendings
+        ]);
     }
 
     /**

@@ -22,4 +22,11 @@ class friendship extends Model
      * @var array
      */
     protected $fillable = ['followee_id', 'follower_id', 'status'];
+    
+    public function followee(){
+        $this->belongsTo('App\User','followee_id');
+    }
+    public function follower(){
+        $this->belongsTo('App\User','follower_id');
+    }
 }

@@ -15,12 +15,21 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
     Route::get('/{id}/edit', 'PlayerController@edit');// why not found?
     Route::put('/{id}', 'PlayerController@update');// why not found?
-    
+    // friend
     Route::resource('/friend', 'FriendController');
+    Route::get('/friend/accept/{id}','FriendController@accept');
+    Route::get('/friend/deny/{id}','FriendController@deny');
+    // doctor
+    Route::resource('/doctor','DoctorController');
+    // social
     Route::resource('/social','SocialController');
     Route::post('/social/comment','SocialController@comment');
     Route::resource('/activity', 'ActivityController');
     Route::get('/activity/{id}/join','ActivityController@join');
+    // health
+    Route::resource('/health/data','health\DataController');
+    // sports
+    Route::resource('/sports/data','sports\DataController');
 });
 
 // coach路由
@@ -44,8 +53,11 @@ Route::group(['prefix'=> 'doctor','namespace' => 'doctor'],function(){
     Route::get('/deny/{id}','PlayerController@deny');
 });
 // admin路由
-Route::group(['prefix'=> 'admin','namespace' => 'admin'],function(){
-    // Route::resource('/','AdminController');    
+Route::group(['prefix'=> 'admin'],function(){
+    Route::resource('/','AdminController'); 
+    // 创建
+    Route::get('/create/doctor','AdminController@getDoctor');
+    Route::get('/create/coach','AdminController@getCoach');
 });
 
 Route::get('/', 'Auth\AuthController@getLogin');

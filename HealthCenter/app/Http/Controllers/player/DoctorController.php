@@ -49,6 +49,7 @@ class DoctorController extends Controller
     public function show($id)
     {
         //
+        return view('player.doctor.player_see_doctor');
     }
 
     /**

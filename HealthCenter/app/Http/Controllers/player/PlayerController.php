@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\sportsentry;
 use App\healthentry;
+use App\healthadvice;
 use App\User;
 use App\player;
 class PlayerController extends Controller
@@ -101,8 +102,9 @@ class PlayerController extends Controller
         }else{
             $running_speed      = round($running_distance/$running_time * 3.6,2);
         }
+        // advice
+        $health_advices = healthadvice::where('player_id',Auth::user()->id)->get();
         return view('player.index',[
-                                    // 'health_entries' => $health_entries
                                    'sports_entries' => $sports_entries
                                    ,'running_distance' => $running_distance
                                    ,'running_speed'  => $running_speed
@@ -114,6 +116,7 @@ class PlayerController extends Controller
                                    ,'avg_hr'         => $avg_hr
                                    ,'avg_bp_high'    => $avg_bp_high
                                    ,'avg_bp_low'     => $avg_bp_low
+                                   ,'health_advices' => $health_advices
                                    ]);
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class adminAdminController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +17,7 @@ class adminAdminController extends Controller
     public function index()
     {
         //
+        return view('admin.admin');
     }
 
     /**
@@ -83,5 +84,13 @@ class adminAdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function getDoctor(){
+        return view('admin.doctor_create');
+    }
+    
+    public function getCoach(){
+        return view('admin.coach_create');
     }
 }

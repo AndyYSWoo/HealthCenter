@@ -264,8 +264,8 @@
 								<a style="color:black;font-size:0.75rem"><i class="fa fa-comments-o" style="font-size:1rem;"></i>Comments</a>
 							</div>
 							<div class="collapsible-body" >
+							<div style="margin-top:2%;background-color:#f7f7f7;" class="com{{ $feed->id }}">
 							@foreach($feed->comment as $comment)
-								<div style="margin-top:2%;background-color:#f7f7f7;" class="com{{ $feed->id }}">
 									<div class="comment-content">
 										<div class="row">
 											<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
@@ -287,8 +287,8 @@
 										</div>
 										<div class="divider" style="margin-top:1%;"></div>
 									</div>
-								</div>
 							@endforeach
+							</div>
 								<div>
 									<div class="row">
 										<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
@@ -441,28 +441,38 @@
 				<div class="addFriends" >
 					<div style="margin-left:3%;font-size:0.75rem;padding:2%;">申请列表:</div>
 					  <div class="divider"></div>
-					  <div id="applicationId">
-					  <div class="row">
-					  	<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
-								<img class="circle responsive-img" src="/img/user.jpg">
+					  @foreach(Auth::user()->follower as $f)
+					  	@if($f->pivot->status == App\friendship::STATUS_PENDING)
+						<div id="req{{ $f->pivot->id }}">
+							<div class="row" >
+									<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+											<img class="circle responsive-img" src="{{ $f->portrait }}" id="src{{ $f->pivot->id }}">
+									</div>
+									<div style="margin-top:5%;margin-left:4%;float:left;" id="name{{ $f->pivot->id }}" value="{{ $f->name }}">{{ $f->name }}</div>
+									<div style="float:right;margin-top:5%;margin-right:8%;">
+										<a style="color:black;font-size:0.75rem;" onclick="agree(this)" id="{{ $f->pivot->id }}"><i class="fa fa-check"></i></a>&nbsp;&nbsp;&nbsp;
+										<a style="color:black;font-size:0.75rem;" onclick="deny(this)" id="applicationIdclose" name="{{ $f->pivot->id }}"><i class="fa fa-close"></i></a>
+									</div>
+							</div>
+							<div class="divider" style="margin-top:-15px;"></div>
 						</div>
-						<div style="margin-top:5%;margin-left:4%;float:left;">Jellybean</div>
-						<div style="float:right;margin-top:5%;margin-right:8%;">
-							<a style="color:black;font-size:0.75rem;" onclick="agree(this)" id="applicationIdcheck"><i class="fa fa-check"></i></a>&nbsp;&nbsp;&nbsp;<a style="color:black;font-size:0.75rem;" onclick="deny(this)" id="applicationIdclose"><i class="fa fa-close"></i></a>
-						</div>
-					    </div>
-						<div class="divider" style="margin-top:-15px;"></div>
-					  </div>
-						<div class="row">
-					  	<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
-								<img class="circle responsive-img" src="/img/user.jpg">
-						</div>
-						<div style="margin-top:5%;margin-left:4%;float:left;">Jellybean Nani</div>
-						<div style="float:right;margin-top:5%;margin-right:8%;">
-							<a style="color:black;font-size:0.75rem;"><i class="fa fa-check"></i></a>&nbsp;&nbsp;&nbsp;<a style="color:black;font-size:0.75rem;"><i class="fa fa-close"></i></a>
-						</div>
-					    </div>
-						<div class="divider" style="margin-top:-15px;"></div>
+						@endif
+					  @endforeach
+				</div>
+				<div class="addFriends" >
+					<div style="margin-left:3%;font-size:0.75rem;padding:2%;">好友列表:</div>
+					  	<div class="divider" id="flag"></div>
+					  		@foreach(Auth::user()->followee as $f)
+							  @if($f->pivot->status == App\friendship::STATUS_ACCEPTED)
+									<div class="row">
+										<div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;">
+										<img class="circle responsive-img" src="{{ $f->portrait }}">
+										</div>
+										<div style="margin-top:5%;margin-left:4%;float:left;">{{ $f->name }}</div>
+									</div>	
+									<div class="divider" style="margin-top:-15px;"></div>
+							  @endif
+							@endforeach
 				</div>
 			</div>
 		</div>
@@ -503,7 +513,7 @@
 								var time = data.time;
 								contents[i].value='';
 								var loc = "div.com"+contents[i].id+":last";
-								$(loc).append('<div style="margin-top:2%;background-color:#f7f7f7;" class="com"><div class="comment-content"><div class="row"><div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;"><img class="responsive-img" src="/img/portrait/user_portrait_'+data.author_id+'.jpg"></div><div style="padding-left:12%;"><div style="float:left;">'+uName+'</div><div style="text-align:right;padding-right:5%;padding-top:1%;color:grey;font-size:0.75rem;">'+time+'</div></div></div><div style="margin-left:10%;margin-top:-5%;font-size:0.75rem;">'+content+'</div><br><div style="text-align:right;margin-top:-10px;padding-right:2%;"><a class="replyBtn" onclick="replyTo(this)">Reply</a></div><div class="divider" style="margin-top:1%;"></div></div></div>');
+								$(loc).append('<div class="comment-content"><div class="row"><div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;"><img class="responsive-img" src="/img/portrait/user_portrait_'+data.author_id+'.jpg"></div><div style="padding-left:12%;"><div style="float:left;">'+uName+'</div><div style="text-align:right;padding-right:5%;padding-top:1%;color:grey;font-size:0.75rem;">'+time+'</div></div></div><div style="margin-left:10%;margin-top:-5%;font-size:0.75rem;">'+content+'</div><br><div style="text-align:right;margin-top:-10px;padding-right:2%;"><a class="replyBtn" onclick="replyTo(this)">Reply</a></div><div class="divider" style="margin-top:1%;"></div></div>');
 							},
 							error: function(e) {
 								console.log(e.responseText);
@@ -534,6 +544,38 @@
 	<script>
 		function publish(){
 			document.getElementsByTagName('form')[0].submit();
+		}
+		function agree(tar){
+			var rel_id = tar.id;
+			var name = $('div#name'+rel_id).attr("value");
+			var src  = $('img#src' +rel_id).attr("src");
+			$.ajax({
+                        type    : "GET",
+                        url     : "/player/friend/accept/"+rel_id,
+                        dataType: "JSON",
+                        success :function(data){
+							$("div#req"+rel_id).remove();
+							var s = $("div#flag");
+							s.after('<div class="row"><div style="width:36px; height:36px;float:left;overflow:hidden;margin-left:4%;margin-top:2%;"><img class="circle responsive-img" src="'+src+'"></div><div style="margin-top:5%;margin-left:4%;float:left;">'+name+'</div></div><div class="divider" style="margin-top:-15px;"></div>');
+                        },
+                        error: function(e) {
+                            console.log(e.responseText);
+                        }
+                    });			
+		}
+		function deny(tar){
+			var rel_id = tar.name;
+			$.ajax({
+                        type    : "GET",
+                        url     : "/player/friend/deny/"+rel_id,
+                        dataType: "JSON",
+                        success :function(data){
+							$("div#req"+rel_id).remove();
+                        },
+                        error: function(e) {
+                            console.log(e.responseText);
+                        }
+                    });				
 		}
 	</script>
 	</body>
