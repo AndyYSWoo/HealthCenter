@@ -159,7 +159,7 @@
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #13844a;">血压</div>
 								<div class="row" style="margin-bottom:0px;">
 									<div class="col s8"style="padding-left:0;">
-									<div style="font-size:2rem;">{{ $last_bp->value }}/{{ $last_bp->value2 }}</div>
+									<div style="font-size:2rem;">{{ round($last_bp->value,0) }}/{{ round($last_bp->value2,0) }}</div>
 								</div>
 								<div class="col s4" style="padding-bottom:0;">
 									<a style="color:white;font-size:.75rem;">mmHg</a>
@@ -175,7 +175,7 @@
 							</div>
 							<div class="col s8" style="background-color:#db4c3f;color:white;">
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #af3d32;">心率</div>
-								<div style="font-size:2rem;"><b>{{ $last_hr->value }}</b><a style="color:white;font-size:0.75rem;">次/分</a>
+								<div style="font-size:2rem;"><b>{{ round($last_hr->value,0) }}</b><a style="color:white;font-size:0.75rem;">次/分</a>
 								<a style="color:white;margin-left:10%;font-size:1rem;"><i class="fa fa-pencil"></i></a>
 								</div>
 							</div>

@@ -85,12 +85,22 @@ class DataController extends Controller
         if($request->hasFile('sports_file')){// 上传文件
             $xml = $request->file('sports_file');
             if($xml->getClientOriginalExtension() != 'xml'){
-                return 'File extension not xml!';
+                return 'File extension is not xml!';
             }
             $new_name = 'xml_'.date('Y-m-d H:m:s').Auth::user()->id.'.xml';
-            $xml->move(base_path().'/public/file/',$new_name);
-            $obj = simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/file/'.$new_name);
-            return $obj->getName();
+            $xml->move(base_path().'/public/file/sports/',$new_name);
+            $obj = simplexml_load_file($_SERVER['DOCUMENT_ROOT'].'/file/sports/'.$new_name);
+            for($i = 0 ; $i < count($obj->xpath('sportsentry'));++$i){
+                $e = $obj->xpath('sportsentry')[$i];
+                $entry = new sportsentry;
+                $entry->user_id     = Auth::user()->id;
+                $entry->type        = $e->xpath('type')[0];
+                $entry->value       = $e->xpath('value')[0];
+                $entry->last_time   = $e->xpath('last_time')[0];
+                $entry->calories    = $e->xpath('calories')[0];
+                $entry->start_time  = $e->xpath('start_time')[0];
+                $entry->save();
+            }
         }else{ // 手动输入
             $entry = new sportsentry;
             $entry->user_id     = Auth::user()->id;
@@ -101,7 +111,8 @@ class DataController extends Controller
             $entry->start_time  = $request->input('date').' '.$request->input('s_h').':'.$request->input('s_m').':'.$request->input('s_s');
             $entry->save();
         }
-        return Redirect::to('/player/sports/data');
+        return Redirect::back();
+        // return Redirect::to('/player/sports/data');
     }
 
     /**
