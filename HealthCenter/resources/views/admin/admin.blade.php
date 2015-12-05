@@ -89,7 +89,9 @@
 			    height: 5rem;
 			    background-color: transparent; 
 			}
-			
+			.modal{
+				width: 36%;
+			}
 	</style>
 </head>
 <body>
@@ -109,15 +111,13 @@
 					</div>
 					<div class="col s7" style="padding-right:2%;">
 						<div>
-        				
-        				<table class="centered">
+        				<table class="centered bordered ">
 				        <thead>
 				          <tr>
 				              <th data-field="type"></th>
 				              <th data-field="count"></th>
 				          </tr>
 				        </thead>
-
 				        <tbody>
 				          <tr>
 				            <td>
@@ -137,9 +137,69 @@
         			</div>
 					</div>
 				</div>
+				<div class="divider"></div>
+				<div style="margin-top:2%;">
+					<div class="row">
+						<div class="col s6" style="padding-left:2%;padding-right:2%;">
+							<ul class="collection with-header" id="coachList">
+					        <li class="collection-header"><h5>教练用户</h5></li>
+					        <li class="collection-item" id="userid"><div>Alvin1<a href="#modal1" class="secondary-content modal-trigger" onclick="deleteCoach(this)" id="useriddelete"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin2<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin3<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin4<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					      	</ul>
+						</div>
+						<div id="modal1" class="modal">
+					    <div class="modal-content">
+					    <div style="text-align:center;">	
+					      <h5>确定删除该用户吗？</h5>
+					    </div>
+					    <div class="divider"></div>
+					    <div class="row" >
+					    	<div class="col s6" style="text-align:center;border-right:1px solid #ddd;padding-top:2%;padding-bottom:2%;">
+					    		<a onclick="confrim()" style="color:black;cursor:pointer;">确定</a>
+					    	</div>
+					    	<div class="col s6" style="text-align:center;padding-top:2%;padding-bottom:2%;">
+					    		<a style="color:black;cursor:pointer;">取消</a>
+					    	</div>
+					    </div>
+					    <div class="divider" style="margin-top:-20px;"></div>
+					    </div>
+					    
+					  </div>
+						<div class="col s6" style="padding-left:2%;padding-right:2%;">
+							<ul class="collection with-header">
+					        <li class="collection-header"><h5>医生用户</h5></li>
+					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+					      	</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		var isConfirm = false;
+		var userId;
+		function deleteCoach(user){
+			userId =  user.id;
+			$('#modal1').openModal();
+		}
+		function confrim(){
+			var childId = userId.substring(0,userId.length-6);
+			document.getElementById("coachList").removeChild(document.getElementById(childId));
+			$('#modal1').closeModal();
+		}
+		function cancel(){
+			$('modal1').closeModal();
+		}
+	</script>
 
+	<script type="text/javascript" src="/js/jquery_min.js"></script>
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
 </body>
 </html>
