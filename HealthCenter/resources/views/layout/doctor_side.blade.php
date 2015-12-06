@@ -26,6 +26,6 @@
                     </div>
                 </li>
             </ul>
-            <li><a href="#!" class="collapsible-header  waves-effect waves-blue">设置</a></li>
+            <!--<li><a href="#!" class="collapsible-header  waves-effect waves-blue">设置</a></li>-->
             <li><a href="/auth/logout" class="collapsible-header  waves-effect waves-blue">退出</a></li>
 	    </ul>

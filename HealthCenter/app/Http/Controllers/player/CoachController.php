@@ -49,6 +49,7 @@ class CoachController extends Controller
     public function show($id)
     {
         //
+        return view('player.coach_index');
     }
 
     /**

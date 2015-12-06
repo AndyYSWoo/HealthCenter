@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\player;
 use Auth;
 use Redirect;
+use Cache;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,27 +25,38 @@ class PlayerController extends Controller
         // health
         //$health_entries     = healthentry::where('user_id', Auth::user()->id)->orderBy('id')->get();
         // sleep
-        $sleep_entries      = healthentry::where('user_id', Auth::user()->id)
-                                            ->where('type', healthentry::TYPE_SLEEP)
-                                            ->orderBy('id')
-                                            ->get();
-        $bad_sleep          = 0;
-        $mid_sleep          = 0;
-        $good_sleep         = 0;
-        foreach($sleep_entries as $sleep_entry){
-            if($sleep_entry->level == healthentry::LEVEL_BAD){
-                $bad_sleep  += $sleep_entry->value;
+        // if(Cache::has('bs'.Auth::user()->id)){
+            // $bad_sleep = Cache::get('bs'.Auth::user()->id);
+            // $mid_sleep = Cache::get('ms'.Auth::user()->id);
+            // $good_sleep = Cache::get('gs'.Auth::user()->id);
+        // }else{
+            $sleep_entries      = healthentry::where('user_id', Auth::user()->id)
+                                                ->where('type', healthentry::TYPE_SLEEP)
+                                                ->where('begin_time','>=',date('Y-m-d').' 00:00:00')
+                                                ->orderBy('id')
+                                                ->get();
+            $bad_sleep          = 0;
+            $mid_sleep          = 0;
+            $good_sleep         = 0;
+            foreach($sleep_entries as $sleep_entry){
+                if($sleep_entry->level == healthentry::LEVEL_BAD){
+                    $bad_sleep  += $sleep_entry->value;
+                }
+                if($sleep_entry->level == healthentry::LEVEL_MID){
+                    $mid_sleep  += $sleep_entry->value;
+                }
+                if($sleep_entry->level == healthentry::LEVEL_GOOD){
+                    $good_sleep  += $sleep_entry->value;
+                }
             }
-            if($sleep_entry->level == healthentry::LEVEL_MID){
-                $mid_sleep  += $sleep_entry->value;
-            }
-            if($sleep_entry->level == healthentry::LEVEL_GOOD){
-                $good_sleep  += $sleep_entry->value;
-            }
-        }
+            // Cache::put('bs'.Auth::user()->id, $bad_sleep, '10');           
+            // Cache::put('ms'.Auth::user()->id, $mid_sleep, '10');           
+            // Cache::put('gs'.Auth::user()->id, $good_sleep, '10');           
+        // }
         // temperature
         $t_entries          = healthentry::where('user_id', Auth::user()->id)
                                             ->where('type', healthentry::TYPE_TEMPERATURE)
+                                            ->where('begin_time','>=',date('Y-m-d').' 00:00:00')
                                             ->get();
         $avg_t = 0;
         foreach($t_entries as $t_entry){
@@ -58,6 +70,7 @@ class PlayerController extends Controller
         // heartrate
         $hr_entries         = healthentry::where('user_id', Auth::user()->id)
                                             ->where('type', healthentry::TYPE_HEARTRATE)
+                                            ->where('begin_time','>=',date('Y-m-d').' 00:00:00')
                                             ->get();
         $avg_hr = 0;
         foreach($hr_entries as $hr_entry){
@@ -71,6 +84,7 @@ class PlayerController extends Controller
         // blood_pressure
         $bp_entries         = healthentry::where('user_id', Auth::user()->id)
                                             ->where('type', healthentry::TYPE_BLOODPRESSURE)
+                                            ->where('begin_time','>=',date('Y-m-d').' 00:00:00')
                                             ->get();
         $avg_bp_high = 0;
         $avg_bp_low  = 0;
@@ -86,7 +100,10 @@ class PlayerController extends Controller
             $avg_bp_low = round($avg_bp_low/$bp_entries->count(),1);            
         }
         // sports
-        $sports_entries     = sportsentry::where('user_id',Auth::user()->id)->orderBy('id')->get();
+        $sports_entries     = sportsentry::where('user_id',Auth::user()->id)
+                                            ->where('start_time','>=',date('Y-m-d').' 00:00:00')
+                                            ->orderBy('id')
+                                            ->get();
         $running_distance   = 0;
         $calories           = 0;
         $running_time       = 0;
@@ -103,7 +120,13 @@ class PlayerController extends Controller
             $running_speed      = round($running_distance/$running_time * 3.6,2);
         }
         // advice
-        $health_advices = healthadvice::where('player_id',Auth::user()->id)->get();
+        if(Cache::has('adviceOf'.Auth::user()->id)){
+            $health_advices = Cache::get('adviceOf'.Auth::user()->id);
+        }else{
+            $health_advices = healthadvice::where('player_id',Auth::user()->id)->get();
+            Cache::put('adviceOf'.Auth::user()->id, $health_advices, '10');           
+        }
+
         return view('player.index',[
                                    'sports_entries' => $sports_entries
                                    ,'running_distance' => $running_distance
@@ -234,3 +257,4 @@ class PlayerController extends Controller
         //
     }
 }
+// 

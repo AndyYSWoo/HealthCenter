@@ -22,7 +22,7 @@
                     <a href="#!" class="collapsible-header">教练</a>
 					<div class="collapsible-body">
 						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
+							<li><a href="/player/coach/1" style="margin:0;"> <div  style="height:48px;">
                                     <div style="padding-left:0%;padding-top:6px;">
                                         <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
                                         <img src="/img/user.jpg" class="responsive-img">

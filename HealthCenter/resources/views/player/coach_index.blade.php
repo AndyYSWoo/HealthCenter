@@ -146,7 +146,7 @@
 		</style>
 	</head>
 	<body>
-@include('layout.coach_side')		
+@include('layout.player_side')		
 		<div style="padding-left:16%;">
 			<!--<nav>
 			<div class="nav-wrapper" style="margin-right:0%;">

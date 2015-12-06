@@ -70,6 +70,8 @@ class DatabaseSeeder extends Seeder
             'created_at'=> date('Y-m-d H:m:s'),
             'updated_at'=> date('Y-m-d H:m:s'),
         ]);
+        factory('App\User',28)->create();
+        
         DB::table('player')->insert([
             'id'      => 1,
             'birthday'      => '1995-5-28',
@@ -95,9 +97,9 @@ class DatabaseSeeder extends Seeder
             'age'     => 20
         ]);//~
         // HealthData
-        factory('App\healthentry',50)->create();
+        factory('App\healthentry',2500)->create();
         // Sports
-        factory('App\sportsentry',50)->create();
+        factory('App\sportsentry',2500)->create();
         // Activity
         factory('App\activity',50)->create();
         Model::reguard();

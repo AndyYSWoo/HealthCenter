@@ -161,7 +161,7 @@ class DataController extends Controller
                 $entry3 = new healthentry;
                 $entry3->user_id     = Auth::user()->id;
                 $entry3->type        = healthentry::TYPE_SLEEP;
-                $entry3->level       = healthentry::LEVEL_GOOD;
+                $entry3->level       = healthentry::LEVEL_BAD;
                 $entry3->begin_time  = date('Y-m-d H:m:s');
                 $entry3->value       = $request->input('bh')*3600+$request->input('bm')*60+$request->input('bs');
                 $entry3->save();

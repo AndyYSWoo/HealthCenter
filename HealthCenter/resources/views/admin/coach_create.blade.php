@@ -336,7 +336,7 @@
 		function addTips(tip){
 			var coachTip = document.getElementById(tip.id).innerHTML;
 			var tiplist = "<div class = \"tip\">" + coachTip + "</div>";
-			alert(tiplist);
+			// alert(tiplist);
 			var coachTips = document.getElementById("trainTip");
 			coachTips.innerHTML = coachTips.innerHTML + tiplist;
 			var list = document.getElementById("tipList");
@@ -358,26 +358,22 @@
 				var validMailAddr = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 				if (!validMailAddr.test(mailAddr)) {
 						alert("邮箱格式不正确");
+						return;
 				};
 			};
 			if ((password1.length!=0)&&(password2.length!=0)){
 
 			}else{
 				alert("密码为空");
+				return;
 			}   
 			if (password1 === password2) {
 
 			}else{
-				alert("两次输入的密码不相同")
+				alert("两次输入的密码不相同");
+				return;
 			};
-			
-			var province = document.getElementById("province");
-			var city     = document.getElementById("city");
-			var level    = document.getElementById("level");
-			var index    = province.selectedIndex;
-			var text     = province.options[index].text;
-			alert(text);
-
+			window.location.reload();
 		} 
 	</script>
 </body>

@@ -13,8 +13,8 @@
 // player路由
 Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     Route::resource('/', 'PlayerController');
-    Route::get('/{id}/edit', 'PlayerController@edit');// why not found?
-    Route::put('/{id}', 'PlayerController@update');// why not found?
+    Route::get('/{id}/edit', 'PlayerController@edit');
+    Route::put('/{id}', 'PlayerController@update');
     // friend
     Route::resource('/friend', 'FriendController');
     Route::get('/friend/accept/{id}','FriendController@accept');
@@ -22,6 +22,8 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     
     // doctor
     Route::resource('/doctor','DoctorController');
+    // coach
+    Route::resource('/coach','CoachController');
     
     // social
     Route::resource('/social','SocialController');
