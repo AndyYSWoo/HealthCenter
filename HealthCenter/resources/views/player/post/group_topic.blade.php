@@ -182,9 +182,13 @@
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
 								<img class="responsive-img" src="{{ Auth::user()->portrait }}">
 							</div>
+							{!! Form::open(array('url' => "/player/post/comment",'method' => 'POST')) !!}
 							<div class="input-field col s8">
-								<textarea id="textarea1" class="materialize-textarea"></textarea>
+								<textarea id="textarea1" class="materialize-textarea" name="content"></textarea>
 							</div>
+							<input type="text" name="post_id" value="{{ $post->id }}" style="display:none;">
+							{{ csrf_field() }}
+							{!! Form::close() !!}
 							<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-1.25%;padding-left:78%;">
 								<a onclick="send()" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
 							</div>
@@ -200,8 +204,7 @@
 			replyContent.innerHTML = "Reply to:";
 		}
 		function send (){
-			var replyContent = document.getElementById("textarea1");
-			replyContent.innerHTML = "";
+			$('form').submit();
 		}
 	</script>
 </body>

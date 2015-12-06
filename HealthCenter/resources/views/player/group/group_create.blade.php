@@ -108,6 +108,7 @@
         		</div>	
         	</div>
         	<div class="container">
+				{!! Form::open(array('url' => "/player/group",'files' => true,'method' => 'POST')) !!}
         		<div class="row" style="margin-top:4%;margin-left:6%;">
         			<div class="col s7" style="border-top:2px solid #408eba;background-color:white;">
         				<div style="font-size:1.25rem;padding:2%;">创建兴趣小组</div>
@@ -115,7 +116,7 @@
 						<div class="row">
 							<div class="col s3"style="padding-top:4%;"><b>小组名称</b></div>
 							<div class="input-field col s8 text">
-								<input type="text">
+								<input type="text" name="name" id="name">
 							</div>
 						</div>
 
@@ -123,7 +124,7 @@
 						<div class="row">
 							<div class="col s3"style="padding-top:4%;"><b>小组口号</b></div>
 							<div class="input-field col s8 text">
-								<input type="text">
+								<input type="text" name="motto" id="motto">
 							</div>
 						</div>
 						
@@ -132,7 +133,7 @@
 							<div class="col s3" style="padding-top:4%;"><b>小组详情描述</b></div>
 							<div class="col s8 " style="padding-top:2%;">
 								<div class="input-field">
-									<textarea class="materialize-textarea"></textarea>
+									<textarea class="materialize-textarea" name="description" id="description"></textarea>
 								</div>
 							</div>						
 						</div>
@@ -143,17 +144,18 @@
 							<div class="col s8">
 								<div class="file-field input-field" id="i_file">
 									<div class="blank">
-										<input type="file">
+										<input type="file" name="poster" id="poster">
 											<img src="/img/icon_add.png"class="responsive-img" id="preview">
 									</div>
 								</div>
 							</div>
 						</div>
-
+						{{ csrf_field() }}
+						{!! Form::close() !!}
 						<div class="divider"></div>
 						<div class="row">
 							<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
-								<a class="waves-effect waves-light btn" >发布</a>
+								<a class="waves-effect waves-light btn" onclick="sub()">发布</a>
 							</div>
 							<div class="col s3" style="padding-top:2%;">
 								<a class="waves-effect waves-light btn" href="/player/group">取消</a>
@@ -175,6 +177,11 @@
 	          	img.setAttribute("src",filePath);
 	          }
 	          });
+	</script>
+	<script type="text/javascript">
+		function sub(){
+			$('form').submit();
+		}
 	</script>
 </body>
 </html>

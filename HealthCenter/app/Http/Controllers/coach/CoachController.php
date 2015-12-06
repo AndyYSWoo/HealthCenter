@@ -85,4 +85,7 @@ class CoachController extends Controller
     {
         //
     }
+    public function trainer(){
+        return view('coach.coach_trainer');
+    } 
 }

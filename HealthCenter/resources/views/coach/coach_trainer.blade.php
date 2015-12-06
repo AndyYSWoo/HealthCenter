@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>trainer</title>
-		<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
-		<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> 
-		<link type="text/css" rel="stylesheet" href="css/animate/animate.min.css">
+		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
+		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/> 
+		<link type="text/css" rel="stylesheet" href="/css/animate/animate.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<script type="text/javascript" src="js/jquery_min.js"></script>
+		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		<style type="text/css">
 			 #header_img{
 				width:  50%;
@@ -125,46 +125,8 @@
 		</style>
 	</head>
 	<body>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		  <div class="side-nav fixed">
-	    <div id="header">
-			<img class="circle responsive-img" src="./img/user.jpg" id ="header_img">
-			<div>Nina Mcintire</div>
-		</div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li class="side-title"><a href="coach_index.html">首页</a></li>
-				<li class="side-title"><a href="coach_train.html">发布训练</a></li>
-				<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach_trainer.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-							<li><a href="coach_trainer.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="./img/user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-	    </div>
+		<script type="text/javascript" src="/js/materialize.min.js"></script>
+		@include('layout.coach_side');
 		<div style="padding-left:16%;">
 			<div class="topbar">
 				
@@ -176,7 +138,7 @@
 					<div class="profile">
 					<div style="text-align:center">
 					<div >
-						<img src="./img/user1.jpg" class="circle responsive-img">
+						<img src="/img/user1.jpg" class="circle responsive-img">
 					</div>
 					<div style="font-size:2rem;">AC_CHAN</div>
 					</div>
@@ -269,10 +231,12 @@
 					    <div class="comment">
 							 <div style="padding:2%;font-size:1.25rem;">留言</div>
 					 <div class="divider"></div>
+					 <div id="list">
+						 
 					 <div class="comment-content">
 					<div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="user1.jpg">
+								<img class="responsive-img" src="/img/user1.jpg">
 							</div>
 						<div class="test"style="padding-left:10%;">
 							<div style="float:left;">
@@ -293,7 +257,7 @@
 				 <div class="comment-content">
 					<div class="row">
 							<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
-								<img class="responsive-img" src="user1.jpg">
+								<img class="responsive-img" src="/img/user1.jpg">
 							</div>
 						<div class="test"style="padding-left:10%;">
 							<div style="float:left;">
@@ -311,16 +275,17 @@
 						</div>
 					<div class="divider" style="margin-top:1%;"></div>
 				</div>
+			</div>
 				<div>
 					<div class="row">
 					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
-						<img class="responsive-img" src="user.jpg">
+						<img class="responsive-img" src="/img/user.jpg">
 					</div>
 					<div class="input-field col s8">
 					<textarea id="textarea1" class="materialize-textarea"></textarea>
 					</div>
 					<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-1.25%;padding-left:78%;">
-						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
+						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;" onclick="sendAdvice()">发送</a></div>
 				</div>
 				 </div>
 				 
@@ -333,6 +298,33 @@
 			
 			</div>
 		</div>
+		<script>
+			function sendAdvice(){
+				var advice = document.getElementById("textarea1");
+				var myDate = new Date();
+				var mytime=myDate.toLocaleString();
+				var newAdvice = "";
+				newAdvice += "<div class=\"comment-content\">";
+				newAdvice += "<div class=\"row\">";
+				newAdvice += "<div style=\"width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;\">";
+				newAdvice += "<img class=\"responsive-img\" src=\"/img/user.jpg\"></div>";
+				newAdvice += "<div class=\"test\"style=\"padding-left:10%;\">";
+				newAdvice += "<div style=\"float:left;\">";
+				newAdvice += "Nina Mcintire";
+				newAdvice += "</div><div style=\"text-align:right;padding-right:2%;padding-top:1%;color:grey;font-size:0.75rem;\">";
+				newAdvice += mytime;
+				newAdvice += "</div></div></div><div style=\"margin-left:10%;margin-top:-4%;font-size:0.75rem;\">";
+				newAdvice += advice.value;
+				newAdvice += "</div><div style=\"text-align:right;margin-top:-10px;padding-right:2%;\">";
+				newAdvice += "<a style=\"color:black;\">回复</a></div>";
+				newAdvice += "<div class=\"divider\" style=\"margin-top:1%;\"></div></div>";
+				var list = document.getElementById("list");
+				list.innerHTML = list.innerHTML + newAdvice;
+				advice.value = "";
+
+
+			}
+		</script>
 		<script type="text/javascript">
 			$(function () {
 		    $('#walk_line_chart').highcharts({
@@ -383,7 +375,7 @@
 		    });
 		});
 		</script>
-		<script src="js/highcharts/highcharts.js"></script>
+		<script src="/js/highcharts/highcharts.js"></script>
 		
 	</body>
 </html>

@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		
 		<style type="text/css">
-		#header_img{
+			#header_img{
 				width:  50%;
 				padding-top: 5%;
 				padding-bottom: 5%;
@@ -21,108 +21,114 @@
 				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 			}
 			.side-nav{
-				background-color: white;
-				width: 16%;
-				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+                background-color: white;
+                width: 16%;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+            }
+            .side-nav .collapsible-header{
+                background-color: transparent;
+                float: none;
+                padding: 0 15px;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                margin-left: 0px;
+            }
+            .side-nav li {
+                float: none;
+                padding: 0 15px;
+                border-bottom: 1 px; 
+            }
+            .side-nav a {
+                color: #fff3e0;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                padding: 0 15px; 
+            }
+			.topbar{
+				background-color: #408eba;
+				height: 56px;
 			}
-			.side-nav .collapsible-header{
-			background-color: transparent;
-			 float: none;
-			 padding: 0 15px;
-			 margin-left:0px;
-			 display: block;
-			 font-size: 1rem;
-			 height: 48px;
-    		 line-height: 48px;
-		}
-		.side-nav li {
-			float: none;
-			padding: 0 15px;
-			border-bottom: 1 px; 
-		}
 		
-		.side-nav a {
-			color: #fff3e0;
-			display: block;
-			font-size: 1rem;
-			height: 48px;
-			line-height: 48px;
-			padding: 0 15px; 
-		}
-		.topbar{
-			background-color: #408eba;
-			height: 56px;
-		}
+			input[type=text]{
+				border: 2px solid #ddd;
+				padding: 2%;
+				border-radius: 5px;
+				margin-bottom: -20px;
+			}
+			input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+				border: 2px solid #408eba;
+				border-bottom: 2px solid #408eba;
+				box-shadow: none;
+			}
+			textarea.materialize-textarea{
+				border: 2px solid #ddd;
+				padding: 2%;
+				border-radius: 5px;
+				height: 5rem;
+				margin-bottom: -20px;
+				min-height: 5rem; 
+			}
+			textarea {
+			    width: 100%;
+			    height: 5rem;
+			    background-color: transparent; 
+			}
 		
-		input[type=text]{
-			border: 2px solid #ddd;
-			padding: 2%;
-			border-radius: 5px;
-			margin-bottom: -20px;
-		}
-		input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
-			border: 2px solid #408eba;
-			border-bottom: 2px solid #408eba;
-			box-shadow: none;
-		}
-		textarea.materialize-textarea{
-			border: 2px solid #ddd;
-			padding: 2%;
-			border-radius: 5px;
-			height: 5rem;
-			margin-bottom: -20px;
-		}
-		body{
-			background-color:#ecf0f5;
-		}
-		.blank{
-			/*background-image: url(icon_add.png);*/
-			width: 128px;
-			height: 128px;
-			background-repeat: no-repeat;
-			max-width: 100%;
-  			height: auto;
-		}
-		.add-train{
-			/*width:100px;
-			height:100px;*/
-			/*background:red;*/
-			
-			visibility: hidden;
-		}
-		.train-content{
-			margin-bottom:5%;
-			/*border-bottom:2px solid #ddd;*/
-			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-			padding-top:5%;
-			padding-left: 2%;
-			padding-right:2%;
-			background-color:white;
-		}
-		.btn{
-			width: 100%;
-			background-color: #408eba;
-		}
-		.btn:hover{
-			box-shadow: none;
-			background-color: #50b5ee;
-		}
-		@keyframes myfirst
-		{
-		from {margin-left: 0%;}
-		to {margin-left:  50%;}
-		}
-
-		@-webkit-keyframes myfirst /* Safari and Chrome */
-		{
-		from {margin-left: 0%;}
-		to {margin-left:  50%;}
-		}
+			body{
+				background-color:#ecf0f5;
+			}
+			.blank{
+				/*background-image: url(icon_add.png);*/
+				width: 128px;
+				height: 128px;
+				background-repeat: no-repeat;
+				max-width: 100%;
+	  			height: auto;
+			}
+			.add-train{
+				/*width:100px;
+				height:100px;*/
+				/*background:red;*/
+				position: absolute;
+				z-index: -1;
+				/*visibility: hidden;*/
+			}
+			.train-content{
+				margin-bottom:5%;
+				/*border-bottom:2px solid #ddd;*/
+				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+				padding-top:5%;
+				padding-left: 2%;
+				padding-right:2%;
+				background-color:white;
+				overflow: auto;
+				height: 200px;
+			}
+			.btn{
+				width: 100%;
+				background-color: #408eba;
+			}
+			.btn:hover{
+				box-shadow: none;
+				background-color: #50b5ee;
+			}
+			.trainlist{
+				 padding-top:4%;
+				 background-color:#ddd;
+				 padding-bottom:4%;
+				 height: 400px;
+				 overflow: auto;
+			}
 
 		</style>
 	</head>
 	<body>
-@include('layout.coach_side')
+		<script type="text/javascript" src="/js/materialize.min.js"></script>
+@include('layout.coach_side');
 		<div style="padding-left:16%;">
 			<div class="topbar"></div>
 			
@@ -134,7 +140,7 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:4%;"><b>训练名称<b></div>
 						<div class="input-field col s8 text">
-							<input  type="text" style="height:1rem;">
+							<input  type="text" style="height:1rem;" id="trainTitle">
 						</div>
 					</div>
 					<div class="divider"></div>
@@ -145,7 +151,7 @@
 					</div>						
 					</div>
 					<div class="divider"></div>
-					<div class="row" style="padding-top:4%;background-color:#ddd;padding-bottom:4%;">
+					<div class="row trainlist" id="trainingList">
 						<div class="col s4">
 								  <div class="train-content">
 									  <div style="text-align:center;">
@@ -154,13 +160,7 @@
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
-								  <div class="train-content">
-									  <div style="text-align:center;">
-										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
-									  </div>
-									  <div style="text-align:center;">开合跳</div>
-									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
-								  </div>
+								  
 						 </div>
 						 <div class="col s4">
 							 <div class="train-content">
@@ -173,6 +173,15 @@
 						 </div>
 						 <div class="col s4">
 							 <div class="train-content">
+									  <div style="text-align:center;">
+										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
+									  </div>
+									  <div style="text-align:center;">开合跳</div>
+									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
+								  </div>
+						 </div>
+						 <div class="col s4">
+						 	<div class="train-content">
 									  <div style="text-align:center;">
 										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
 									  </div>
@@ -183,7 +192,7 @@
 					</div>
 					<div class="row">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;">
-						<a class="waves-effect waves-light btn" >发布</a>
+						<a class="waves-effect waves-light btn" onclick="release()">发布</a>
 						</div>
 						<div class="col s3">
 						<a class="waves-effect waves-light btn" >取消</a>
@@ -207,13 +216,13 @@
 							<div style="margin-top:2%;padding-right:5%;">
 								<div>文字描述</div>
 									<div class="input-field">
-									<textarea id="textarea1" class="materialize-textarea"></textarea>
+									<textarea id="train" class="materialize-textarea"></textarea>
 									</div>
 							</div>
 							  <div style="margin-top:7%;text-align:right;">
 								  <div class="row">
 									  <div class="col s4 offset-s4">
-									  <a class="waves-effect waves-light btn" onclick="slideOut()">确定</a>
+									  <a class="waves-effect waves-light btn" onclick="addtrain()">确定</a>
 									  </div>
 									  <div class="col s4">
 									  <a class="waves-effect waves-light btn" onclick="slideOut()">取消</a>
@@ -221,30 +230,76 @@
 								  </div>
 							  </div>
 				    		</form>
-						 
 						  </div>
-						  
-						  
 					</div>
 				</div>
 			</div>
 			
 			
 		</div>
-		 <script type="text/javascript">
-                          $('#i_file').change( function(event) {
-                          var tmppath = URL.createObjectURL(event.target.files[0]);
-                            $("#preview").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
-                          });
-                          </script>	
+		<script type="text/javascript">
+			  var filePath;
+			  var uploadFile = new Array();
+			  var uploadText = new Array();
+	          $('#i_file').change( function(event) {
+	          filePath = URL.createObjectURL(event.target.files[0]);
+	          if(filePath!=""){
+	          	var img = document.getElementById("preview");
+	          	img.setAttribute("src",filePath);
+	          }
+	          });
+	          function addtrain(){
+				var pic = filePath;
+				var trainDetail = document.getElementById("train").value;
+				if (filePath==""||trainDetail=="") {
+					alert(" 请完善信息");
+				}else{
+					document.getElementById("train").value = "";
+					var trainingList = document.getElementById("trainingList");
+					var subTrain = "";
+					subTrain += "<div class=\"col s4\"><div class=\"train-content\">";
+					subTrain += "<div style=\"text-align:center\"><img src =\"";
+					subTrain += pic;
+					subTrain += "\" style=\"width:48%;height:48%;\" class=\"responsive-img\"></div>";
+					subTrain += "<div style=\"text-align:left;font-size:0.75rem;\">";
+					subTrain += trainDetail;
+					subTrain += "</div></div></div>";
+					trainingList.innerHTML = trainingList.innerHTML + subTrain;
+					var img = document.getElementById("preview");
+					img.setAttribute("src","./img/icon_add.png");
+					document.getElementById("add").className='col s5 animated slideOutRight';
+					uploadFile.push(filePath);
+					uploadText.push(trainDetail);
+				};
+				
+			}
+			function release(){
+				var title = document.getElementById("trainTitle");
+				var list  = document.getElementById("trainingList");
+				var numOfTrain = $('#trainingList').children().length;
+				if (title.value!="") {
+					for(var i = 0; i < uploadFile.length;i++){
+						alert(uploadFile[i]);
+						alert(uploadText[i]);
+					}
+				}else{
+					alert("请输入训练名称");
+				};
+			}
+         </script>	
+		
 		<script type="text/javascript">
 			function myFunction(){
 				document.getElementById("add").className='col s5 animated slideInRight';
+
 			}
 		</script>
 		<script type="text/javascript">
 			function slideOut(){
 				document.getElementById("add").className='col s5 animated slideOutRight';
+				setTimeout(function(){
+					document.getElementById("add").className = 'col s5 add-train';
+				},800);
 			}
 		</script>
 	</body>

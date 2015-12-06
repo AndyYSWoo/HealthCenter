@@ -34,9 +34,12 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
     // group
     Route::resource('/group','GroupController');
     Route::resource('/post','PostController');
+    Route::post('/post/comment','PostController@comment');
+    Route::get('/group/{id}/join','GroupController@join');
     
     // health
     Route::resource('/health/data','health\DataController');
+    Route::get('/health/json','health\DataController@getJsonData');
     // sports
     Route::resource('/sports/data','sports\DataController');
 });
@@ -44,6 +47,7 @@ Route::group(['prefix' => 'player','namespace' => 'player'], function() {
 // coach路由
 Route::group(['prefix'=> 'coach','namespace' => 'coach'],function(){
     Route::resource('/','CoachController');  
+    Route::get('/trainer','CoachController@trainer');  
     Route::resource('/coach_train','TutorialController');  
 });
 // doctor路由
@@ -76,4 +80,4 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login','Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register','Auth\AuthController@getReg');
-Route::post('auth/register','Auth\AuthController@postReg');
+Route::post('auth/reg','Auth\AuthController@postReg');

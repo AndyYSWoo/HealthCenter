@@ -123,13 +123,19 @@
 				            <td>
 				            教练用户人数
 				            </td>
-				            <td>5445</td>
+				            <td>{{ $coachs->count() }}</td>
 				          </tr>
 				          <tr>
 				            <td>
 				            医生用户人数
 				            </td>
-				            <td>3231</td>
+				            <td>{{ $doctors->count() }}</td>
+				          </tr>
+				          <tr>
+				            <td>
+				            普通用户人数
+				            </td>
+				            <td>{{ $users->count() }}</td>
 				          </tr>
 				          
 				        </tbody>
@@ -140,13 +146,12 @@
 				<div class="divider"></div>
 				<div style="margin-top:2%;">
 					<div class="row">
-						<div class="col s6" style="padding-left:2%;padding-right:2%;">
+						<div class="col s4" style="padding-left:2%;padding-right:2%;">
 							<ul class="collection with-header" id="coachList">
 					        <li class="collection-header"><h5>教练用户</h5></li>
-					        <li class="collection-item" id="userid"><div>Alvin1<a href="#modal1" class="secondary-content modal-trigger" onclick="deleteCoach(this)" id="useriddelete"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin2<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin3<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin4<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+							@foreach($coachs as $coach)
+					        <li class="collection-item" id="{{ $coach->id }}"><div>{{ $coach->true_name }}<a href="#modal1" class="secondary-content modal-trigger" onclick="deleteCoach(this)" id="{{ $coach->id }}delete"><i class="fa fa-trash-o"></i></a></div></li>
+							@endforeach
 					      	</ul>
 						</div>
 						<div id="modal1" class="modal">
@@ -167,13 +172,20 @@
 					    </div>
 					    
 					  </div>
-						<div class="col s6" style="padding-left:2%;padding-right:2%;">
+						<div class="col s4" style="padding-left:2%;padding-right:2%;">
 							<ul class="collection with-header">
 					        <li class="collection-header"><h5>医生用户</h5></li>
-					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
-					        <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="fa fa-trash-o"></i></a></div></li>
+							@foreach($doctors as $doctor)
+					        <li class="collection-item" id="{{ $doctor->id }}"><div>{{ $doctor->true_name }}<a href="#modal1" class="secondary-content modal-trigger" onclick="deleteCoach(this)" id="{{ $doctor->id }}delete"><i class="fa fa-trash-o"></i></a></div></li>
+							@endforeach
+					      	</ul>
+						</div>
+						<div class="col s4" style="padding-left:2%;padding-right:2%;height:500px;overflow:auto;">
+							<ul class="collection with-header">
+					        <li class="collection-header"><h5>普通用户</h5></li>
+							@foreach($users as $user)
+					        <li class="collection-item" id="{{$user->id }}"><div>{{ $user->true_name }}<a href="#modal1" class="secondary-content modal-trigger" onclick="deleteCoach(this)" id="{{ $user->id }}delete"><i class="fa fa-trash-o"></i></a></div></li>
+							@endforeach
 					      	</ul>
 						</div>
 					</div>

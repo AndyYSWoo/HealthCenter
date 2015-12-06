@@ -381,7 +381,7 @@ $(function () {
         });
     }
 
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=activity.json&callback=?', function (activity) {
+    $.getJSON('/player/health/json', function (activity) {
         $.each(activity.datasets, function (i, dataset) {
 
             // Add X values
@@ -417,7 +417,7 @@ $(function () {
                             setExtremes: syncExtremes
                         },
                         labels: {
-                            format: '{value} km'
+                            format: '{value} '
                         }
                     },
                     yAxis: {

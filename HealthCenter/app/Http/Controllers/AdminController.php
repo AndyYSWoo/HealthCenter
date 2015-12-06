@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth, Redirect, Gate;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +18,18 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('admin.admin');
+        if(Gate::allows('adminAuthed',Auth::user())){
+            $doctors = User::where('type',User::TYPE_DOCTOR)->get();
+            $coachs = User::where('type',User::TYPE_COACH)->get();
+            $users  = User::where('type',User::TYPE_PLAYER)->get();
+            return view('admin.admin',[
+                'doctors'   =>  $doctors,
+                'coachs'    =>  $coachs,
+                'users'     =>  $users
+            ]);
+        }else{
+            return 'Sorry, You Are Not Authorized To See This Page';
+        }
     }
 
     /**

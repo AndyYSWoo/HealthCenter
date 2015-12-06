@@ -296,7 +296,7 @@
                         </div>
                         <div class="col s7">
                             今日运动排名
-                            <div>第3名</div>
+                            <div>第4名</div>
                         </div>
                     </div>
                     

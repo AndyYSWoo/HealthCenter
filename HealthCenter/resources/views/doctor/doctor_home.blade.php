@@ -152,7 +152,7 @@
 			},
             defaultView: "agendaDay",
             height: 650,
-			defaultDate: '2015-02-12',
+			defaultDate: '2015-12-06',
             selectable: true,
 			selectHelper: true,
 			select: function(start, end) {

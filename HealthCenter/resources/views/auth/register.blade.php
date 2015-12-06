@@ -5,7 +5,7 @@
 	<title>Register</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="/css/font-awesome.css" rel="stylesheet" />
+	<link href="/custom-font/css/font-awesome.css" rel="stylesheet" />
 	<link href='http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600' rel='stylesheet'>
 	<style>
 		html{
@@ -41,9 +41,9 @@
 	
 	<div class="row">
 		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-1 col-md-offset-3 panel panel-default">
-			<form role="form" id="regform">
 				<h2>请提供注册信息 <small>First step towards a healthier life.</small></h2>
 				<hr class="colorgraph">
+				{!! Form::open(array('url' => "/auth/reg",'method' => 'POST')) !!}
 				<div class="form-group">
 					<div class="input-group">
 							<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
@@ -100,8 +100,8 @@
 							<div class="input-group">
 								<select class="form-control input-lg" name="gender" id="gender" tabindex="7">
 									<option value="none">性别</option>
-									<option value="m">♂</option>
-									<option value="f">♀</option>
+									<option value="1">♂</option>
+									<option value="2">♀</option>
 								</select>
 							</div>
 						</div>
@@ -110,7 +110,7 @@
 				<div class="form-group">
 					<div class="input-group">
 						<div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-						<input type="datetime-local" class="form-control input-lg" placeholder="生日" tabindex="8">
+						<input type="datetime-local" class="form-control input-lg" placeholder="生日" tabindex="8" name="birthday" id="birthday">
 					</div>
 				</div>
 				<div class="row">
@@ -133,18 +133,33 @@
 						</div>
 					</div>
 				</div>
+				{{ csrf_field() }}
+				{!! Form::close() !!}
 				<hr class="colorgraph">
 				<div class="row">
-					<div class="col-xs-6 col-md-6"><a class="btn btn-primary btn-block btn-lg" href="reg">注册</a></div>
+					<div class="col-xs-6 col-md-6"><a class="btn btn-primary btn-block btn-lg" onclick="reg()">注册</a></div>
 					<div class="col-xs-6 col-md-6"><a href="/auth/login" class="btn btn-success btn-block btn-lg">登录</a></div>
 				</div>
-			</form>
 		</div>
 	</div>
+	<script src="/js/jquery_min.js"></script>
 	<script src="/js/bootstrap.js"></script>
 	<script>
 		function reg(){
-			
+			if($('input#email').val().length == 0
+		 	 	||$('input#password').val().length == 0
+			  	||$('input#first_name').val().length == 0
+				||$('input#last_name').val().length == 0
+				||$('input#display_name').val().length == 0
+				||$('input#birthday').val().length == 0){
+				alert('请输入完整信息');
+				return;
+			}
+			if($('input#password').val()!=$('input#password_confirmation').val()){
+				alert('两次密码不一致');
+				return;
+			}
+			$('form').submit();
 		}
 	</script>
 </body>

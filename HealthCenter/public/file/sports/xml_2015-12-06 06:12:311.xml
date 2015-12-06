@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+    <sportsentry>
+        <type>1</type>
+        <value>3000</value>
+        <last_time>1800</last_time>
+        <calories>1000</calories>
+        <start_time>2015-12-06 12:00:00</start_time>
+    </sportsentry>
+    <sportsentry>
+        <type>1</type>
+        <value>5000</value>
+        <last_time>3000</last_time>
+        <calories>1500</calories>
+        <start_time>2015-12-06 20:00:00</start_time>
+    </sportsentry>
+</entries>

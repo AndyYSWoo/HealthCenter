@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\healthadvice;
 use App\healthentry;
+use App\sportsentry;
 class DataController extends Controller
 {
     /**
@@ -213,5 +214,26 @@ class DataController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getJsonData(){
+        $xdata      = Array();
+        $speeddata  = Array();
+        $elevationdata=Array();
+        $hrdata     = Array();
+        $all_run    =  sportsentry::where('user_id',Auth::user()->id)
+                        ->where('type',sportsentry::TYPE_RUN)
+                        ->orderBy('start_time')
+                        ->get();
+        foreach($all_run as $r){
+            array_push($speeddata,round($r->value,0));
+            array_push($elevationdata,round($r->last_time,0));
+            array_push($hrdata,round($r->calories,0));
+        }
+        $speed      = Array("name"=>"Distance","data"=>$speeddata,"unit"=>"m","type"=>"area","valueDecimals"=>1);
+        $elevation  = Array("name"=>"Time","data"=>$elevationdata,"unit"=>"s","type"=>"line","valueDecimals"=>0);
+        $hr         = Array("name"=>"Calories","data"=>$hrdata,"unit"=>"cal","type"=>"area","valueDecimals"=>0);
+        $datasets = Array($speed,$elevation,$hr);
+        $result = Array("xData"=>$xdata,"datasets" => $datasets);
+        return json_encode($result);
     }
 }

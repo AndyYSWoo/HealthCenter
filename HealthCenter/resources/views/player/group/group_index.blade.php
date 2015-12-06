@@ -137,11 +137,20 @@
 								</div>
 								<div class="row">
 									<div class="col s2" style="background-color:#ddd;text-align:center;margin-top:1%;">
-										{{ App\player_in_group::where('group_id',$group->id)->count() }} 人参与
+										<div id="cnt">
+										{{ App\player_in_group::where('group_id',$group->id)->count() }} 
+										</div>
+										人参与
 									</div>
+									@if($in == 0)
 									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;margin-left:2%;cursor:pointer;" onclick="joinGroup()">
 										我要参加
 									</div>
+									@else
+									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;margin-left:2%;cursor:pointer;">
+										已经参加
+									</div>									
+									@endif
 								</div>
 								</div>
 							</div>
@@ -172,32 +181,25 @@
 								<div id="modal1" class="modal" >
 								    <div class="modal-content" >
 								      <h4>小组发言</h4>
+										{!! Form::open(array('url' => "/player/post",'method' => 'POST')) !!}
+										<input type="text" name="group_id" style="display:none;" value="{{ $group->id }}">
 								      <div class="container" >
 								      	<div class="row">
 											<div class="col s2"style="padding-top:3%;text-align:right;"><b>标题</b></div>
 											<div class="input-field col s8 text" >
-												<input type="text" id="title">
+												<input type="text" id="title" name="title">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col s2" style="padding-top:4%;text-align:right;"><b>内容</b></div>
 											<div class="col s8 " style="padding-top:2%;">
 												<div class="input-field">
-													<textarea class="materialize-textarea" placeholder="写下想说的话..." id="content"></textarea>
+													<textarea class="materialize-textarea" placeholder="写下想说的话..." id="content" name="content"></textarea>
 												</div>
 											</div>						
 										</div>
-										<div class="row">
-											<div class="col s2" style="padding-top:3%;text-align:right;"><b>添加图片</b></div>
-											<div class="col s5">
-												<div class="file-field input-field" id="i_file">
-													<div class="blank">
-														<input type="file" id="f_path">
-															<img src="/img/icon_add.png"class="responsive-img" id="preview" style="weight:96px;height:96px;">
-													</div>
-												</div>
-											</div>
-										</div>
+										{{ csrf_field() }}
+										{!! Form::close() !!}
 								      </div>
 								    </div>
 								    <div class="divider" style="margin-top:-15px;"></div>
@@ -228,7 +230,11 @@
 									<tr>
 										<td><span style="cursor:pointer;" id="topicId"><a href="/player/post/{{ $post->id }}" style="color:black;">{{ $post->title }}</a></span></td>
 										<td>{{ $post->author->name }}</td>
+										@if($post->comments->count()!=0)
 										<td>{{ $post->comments->sortByDesc('created_at')->first()->created_at }}</td>
+										@else
+										<td>No Comment</td>
+										@endif
 						          	</tr>
 									@endforeach
 						        </tbody>
@@ -241,15 +247,26 @@
 
     
     <script type="text/javascript">
-    	var isJoin = false;
+		@if($in == 0)
+		var isJoin = false;
+		@else
+    	var isJoin = true;
+		@endif
     	function joinGroup(){
-    		if (!isJoin) {
-    			isJoin = true;
-    			var join = document.getElementById("join");
-    			join.innerHTML = "已参加";
-    		}else{
-    			$('#tipmodal2').openModal();
-    		};
+			$.ajax({
+				type    : "GET",
+				url     : "{{ "/player/group/".$group->id."/join" }}",
+				dataType: "JSON",
+				success :function(data){
+					var join = document.getElementById("join");
+					join.innerHTML = "已经参加";
+					var cnt = document.getElementById("cnt");
+					cnt.innerHTML = parseInt(cnt.innerHTML)+1;
+				},
+				error: function(e) {
+					console.log(e.responseText);
+				}
+			});
     	}
     	function sendTopic(){
     		if (isJoin) {
@@ -259,12 +276,7 @@
     		};
     	}
     	function confirmSend(){
-    		var text = document.getElementById("title");
-    		var content = document.getElementById("content");
-
-    		$('#modal1').closeModal();
-    		text.value = "";
-    		content.value = "";
+    		$('form').submit();
     	}
     	function cancelSend(){
     		$('#modal1').closeModal();

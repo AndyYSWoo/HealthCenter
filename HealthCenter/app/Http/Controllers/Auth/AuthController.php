@@ -105,6 +105,15 @@ class AuthController extends Controller
     }
     
     public function postReg(Request $request){
-        
+        $user = new User;
+        $user->email = $request->input('email');
+        $user->type = 1;
+        $user->password = bcrypt($request->input('password'));
+        $user->true_name = $request->input('last_name').' '.$request->input('first_name');
+        $user->name = $request->input('display_name');
+        $user->gender = $request->input('gender');
+        $user->birthday = $request->input('birthday');
+        $user->save();
+        return Redirect::to('/auth/login');
     }
 }

@@ -40,6 +40,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $post = new post;
+        $post->group_id = $request->input('group_id');
+        $post->author_id = Auth::user()->id;
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->photo = '/img/garen.jpg';
+        $post->save();
+        return Redirect::back();
     }
 
     /**
@@ -88,5 +96,13 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function comment(Request $request){
+        $comment = new postcomment;
+        $comment->post_id = $request->input('post_id');
+        $comment->player_id = Auth::user()->id;
+        $comment->content = $request->input('content');
+        $comment->save();
+        return Redirect::back();
     }
 }
