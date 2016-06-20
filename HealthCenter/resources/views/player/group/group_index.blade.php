@@ -143,11 +143,11 @@
 										人参与
 									</div>
 									@if($in == 0)
-									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;margin-left:2%;cursor:pointer;" onclick="joinGroup()">
+									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;padding-top:1.8%;margin-left:2%;cursor:pointer;height:32px" onclick="joinGroup()">
 										我要参加
 									</div>
 									@else
-									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;margin-left:2%;cursor:pointer;">
+									<div class="col s2" id="join" style="background-color:#ddd;text-align:center;margin-top:1%;padding-top:1.8%;margin-left:2%;cursor:pointer;height:32px">
 										已经参加
 									</div>									
 									@endif
@@ -161,7 +161,7 @@
 								<div class="col s3" style="font-size:1.25rem;color:#408eba;">
 									最近话题
 								</div>
-								<a class="modal-trigger sendBtn" href="#modal1" id="send" onclick="sendTopic()">
+								<a class="modal-trigger btn col s1  offset-s8" href="#modal1" id="send" onclick="sendTopic()">
 									发言
 								</a>
 								<div id="tipmodal1" class="modal tipmodal">

@@ -99,9 +99,9 @@
 								</div>
 								<div style="margin-top:3%;">
 									@if($join == 0)
-									<a id="join" class="waves-effect waves-light btn" style="color:white;height:36px;line-height: 24px;padding: 0 1rem;font-size:0.5rem;" onclick="join()">我要参加</a></div>
+									<a id="join" class="waves-effect waves-light btn" style="color:white;height:36px;width:78px;line-height: 24px;padding: 0 1rem;padding-top:2%;font-size:0.5rem;" onclick="join()">我要参加</a></div>
 									@else
-									<a id="join" class="waves-effect waves-light btn disabled" style="background-color:#ddd;color:black;height:36px;line-height: 24px;padding: 0 1rem;font-size:0.5rem;">已经参加</a></div>
+									<a id="join" class="waves-effect waves-light btn disabled" style="background-color:#ddd;color:black;height:36px;width:78px;line-height: 24px;padding: 0 1rem;padding-top:2%;font-size:0.5rem;">已经参加</a></div>
 									@endif
 								</div>
 								</div>

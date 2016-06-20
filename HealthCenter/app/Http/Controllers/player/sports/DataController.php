@@ -111,8 +111,8 @@ class DataController extends Controller
             $entry->start_time  = $request->input('date').' '.$request->input('s_h').':'.$request->input('s_m').':'.$request->input('s_s');
             $entry->save();
         }
-        return Redirect::back();
-        // return Redirect::to('/player/sports/data');
+//        return Redirect::back();
+         return Redirect::to('/player/sports/data');
     }
 
     /**

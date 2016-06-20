@@ -396,7 +396,7 @@
                           <a ><div style="font-size:0.75rem;color:grey;cursor:pointer;"onclick="addFriends(this)" id="add">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
-                          <img src="/img/user.jpg" alt="User Image">
+                          <img src="/img/user3.png" alt="User Image">
                           <a class="users-list-name" href="#">Norman</a>
                           <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
@@ -411,7 +411,7 @@
                           <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
-                          <img src="/img/user.jpg" alt="User Image">
+                          <img src="/img/user4.png" alt="User Image">
                           <a class="users-list-name" href="#">Alexander</a>
                           <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>

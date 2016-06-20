@@ -8,23 +8,51 @@
 		<link type="text/css" rel="stylesheet" href="/css/fullcalendar/fullcalendar.min.css"  media="screen,projection"/>  
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style type="text/css">
-			#header_img{
-				width:  50%;
-				padding-top: 5%;
-				padding-bottom: 5%;
-			}
-			#nav-mobile{
-				text-align: center;
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-                width: 12%;
-			}
-            nav{
-                background-color: rgb(30, 128,240);
+            #header_img{
+                width:  50%;
+                padding-top: 5%;
+                padding-bottom: 5%;
             }
-            .colorgraph {
-                height: 2px;
-                border-top: 0;
-                background: rgb(30, 128,240);
+            #header{
+                text-align: center;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+            }
+            .container{
+                width:90%
+            }
+            .side-nav{
+                background-color: white;
+                width: 16%;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+            }
+            .side-nav .collapsible-header{
+                background-color: transparent;
+                float: none;
+                padding: 0 15px;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                margin-left: 0px;
+            }
+            .side-nav li {
+                float: none;
+                padding: 0 15px;
+                border-bottom: 1 px;
+            }
+            .side-nav a {
+                color: #fff3e0;
+                display: block;
+                font-size: 1rem;
+                height: 48px;
+                line-height: 48px;
+                padding: 0 15px;
+            }
+            nav {
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+                background-color: #408eba;
+                /*background-color: cornflowerblue;*/
             }
             .waves-effect.waves-blue .waves-ripple {
                 background-color: rgba(30, 128,240,0.7);
@@ -46,17 +74,15 @@
 	<body>
        <header>
         <nav class="top-nav">
-            <div class="container">
-                <div class="nav-wrapper"><a class="page-title">欢迎您, 陈大夫</a></div>
-            </div>
+                <div class="nav-wrapper"><a class="page-title">Welcome, Dr. Chan</a></div>
         </nav>
         @include('layout.doctor_side');
     </header>
     
-    <div id="main" style="padding-left: 12%">
+    <div id="main" class="container" style="padding-left: 12%">
         <div class="row">
             <div class="col s12 l6 client">
-                <h5>客户列表</h5>
+                <h5>Clients</h5>
                 <ul class="collapsible" data-collapsible="expandable">
                     @foreach($clients as $client)
                         <li>
@@ -74,15 +100,15 @@
                                     </p>
                                     </div>
                                     <div class="card-action">
-                                        <a href="/doctor/playerhealth/{{ $client->id }}" style="color:#fff;">健康情况</a>
-                                        <a href="#" style="color:#fff;">运动情况</a>
+                                        <a href="/doctor/playerhealth/{{ $client->id }}" style="color:#fff;">Health</a>
+                                        <a href="#" style="color:#fff;">Sports</a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                     @endforeach
                 </ul>
-                <h5>申请队列</h5>          
+                <h5>Apply List</h5>
                 <ul class="collection">
                     @foreach($requests as $request)
                         <li class="collection-item avatar">
@@ -98,9 +124,9 @@
             </div>
             <div class="col s12 l6 personal">
                 <meta name="csrf-token" content="{{ csrf_token() }}" />
-                <h5>日程安排</h5>
+                <h5>Schedule</h5>
                 <div id="calendar">   </div>
-                <h5>客户日程请求</h5>
+                <h5>Requests</h5>
                 <hr class="colorgraph">
                 <div id="external-events">
                     @foreach($event_requests as $r)
@@ -117,7 +143,6 @@
     <script src="/js/materialize.js"></script>
     <script src="/js/fullcalendar/moment.min.js"></script>
     <script src="/js/fullcalendar/fullcalendar.min.js"></script>
-    <script src="/js/fullcalendar/zh-cn.js"></script>
     <script>
         $(document).ready(function() {
         $('#external-events .fc-event').each(function() {

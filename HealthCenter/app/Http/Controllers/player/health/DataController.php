@@ -229,9 +229,9 @@ class DataController extends Controller
             array_push($elevationdata,round($r->last_time,0));
             array_push($hrdata,round($r->calories,0));
         }
-        $speed      = Array("name"=>"Distance","data"=>$speeddata,"unit"=>"m","type"=>"area","valueDecimals"=>1);
-        $elevation  = Array("name"=>"Time","data"=>$elevationdata,"unit"=>"s","type"=>"line","valueDecimals"=>0);
-        $hr         = Array("name"=>"Calories","data"=>$hrdata,"unit"=>"cal","type"=>"area","valueDecimals"=>0);
+        $speed      = Array("name"=>"距离","data"=>$speeddata,"unit"=>"m","type"=>"area","valueDecimals"=>1);
+        $elevation  = Array("name"=>"时间","data"=>$elevationdata,"unit"=>"s","type"=>"line","valueDecimals"=>0);
+        $hr         = Array("name"=>"卡路里","data"=>$hrdata,"unit"=>"cal","type"=>"area","valueDecimals"=>0);
         $datasets = Array($speed,$elevation,$hr);
         $result = Array("xData"=>$xdata,"datasets" => $datasets);
         return json_encode($result);
