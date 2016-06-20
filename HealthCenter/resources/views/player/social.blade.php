@@ -208,9 +208,9 @@
         			朋友圈
         		</div>	
 			</div>
-			<div class="row">
+			<div class="row" style="width:81%;">
 			<div class="col s8">
-			<div class="container" style="margin-top:4%;">
+			<div class="" style="margin-top:4%;">
 				<div style="width:100%;background-color:white;">
 					<div class="row">
 						<div class="col s2" style="padding-top:3%;padding-right:0px;font-size:0.75rem;padding-left:4%;"><b>说些什么吧</b></div>
