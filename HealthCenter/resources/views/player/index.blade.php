@@ -22,11 +22,11 @@
             .container{
                 width:90%
             }
-            .side-nav{
+            /*.side-nav{
                 background-color: white;
                 width: 16%;
                 box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-            }
+            }*/
             .side-nav .collapsible-header{
                 background-color: transparent;
                 float: none;

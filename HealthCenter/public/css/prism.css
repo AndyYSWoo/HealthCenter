@@ -7067,9 +7067,15 @@ select {
     .side-nav.fixed.right-aligned {
       right: -105%;
       left: auto; } }
-
+/*
 .side-nav .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active {
-  background-color: #ee6e73; }
+  background-color: #ee6e73; }*/
+   .side-nav .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active {
+            background-color: #408eba; 
+            }
+       .logo-img{
+            width: 64%;
+            }    
   .side-nav .collapsible-body li.active a, .side-nav.fixed .collapsible-body li.active a {
     color: #fff; }
 

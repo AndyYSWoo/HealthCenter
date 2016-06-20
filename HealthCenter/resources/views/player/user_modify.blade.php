@@ -18,11 +18,11 @@
 				height: 24%;
 				box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 			}
-			.side-nav{
+			/*.side-nav{
 				background-color: white;
 				width: 16%;
 				box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
-			}
+			}*/
 			.side-nav .collapsible-header{
 				background-color: transparent;
 				float: none;
@@ -118,7 +118,7 @@
             <li class="bold"><a class="collapsible-header">体质数据</a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a  href="/player/sports/data">运动数据</a></li>
+                  <li><a href="/player/sports/data">运动数据</a></li>
                   <li><a href="/player/health/data">健康数据</a></li>
                 </ul>
               </div>
