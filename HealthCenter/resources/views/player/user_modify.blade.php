@@ -200,7 +200,7 @@
 						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
 						</div>
 						<div class="col s3" style="padding-top:2%;">
-						<a class="waves-effect waves-light btn" style="width:120px;">重置</a>
+						<a href="/player/{{ Auth::user()->id }}/edit" class="waves-effect waves-light btn" style="width:120px;">重置</a>
 						</div>
 					</div>
 				</div>

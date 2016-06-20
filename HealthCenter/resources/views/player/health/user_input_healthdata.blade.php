@@ -135,7 +135,7 @@
 					    <div id="byhand" class="col s12">
 							{!! Form::open(array('url' => "/player/health/data",'method' => 'POST')) !!}
 					    	<div class="row">
-								<div class="col s3"style="padding-top:3%;text-align:center;"><b>体温<b></div>
+								<div class="col s3"style="padding-top:3%;text-align:right;"><b>体温<b></div>
 								<div class="input-field col s4 text">
 									<input  type="number" id="temp" name="temp">
 								</div>
@@ -143,7 +143,7 @@
 							</div>
 							<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>心率<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>心率<b></div>
 						<div class="input-field col s4 text">
 							<input  type="number" id="hr" name="hr">
 						</div>
@@ -151,7 +151,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>身高<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>身高<b></div>
 						<div class="input-field col s4 text">
 							<input  type="number" id="height" name="height">
 						</div>
@@ -159,7 +159,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>体重<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>体重<b></div>
 						<div class="input-field col s4 text">
 							<input  type="number" id="weight" name="weight">
 						</div>
@@ -167,19 +167,19 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>血压<b></div>
+						<div class="col s3"style="padding-top:2%;text-align:right;"><b>血压<b></div>
 						<div class="input-field col s2 text">
-							<input  type="number" id="bph" name="bph">
+							<input  type="number" id="bph" name="bph" placeholder="高">
 						</div>
 						<div class="col s1" style="padding-top:2%;">/</div>
 						<div class="input-field col s2 text">
-							<input  type="number" id="bpl" name="bpl">
+							<input  type="number" id="bpl" name="bpl" placeholder="低">
 						</div>
-						<div class="col s3" style="padding-top:2%;font-size:1rem">mmHg</div>
+						<div class="col s1" style="padding-top:2%;font-size:1rem">mmHg</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>深度睡眠时间<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>深度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
 							<input  type="number" id="dh" name="dh">
 						</div>
@@ -194,7 +194,7 @@
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">s</div>
 					</div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>中度睡眠时间<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>中度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
 							<input  type="number" id="mh" name="mh">
 						</div>
@@ -209,7 +209,7 @@
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">s</div>
 					</div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>浅度睡眠时间<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>浅度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
 							<input  type="number" id="bh" name="bh">
 						</div>

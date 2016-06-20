@@ -1,6 +1,6 @@
 	<div class="side-nav fixed">
 	    <div id="header">
-			<img class="circle responsive-img" src="/img/user.jpg" id ="header_img">
+			<img class="circle responsive-img" src="/img/user1.jpg" id ="header_img">
 			<div>Nina Mcintire</div>
 		</div>
   			<ul class="collapsible" data-collapsible="accordion" style="color:black;">

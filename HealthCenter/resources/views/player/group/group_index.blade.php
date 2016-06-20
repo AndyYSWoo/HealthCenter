@@ -137,7 +137,7 @@
 								</div>
 								<div class="row">
 									<div class="col s2" style="background-color:#ddd;text-align:center;margin-top:1%;">
-										<div id="cnt">
+										<div id="cnt" style="font-size:1.25rem">
 										{{ App\player_in_group::where('group_id',$group->id)->count() }} 
 										</div>
 										人参与

@@ -208,7 +208,7 @@
 					<div style="font-size:1.25rem;padding:2%;">创建教练用户</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;text-align:center;"><b>头像</b></div>
+					<div class="col s3" style="padding-top:4%;text-align:right;"><b>头像</b></div>
 					<div class="col s8">
 						<div class="col s6">
 						<div class="file-field input-field" id="i_file">

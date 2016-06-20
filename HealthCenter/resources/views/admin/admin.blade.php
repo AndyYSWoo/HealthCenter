@@ -106,7 +106,7 @@
 			<div>
 				<div class="row">
 					<div class="col s4" style="text-align:center;padding:3%;">
-						<img src="/img/user.jpg" alt="img" class="circle responsive-img">
+						<img src="/img/user1.jpg" alt="img" class="circle responsive-img">
 						<div>Nina Mcintire</div>
 					</div>
 					<div class="col s7" style="padding-right:2%;">
