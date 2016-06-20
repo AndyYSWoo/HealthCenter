@@ -222,7 +222,7 @@
 							<div class="file-field input-field" id="i_file" style="margin-top:5%;width:32%;float:left;">
 								<div class="blank">
 									<input type="file" id="post_photo" name="post_photo">
-									<img src="/img/icon_add.png"class="responsive-img" id="preview">
+									<img src="/img/add_bkg.png"class="responsive-img" id="preview">
 								</div>
 							</div>
 						{{ csrf_field() }}

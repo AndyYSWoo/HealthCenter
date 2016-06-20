@@ -156,7 +156,7 @@
 								@if($activity->type == App\activity::TYPE_WORKOUT)
 									<div class="row">
 										<div class="col s5" style="text-align:center;">
-											<img style="height:120px;" src="{{ $activity->poster }}" alt="poster" class="responsive-img">
+											<img style="height:160px;width:160px;" src="{{ $activity->poster }}" alt="poster" class="responsive-img">
 										</div>
 										<div class="col s7" style="border-top:1px solid #ddd;color:grey;font-size:0.75rem;"> 
 											<div style="font-size:1.25rem;">
