@@ -140,7 +140,7 @@
 					<div class="col s3">
 						<div class="row" style="background-color:#c37d0e;">
 							<div class="col s4" style="padding-top:5%;text-align:center;">
-								<a style="color:white;"><i class="fa fa-glass fa-3x"></i></a>
+								<a style="color:white;"><i class="fa fa-tachometer fa-3x"></i></a>
 							</div>
 							<div class="col s8" style="background-color:#f39c12;color:white;">
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #c37d0e;">体重</div>

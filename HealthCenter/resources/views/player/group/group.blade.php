@@ -79,7 +79,7 @@
         				<div class="row">
         					<div class="col s3" style="font-size:1.75rem;padding-top:2%;">精选小组</div>
         					<div class="col s9" style="padding-top:2%;text-align:right;">
-								<a class="waves-effect waves-light btn" style="width:160px;color:white;height:36px;line-height: 24px;font-size:0.5rem;padding-top:1%;" href="/player/group/create">创建兴趣组</a>
+								<a class="waves-effect waves-light btn" style="color:white;" href="/player/group/create">创建兴趣组</a>
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 									{{ $group->description }} 
 								</div>
 								<div style="background-color:#ddd;width:18%;text-align:center;margin-top:1%;">
-									{{ App\player_in_group::where('group_id',$group->id)->count() }} 人参与
+									<b style="font-size:1.25rem">{{ App\player_in_group::where('group_id',$group->id)->count() }}</b> 人参与
 								</div>
 								</div>
 							</div>
