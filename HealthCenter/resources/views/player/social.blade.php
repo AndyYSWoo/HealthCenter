@@ -219,7 +219,7 @@
             <li class="bold"><a class="collapsible-header">体质数据</a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a  href="/player/sports/data">运动数据</a></li>
+                  <li><a href="/player/sports/data">运动数据</a></li>
                   <li><a href="/player/health/data">健康数据</a></li>
                 </ul>
               </div>

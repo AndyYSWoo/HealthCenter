@@ -263,7 +263,7 @@
 				<div>
 					<div class="row">
 						<div class="col s8">
-							<div id="check" style="background-color:white;border-top:2px solid #ddd;border-bottom:2px solid #ddd;">
+							<div id="check" style="padding:3%;background-color:white;border-top:2px solid #ddd;border-bottom:2px solid #ddd;">
 								<div style="padding:2%;font-size:1.25rem;">
 									运动时状况分析
 								</div>
