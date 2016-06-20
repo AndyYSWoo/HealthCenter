@@ -105,42 +105,39 @@
 		<div class="container" style="margin-top:4%;background-color:white;">
 			<div>
 				<div class="row">
-					<div class="col s5" style="text-align:center;padding:3%;">
+					<div class="col s4" style="text-align:center;padding:3%;">
 						<img src="/img/user.jpg" alt="img" class="circle responsive-img">
 						<div>Nina Mcintire</div>
 					</div>
 					<div class="col s7" style="padding-right:2%;">
-						<div>
         				<table class="centered bordered ">
-				        <thead>
-				          <tr>
-				              <th data-field="type"></th>
-				              <th data-field="count"></th>
-				          </tr>
-				        </thead>
-				        <tbody>
-				          <tr>
-				            <td>
-				            教练用户人数
-				            </td>
-				            <td>{{ $coachs->count() }}</td>
-				          </tr>
-				          <tr>
-				            <td>
-				            医生用户人数
-				            </td>
-				            <td>{{ $doctors->count() }}</td>
-				          </tr>
-				          <tr>
-				            <td>
-				            普通用户人数
-				            </td>
-				            <td>{{ $users->count() }}</td>
-				          </tr>
-				          
-				        </tbody>
+                            <thead>
+                                <tr>
+                                    <th data-field="type"></th>
+                                    <th data-field="count"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        教练用户人数
+                                    </td>
+                                    <td>{{ $coachs->count() }}</td>
+                                </tr>
+                            <tr>
+                                <td>
+                                医生用户人数
+                                </td>
+                                <td>{{ $doctors->count() }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                普通用户人数
+                                </td>
+                                <td>{{ $users->count() }}</td>
+                            </tr>
+                            </tbody>
 				      </table>
-        			</div>
 					</div>
 				</div>
 				<div class="divider"></div>

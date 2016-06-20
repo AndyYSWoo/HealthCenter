@@ -73,7 +73,7 @@ Route::group(['prefix'=> 'admin'],function(){
     Route::get('/create/coach','AdminController@getCoach');
 });
 
-Route::get('/', 'Auth\AuthController@getLogin');
+Route::resource('/', 'Auth\AuthController@getLogin');
 
 // 认证路由
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -81,3 +81,5 @@ Route::post('auth/login','Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register','Auth\AuthController@getReg');
 Route::post('auth/reg','Auth\AuthController@postReg');
+
+Route::resource('/rbac','Auth\RBACController');

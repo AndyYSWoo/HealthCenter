@@ -18,7 +18,9 @@ class AdminController extends Controller
     public function index()
     {
         //
-        if(Gate::allows('adminAuthed',Auth::user())){
+//        if(Gate::allows('adminAuthed',Auth::user())){
+        if(Auth::user()->may('display-admin-homepage')){
+//        if(Auth::user()->hasRole('admin')){
             $doctors = User::where('type',User::TYPE_DOCTOR)->get();
             $coachs = User::where('type',User::TYPE_COACH)->get();
             $users  = User::where('type',User::TYPE_PLAYER)->get();
