@@ -6,7 +6,8 @@
 		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
 		<link type="text/css" rel="stylesheet" href="/css/box.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link type="text/css" rel="stylesheet" href="/css/prism.css"  media="screen,projection"/>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		   <style type="text/css">
 		   #slide-out{
@@ -197,12 +198,88 @@
 				background-color:white;
 				margin-top:4%;
 			}
+            .modal{
+                width: 480px;
+                height:200px;
+            }
 		   </style>
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
-@include('layout.player_side')
-		<div style="padding-left: 16%;">
+		         <header>
+            <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
+            <ul id="nav-mobile" class="side-nav fixed">
+            <li class="logo">
+                <img src="{{ Auth::user()->portrait }}" class="logo-img responsive-img">
+            </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header" href="/player">首页</a>
+            </li>
+            <li class="bold"><a class="collapsible-header">体质数据</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a  href="/player/sports/data">运动数据</a></li>
+                  <li><a href="/player/health/data">健康数据</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header" href="/player/activity">活动</a></li>
+            <li class="bold"><a class="collapsible-header" href="/player/group">兴趣组</a>
+            </li>
+            <li class="bold"><a class="collapsible-header active" href="/player/social">朋友圈</a>
+              
+            </li>
+            <li class="bold"><a href="#!" class="collapsible-header">教练</a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="/player/coach/1" style="margin:0;"> <div  style="height:48px;">
+                                    <div style="padding-left:0%;padding-top:6px;">
+                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+                                        <img src="/img/user.jpg" class="responsive-img">
+                                    </div>
+                                    <div style="margin-left:30%;margin-top:-2%;">
+                                         Sarah Bullock
+                                    </div>
+                            		</div>
+									</div>
+								</a>
+                            </li>
+						</ul>
+					</div>
+				</li>
+				<li class="bold"><a href="#!"class="collapsible-header ">医生</a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="/player/doctor/3" style="margin:0;"><div style="height:48px;">
+                                    <div style="padding-left:0%;padding-top:6px;">
+                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+                                        <img src="/img/user1.jpg" class="responsive-img">
+                                    </div>
+                                    <div style="margin-left:30%;margin-top:-2%;">
+                                        Doctor
+                                    </div>
+									</div>
+                            </div></a></li>
+						</ul>
+					</div>
+				</li>
+                <li><a class="collapsible-header " href="/player/{{ Auth::user()->id }}/edit">个人资料</a></li>
+                <li class="bold"><a class="collapsible-header modal-trigger" onclick="logout()">退出</a></li>
+          </ul>
+        </li>
+        </header>
+        <div id="logoutTip" class="modal">
+            <div class="modal-content" style="text-align:center;">
+            <h4>确定要退出该账号？</h4>
+            </div>
+            <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn-flat" href="/auth/logout">确定</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+            </div>
+        </div>
+        <main>
+        <div style="">
 			<div class="topbar">
 				<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
         			朋友圈
@@ -478,8 +555,13 @@
 			</div>
 		</div>
 		</div>
-		
-	
+		</main>
+	    <script type="text/javascript">
+         $(".button-collapse").sideNav();
+            function logout(){
+                $("#logoutTip").openModal();
+            }
+        </script>
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		var isLike = false;
