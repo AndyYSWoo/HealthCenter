@@ -205,8 +205,8 @@
                                 </div>
 							</div>
                 <div>
-                    <div class="row">
-                        <div class="col s12">
+                    <div class="">
+                        <div class="">
                         <div class="comment">
                             <div style="padding:2%;font-size:1.25rem;">健康建议</div>
                             <div class="divider"></div>

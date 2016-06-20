@@ -5,6 +5,7 @@
 	<title>coach</title>
 	<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
 	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>  
+    <link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>  
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<script type="text/javascript" src="js/jquery_min.js"></script>
 	<style type="text/css">
@@ -18,11 +19,10 @@
 			height: 24%;
 			box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 		}
-		.side-nav{
-            background-color: white;
-            width: 16%;
-            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.18), 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+        .logo-img{
+            width: 64%;
         }
+
         .side-nav .collapsible-header{
             background-color: transparent;
             float: none;
@@ -45,6 +45,9 @@
             height: 48px;
             line-height: 48px;
             padding: 0 15px; 
+        }
+        .side-nav .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active {
+            background-color: #408eba; 
         }
 		.topbar{
 			background-color: #408eba;
@@ -109,89 +112,61 @@
 </head>
 <body>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<div class="side-nav fixed">
-             <div id="header"><img class="circle responsive-img" src="./img/image.jpg" id ="header_img"></div>
-  			<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-  				<li><a href="index.html">首页</a></li>
-				<li><a href="#!" class="collapsible-header">体质数据</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li>
-                                <a href="user_act.html" style="margin:0;"><div style="padding-left:10%;">运动数据</div></a>
-                            </li>
-                            <li>
-                                <a href="user_health.html" style="margin:0;"><div style="padding-left:10%;">健康数据</div></a>
-                            </li>
-                        </ul>
-                    </div>
+	
+        
+        <header>
+            <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
+            <ul id="nav-mobile" class="side-nav fixed">
+            <li class="logo">
+                <img src="./img/csc.jpg" class="logo-img responsive-img">
+            </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header">CSS</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="color.html">Color</a></li>
+                  <li><a href="grid.html">Grid</a></li>
+                  <li><a href="helpers.html">Helpers</a></li>
+                  <li><a href="media-css.html">Media</a></li>
+                  <li><a href="sass.html">Sass</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header active">Components</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li class="active"><a href="navbar.html">Navbar</a></li>
+                  <li><a href="pagination.html">Pagination</a></li>
+                  <li><a href="preloader.html">Preloader</a></li>
+                  <li><a href="coach_trainer.html" style="margin:0;"><div style="height:48px;">
+                        <div style="padding-left:0%;padding-top:6px;">
+                            <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+                            <img src="./img/user1.jpg" class="responsive-img">
+                        </div>
+                        <div style="margin-left:30%;margin-top:-2%;">
+                                Alexander Pierc
+                        </div>
+                        </div>
+                </div></a>
                 </li>
-				<li><a href="group_index.html">兴趣组</a>
-				<li><a href="#!"class="collapsible-header">好友</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a>
-                            </li>
-                            <li>
-                             <a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a>
-                            </li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!" class="collapsible-header">教练</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="coach.html" style="margin:0;"> <div  style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Sarah Bullock
-                                    </div>
-                            		</div>
-									</div>
-									</a></li>
-						</ul>
-					</div>
-				</li>
-				<li><a href="#!"class="collapsible-header ">医生</a>
-					<div class="collapsible-body">
-						<ul>
-							<li><a href="index.html" style="margin:0;"><div style="height:48px;">
-                                    <div style="padding-left:0%;padding-top:6px;">
-                                        <div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
-                                        <img src="user1.jpg" class="responsive-img">
-                                    </div>
-                                    <div style="margin-left:30%;margin-top:-2%;">
-                                         Alexander Pierc
-                                    </div>
-									</div>
-                            </div></a></li>
-						</ul>
-					</div>
-				</li>
-  			</ul>
-        </div>
-		<div style="padding-left:16%;">
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header">JavaScript</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                  <li><a href="dropdown.html">Dropdown</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        </header>
+        <main>
+		<div style="">
 			<div class="topbar">
 				
 			</div>
@@ -361,7 +336,9 @@
 				</div>
 			</div>
 			</div>
+        </main>
 		<script type="text/javascript">
+        $(".button-collapse").sideNav();
 			var isFollowed = false;
 			function follow(){
 				var btn = document.getElementById("follow");
