@@ -91,6 +91,10 @@
                 box-shadow: none;
                 background-color: #50b5ee;
             }
+            .modal{
+                width: 480px;
+                height:200px;
+            }
 		</style>
 	</head>
 	<body>
@@ -146,7 +150,8 @@
                                     </div>
                             		</div>
 									</div>
-									</a></li>
+								</a>
+                            </li>
 						</ul>
 					</div>
 				</li>
@@ -166,10 +171,20 @@
 						</ul>
 					</div>
 				</li>
+                <li class="bold"><a class="collapsible-header modal-trigger" onclick="logout()">退出</a></li>
           </ul>
         </li>
+        
         </header>
-       
+       <div id="logoutTip" class="modal">
+            <div class="modal-content" style="text-align:center;">
+            <h4>确定要退出该账号？</h4>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确定</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+            </div>
+        </div>
         <main>
 		<div style="">
 			<div class="topbar">
@@ -334,6 +349,11 @@
 					
 		</div>
         </main>
+        <script type="text/javascript">
+            function logout(){
+                $("#logoutTip").openModal();
+            }
+        </script>
 		<script type="text/javascript">
         
         $(".button-collapse").sideNav();

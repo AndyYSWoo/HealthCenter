@@ -151,7 +151,7 @@
 			}
 			.like{
 				background-color: #ddd;
-				width: 56px;
+				width: 72px;
 				height: 24px;
 				margin-left: 2%;
 				padding-right: 1%;
@@ -165,6 +165,7 @@
 			.comments{
 				background-color: #ddd;
 				height: 24px;
+                width: 180px;
 				margin-left: 15%;
 				text-align: center;
 				-moz-border-radius: 15px; 
@@ -256,12 +257,12 @@
 						</div>
 					</div>
 					<div class="like" style="padding-left:2%;padding-bottom:2%;float:left;">
-						<a id="likeIcon" style="color:black;font-size:0.75rem" onclick="changeIcon(this)"><i class="fa fa-thumbs-o-up" style="font-size:1rem;"></i>Like</a>
+						<a id="likeIcon" style="color:black;font-size:0.75rem" onclick="changeIcon(this)"><i class="fa fa-thumbs-o-up" style="font-size:1rem;"></i>Like(<b id="num">1</b>)</a>
 					</div>
 					<ul class="collapsible" data-collapsible="accordion">
 						<li>
 							<div class="collapsible-header comments">
-								<a style="color:black;font-size:0.75rem"><i class="fa fa-comments-o" style="font-size:1rem;"></i>Comments</a>
+								<a style="color:black;font-size:0.75rem"><i class="fa fa-comments-o" style="font-size:1rem;"></i>Comments(10)</a>
 							</div>
 							<div class="collapsible-body" >
 							<div style="margin-top:2%;background-color:#f7f7f7;" class="com{{ $feed->id }}">
@@ -392,47 +393,47 @@
                         <li>
                           <img src="/img/user1.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Alexander Pierce</a>
-                          <a ><div style="font-size:0.25rem;color:grey;cursor:pointer;"onclick="addFriends(this)" id="add">添加<i class="fa fa-plus"></i></div></a>
+                          <a ><div style="font-size:0.75rem;color:grey;cursor:pointer;"onclick="addFriends(this)" id="add">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Norman</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user2.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Jane</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user1.jpg" alt="User Image">
                           <a class="users-list-name" href="#">John</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Alexander</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user1.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Sarah</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user2.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Nora</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user1.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Nadia</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         <li>
                           <img src="/img/user1.jpg" alt="User Image">
                           <a class="users-list-name" href="#">Nadia</a>
-                          <a><div style="font-size:0.25rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
+                          <a><div style="font-size:0.75rem;color:grey;">添加<i class="fa fa-plus"></i></div></a>
                         </li>
                         
                       </ul>
@@ -484,9 +485,11 @@
 		var isLike = false;
 		function changeIcon(icon){
 			var icon = document.getElementById("icon.id");
+            var num = var num = parseInt(100*Math.random());
 			if(!isLike){
 				isLike = true;
 				document.getElementById("likeIcon").style.color = '#d13d3d';
+                 document.getElementById("num").innerHTML = num;
 			}else{
 				isLike = false;
 				document.getElementById("likeIcon").style.color = 'black';

@@ -84,6 +84,11 @@
 					        <li class="tab col s3"><a href="#fitness">健身</a></li>
 					      </ul>
 					    </div>
+                        <div class="col s3 offset-s1">
+                            <div style="text-align:right;padding-top:5%;padding-bottom:2%;">
+                                <a class="waves-effect waves-light btn" style="width:140px;color:white;height:36px;line-height: 24px;font-size:0.5rem;padding-top:4%;" href="/player/activity/create">创建新活动</a>
+                            </div>
+                        </div>
 					</div>
 					<div>
 						<div id="run" class="col s12">
@@ -177,9 +182,7 @@
 							@endforeach
 					    </div>
 					</div>
-					<div style="text-align:right;padding-bottom:2%;">
-						<a class="waves-effect waves-light btn" style="width:160px;color:white;height:36px;line-height: 24px;font-size:0.5rem;padding-top:1%;" href="/player/activity/create">创建新活动</a>
-					</div>
+					
         		</div>
         		<div class="col s4" style="padding:2%;margin-top:2%;border-left:1px solid #ddd;">
         			<div>

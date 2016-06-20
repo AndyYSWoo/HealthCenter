@@ -96,6 +96,10 @@
 				max-width: 100%;
 	  			height: auto;
 			}
+            .title-header{
+            margin-top: 3%;
+            text-align: right;
+            }
 	</style>
 </head>
 <body>
@@ -108,19 +112,19 @@
         	<div >
         		<div class="container" >
         			<div class="row" style="margin-top:4%;margin-left:6%;">
-						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
+						<div class="col s10 offset-s1" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
 					<div style="font-size:1.25rem;padding:2%;">发布活动</div>
 					<div class="divider"></div>
 					<form action="/player/activity" method="post" id="postform" enctype="multipart/form-data">
 					<div class="row">
-						<div class="col s3"style="padding-top:4%;"><b>活动名称<b></div>
+						<div class="col s3 title-header"><b>活动名称<b></div>
 						<div class="input-field col s8 text">
 							<input  type="text" id="name" name="name">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:4%;"><b>类型<b></div>
+						<div class="col s3 title-header"><b>类型<b></div>
 						<div class="input-field col s8 text">
 							<input name="group1" type="radio" id="type1" value = "1"/>
 							<label for="type1">跑步</label>
@@ -132,15 +136,15 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:4%;"><b>活动地点<b></div>
+						<div class="col s3 title-header"><b>活动地点<b></div>
 						<div class="input-field col s8 text">
 							<input  type="text" id="place" name="place">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;"><b>活动详情</b></div>
-					<div class="col s8 " style="padding-top:2%;">
+					<div class="col s3 title-header"><b>活动详情</b></div>
+					<div class="col s8 " style="padding-top:1%;">
 						<div class="input-field">
 							<textarea class="materialize-textarea" id="description" name="desc"></textarea>
 						</div>
@@ -148,7 +152,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3" style="padding-top:3%;">活动海报</div>
+						<div class="col s3 title-header" >活动海报</div>
 						<div class="col s8">
 							<div class="col s8">
 							<div class="file-field input-field" id="i_file">
@@ -162,26 +166,26 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3" style="padding-top:3%;">
+						<div class="col s3 title-header">
 							活动日期
 						</div>
 						
-						<div class="input-field col s8">
+						<div style="padding-top:1%;" class="input-field col s8">
 							<div class="row">
                             <div class="col s6"><input type="date" class="datepicker"placeholder="选择日期" id="date" name="date"></div>
                             <div class="col s4">
                             </div>
                             </div>
                         </div>
-						<div class="col s3"style="padding-top:4%;"><b>活动时间<b></div>
+						<div class="col s3 title-header"><b>活动时间<b></div>
 						<div class="input-field col s8 text">
 							<input  type="text" id="time" name="time">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;"><b>联系方式</b></div>
-					<div class="col s8 " style="padding-top:2%;">
+					<div class="col s3 title-header"><b>联系方式</b></div>
+					<div class="col s8 " style="padding-top:1%;">
 						<div class="input-field">
 							<textarea class="materialize-textarea" id="contact" name="contact"></textarea>
 						</div>

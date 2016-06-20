@@ -119,7 +119,7 @@
 						<div class="col s4">
 						<div class="row" style="background-color:#1a9abe;">
 							<div class="col s4" style="padding-top:8%;text-align:center;">
-								<a style="color:white;"><i class="fa fa-tags fa-3x"></i></a>
+								<a style="color:white;"><i class="fa fa-paw fa-3x"></i></a>
 							</div>
 							<div class="col s8" style="background-color:#20c1ed;color:white;">
 								<div class="row" style="border-bottom:2px solid #1a9abe;margin-top:3%;">

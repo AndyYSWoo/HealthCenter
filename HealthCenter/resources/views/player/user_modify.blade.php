@@ -106,8 +106,8 @@
         		
         	</div>
         	<div class="container" >
-        			<div class="row" style="margin-top:4%;margin-left:6%;">
-						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
+        			<div class="row" style="margin-top:4%;">
+						<div class="col s8 offset-s2" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
 					<div style="font-size:1.25rem;padding:2%;">个人信息修改</div>
 					<div class="divider"></div>
 					<div class="row">
@@ -200,7 +200,7 @@
 						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
 						</div>
 						<div class="col s3" style="padding-top:2%;">
-						<a class="waves-effect waves-light btn" style="width:120px;">取消</a>
+						<a class="waves-effect waves-light btn" style="width:120px;">重置</a>
 						</div>
 					</div>
 				</div>

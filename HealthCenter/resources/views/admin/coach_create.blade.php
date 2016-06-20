@@ -196,17 +196,19 @@
 <body>
 @include('layout.admin_side')
 	    <div style="padding-left:16%">
-	    	<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+	    	<div class="topbar">
+        		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
         			管理员
         		</div>
+        	</div>
 	    	<div>
 	    		<div class="container" >
-        			<div class="row" style="margin-top:4%;margin-left:6%;">
-						<div class="col s7" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
+        			<div class="row" style="margin-top:4%;">
+						<div class="col s8 offset-s2" style="z-index:999;border-top:2px solid #408eba;background-color:white;">
 					<div style="font-size:1.25rem;padding:2%;">创建教练用户</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;text-align:center;">头像</div>
+					<div class="col s3" style="padding-top:4%;text-align:center;"><b>头像</b></div>
 					<div class="col s8">
 						<div class="col s6">
 						<div class="file-field input-field" id="i_file">
@@ -220,35 +222,35 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>昵称<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>昵称<b></div>
 						<div class="input-field col s5 text">
 							<input  type="text">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>邮箱<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>邮箱<b></div>
 						<div class="input-field col s5 text">
 							<input  type="email" id="mailaddr">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>密码<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>密码<b></div>
 						<div class="input-field col s5 text">
 							<input  type="password" id="newPassword1">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>确认密码<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>确认密码<b></div>
 						<div class="input-field col s5 text">
 							<input  type="password" id="newPassword2">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;text-align:center;"><b>个人简介</b></div>
+					<div class="col s3" style="padding-top:4%;text-align:right;"><b>个人简介</b></div>
 					<div class="col s8 " style="padding-bottom:1%;">
 						<div class="input-field">
 							<textarea class="materialize-textarea"></textarea>
@@ -257,7 +259,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>地点<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>地点<b></div>
 						<div class="input-field col s3 text">
 							<select id="province">
 								<option>江苏</option>
@@ -272,7 +274,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>训练方向<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>训练方向<b></div>
 						<div class="col s8" id="trainTip" style="margin-top:4%;"></div>
 					</div>
 					<div class="divider"></div>
@@ -286,7 +288,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-					<div class="col s3" style="padding-top:4%;text-align:center;"><b>个人签名</b></div>
+					<div class="col s3" style="padding-top:4%;text-align:right;"><b>个人签名</b></div>
 					<div class="col s8 " style="padding-bottom:1%;">
 						<div class="input-field">
 							<textarea class="materialize-textarea"></textarea>
@@ -295,7 +297,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>评级<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>评级<b></div>
 						<div class="input-field col s3 text">
 							<select id="level">
 								<option>初级教练</option>
@@ -308,10 +310,10 @@
 					
 					<div class="row">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
-						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
+						<a class="waves-effect waves-light btn" style="width:120px;display:none;" >确定</a>
 						</div>
 						<div class="col s3" style="padding-top:2%;">
-						<a class="waves-effect waves-light btn" style="width:120px;">取消</a>
+						<a class="waves-effect waves-light btn" style="width:120px;" onclick="checkValid()">确定</a>
 						</div>
 					</div>
 				</div>
