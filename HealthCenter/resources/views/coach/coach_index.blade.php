@@ -5,7 +5,8 @@
 		<title>coach</title>
 		<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/> 
-		<link type="text/css" rel="stylesheet" href="/css/index.css"> 
+		<link type="text/css" rel="stylesheet" href="/css/index.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		<style type="text/css">
@@ -143,24 +144,67 @@
 			background-color: #408eba;
 			height: 56px;
 		}
+		.modal{
+			width: 480px;
+			height:200px;
+		}
 		</style>
 	</head>
 	<body>
-@include('layout.coach_side')		
-		<div style="padding-left:16%;">
-			<!--<nav>
-			<div class="nav-wrapper" style="margin-right:0%;">
-				<ul class="right hide-on-med-and-down" >
-				<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="fa fa-envelope-o"></i></a></li>
-				</ul>
+		<header>
+			<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
+			<ul id="nav-mobile" class="side-nav fixed">
+				<li class="logo">
+					<img src="/img/user.jpg" class="logo-img responsive-img">
+				</li>
+				<li class="no-padding">
+					<ul class="collapsible" data-collapsible="accordion" style="color:black;">
+						<li class="side-title active"><a href="/coach">首页</a></li>
+						<li class="side-title"><a href="/coach/coach_train">发布训练</a></li>
+						<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
+							<div class="collapsible-body">
+								<ul>
+									<li><a href="/coach/trainer" style="margin:0;"> <div  style="height:48px;">
+												<div style="padding-left:0%;padding-top:6px;">
+													<div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+														<img src="/img/user.jpg" class="responsive-img">
+													</div>
+													<div style="margin-left:30%;margin-top:-2%;">
+														Sarah Bullock
+													</div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li> <a href="/coach/trainer" style="margin:0;"><div style="height:48px;">
+												<div style="padding-left:0%;padding-top:6px;">
+													<div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+														<img src="/img/user1.jpg" class="responsive-img">
+													</div>
+													<div style="margin-left:30%;margin-top:-2%;">
+														Alexander Pierc
+													</div>
+												</div>
+											</div></a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="side-title"><a class="collapsible-header modal-trigger waves-effect waves-blue" onclick="logout()">退出</a></li>
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<div id="logoutTip" class="modal">
+			<div class="modal-content" style="text-align:center;">
+				<h4>Log out your account?</h4>
 			</div>
-			</nav>
-			<ul id="dropdown1" class="dropdown-content" style="margin-top:64px;">
-			<li><a href="#!">one</a></li>
-			<li><a href="#!">two</a></li>
-			<li class="divider"></li>
-			<li><a href="#!">three</a></li>
-			</ul>-->
+			<div class="modal-footer">
+				<a href="/auth/logout" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+			</div>
+		</div>
+		<div style="padding-left:16%;">
 			<div class="topbar"></div>
 			<div>
 				<div class="row" style="margin-top:5%;">
@@ -422,8 +466,14 @@
 		</div>
 		</div>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
+		<script type="text/javascript">
+			function logout(){
+				$("#logoutTip").openModal();
+			}
+		</script>
 		<script>
 			$(".dropdown-button").dropdown();
 	    </script>
+
 	</body>
 </html>

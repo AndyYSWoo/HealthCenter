@@ -6,6 +6,7 @@
 		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
 		<link type="text/css" rel="stylesheet" href="/css/animate/animate.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		
@@ -123,12 +124,67 @@
 				 height: 400px;
 				 overflow: auto;
 			}
-
+			.modal{
+				width: 480px;
+				height:200px;
+			}
 		</style>
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
-@include('layout.coach_side');
+		<header>
+			<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
+			<ul id="nav-mobile" class="side-nav fixed">
+				<li class="logo">
+					<img src="/img/user.jpg" class="logo-img responsive-img">
+				</li>
+				<li class="no-padding">
+					<ul class="collapsible" data-collapsible="accordion" style="color:black;">
+						<li class="side-title "><a href="/coach">首页</a></li>
+						<li class="side-title active"><a href="/coach/coach_train">发布训练</a></li>
+						<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
+							<div class="collapsible-body">
+								<ul>
+									<li><a href="/coach/trainer" style="margin:0;"> <div  style="height:48px;">
+												<div style="padding-left:0%;padding-top:6px;">
+													<div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+														<img src="/img/user.jpg" class="responsive-img">
+													</div>
+													<div style="margin-left:30%;margin-top:-2%;">
+														Sarah Bullock
+													</div>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li> <a href="/coach/trainer" style="margin:0;"><div style="height:48px;">
+												<div style="padding-left:0%;padding-top:6px;">
+													<div style="width:36px;height:36px;border-radius:50%; overflow:hidden;float:left;">
+														<img src="/img/user1.jpg" class="responsive-img">
+													</div>
+													<div style="margin-left:30%;margin-top:-2%;">
+														Alexander Pierc
+													</div>
+												</div>
+											</div></a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="side-title"><a class="collapsible-header modal-trigger waves-effect waves-blue" onclick="logout()">退出</a></li>
+					</ul>
+				</li>
+			</ul>
+		</header>
+		<div id="logoutTip" class="modal">
+			<div class="modal-content" style="text-align:center;">
+				<h4>Log out your account?</h4>
+			</div>
+			<div class="modal-footer">
+				<a href="/auth/logout" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+			</div>
+		</div>
 		<div style="padding-left:16%;">
 			<div class="topbar"></div>
 			

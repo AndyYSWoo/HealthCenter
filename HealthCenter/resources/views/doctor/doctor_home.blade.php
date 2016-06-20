@@ -5,7 +5,8 @@
 		<title>Doctor Home</title>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>  
-		<link type="text/css" rel="stylesheet" href="/css/fullcalendar/fullcalendar.min.css"  media="screen,projection"/>  
+		<link type="text/css" rel="stylesheet" href="/css/fullcalendar/fullcalendar.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style type="text/css">
             #header_img{
@@ -68,18 +69,58 @@
                 margin: 10px 0;
                 cursor: pointer;
             }
-            
+            .modal{
+                width: 480px;
+                height:200px;
+            }
 		</style>
 	</head>
 	<body>
        <header>
-        <nav class="top-nav">
-                <div class="nav-wrapper"><a class="page-title">Welcome, Dr. Chan</a></div>
-        </nav>
-        @include('layout.doctor_side');
-    </header>
-    
+            <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
+            <ul id="nav-mobile" class="side-nav fixed">
+                <li class="logo">
+                    <img src="/img/cmp.jpg" class="logo-img responsive-img">
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li><a href="/doctor" class="collapsible-header active">Home</a></li>
+                        <li><a href="#!" class="collapsible-header  waves-effect waves-blue">Queries<span class="badge">2</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>Query1</li>
+                                    <li>Query2</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#!" class="collapsible-header  waves-effect waves-blue">Users</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>Mr.Chan</li>
+                                    <li>Ms.Gao</li>
+                                    <li>Mrs.Zhao</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a class="collapsible-header modal-trigger waves-effect waves-blue" onclick="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+       </header>
+       <div id="logoutTip" class="modal">
+           <div class="modal-content" style="text-align:center;">
+               <h4>Log out your account?</h4>
+           </div>
+           <div class="modal-footer">
+               <a href="/auth/logout" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+               <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+           </div>
+       </div>
+
     <div id="main" class="container" style="padding-left: 12%">
+        <div class="topbar">
+
+        </div>
         <div class="row">
             <div class="col s12 l6 client">
                 <h5>Clients</h5>
@@ -137,13 +178,19 @@
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="/js/jquery_min.js"></script>
     <script src="/js/fullcalendar/jquery-ui.custom.min.js"></script>
     <script src="/js/highcharts/highcharts.js"></script>
-    <script src="/js/materialize.js"></script>
+    <script src="/js/materialize.min.js"></script>
     <script src="/js/fullcalendar/moment.min.js"></script>
     <script src="/js/fullcalendar/fullcalendar.min.js"></script>
-    <script>
+   <script type="text/javascript">
+       function logout(){
+           $("#logoutTip").openModal();
+       }
+   </script>
+       <script>
         $(document).ready(function() {
         $('#external-events .fc-event').each(function() {
 			// store data so the calendar knows to render an event upon drop
