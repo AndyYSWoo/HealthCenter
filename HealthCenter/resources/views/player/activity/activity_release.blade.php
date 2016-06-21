@@ -166,7 +166,7 @@
 						</ul>
 					</div>
 				</li>
-                <li><a class="collapsible-header " href="/player/{{ Auth::user()->id }}/edit">个人资料</a></li>
+                <li class="bold"><a class="collapsible-header " href="/player/{{ Auth::user()->id }}/edit">个人资料</a></li>
                 <li class="bold"><a class="collapsible-header modal-trigger" onclick="logout()">退出</a></li>
           </ul>
         </li>
