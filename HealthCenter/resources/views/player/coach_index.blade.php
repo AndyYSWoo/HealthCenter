@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>coach</title>
-		<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
+		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/> 
 		<link type="text/css" rel="stylesheet" href="/css/index.css"> 
 		<link type="text/css" rel="stylesheet" href="/css/prism.css"  media="screen,projection"/>  
@@ -245,7 +245,7 @@
 					<div class="profile">
 					<div style="text-align:center">
 					<div >
-						<img src="/img/user.jpg" class="circle responsive-img">
+						<img src="./img/user.jpg" class="circle responsive-img">
 					</div>
 					<div style="font-size:2rem;">Nina Mcintire</div>
 					<div style="color:grey;">健身教练</div>
@@ -270,12 +270,7 @@
 					</div>
 					<div class="divider"></div>
 					<div style="margin-top:5%;margin-bottom:5%;">
-					  <div style="float:left;">
-						评级
-					</div>
-					<div style="text-align:right;">
-						专业教练
-					</div>
+					<a class="waves-effect waves-light btn" style="width:100%;" id="follow" onclick="follow()">关注</a>
 					</div>
 				</div>
 				
@@ -434,7 +429,7 @@
 				</ul> 
 				 </div>
 				 <!--comment-->
-				 <div class="comment">
+				 <div class="comment" id="list">
 					 <div style="padding:2%;font-size:1.25rem;">留言</div>
 					 <div class="divider"></div>
 					 <div class="comment-content">
@@ -479,7 +474,10 @@
 						</div>
 					<div class="divider" style="margin-top:1%;"></div>
 				</div>
-				<div>
+				
+				 
+				</div>
+                <div style="background-color:white;margin-right:2%;padding-bottom:2%;border-left:1px solid #ddd;border-right:1px solid #ddd;">
 					<div class="row">
 					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
 						<img class="responsive-img" src="/img/user.jpg">
@@ -488,11 +486,9 @@
 					<textarea id="textarea1" class="materialize-textarea"></textarea>
 					</div>
 					<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-1.25%;padding-left:78%;">
-						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
+						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;" onclick="sendAdvice()">发送</a></div>
 				</div>
 				 </div>
-				 
-				</div>
 			</div>
 		
 		</div>
@@ -501,6 +497,19 @@
         </main>
         <script type="text/javascript">
          $(".button-collapse").sideNav();
+         var isFollowed = false;
+			function follow(){
+				var btn = document.getElementById("follow");
+				if(!isFollowed){
+					isFollowed = true;
+
+					setTimeout(function(){
+						btn.innerHTML = "已关注";
+						btn.className = "btn disabled";
+					},500);
+					
+				}
+			}
             function logout(){
                 $("#logoutTip").openModal();
             }
@@ -509,5 +518,30 @@
 		<script>
 			$(".dropdown-button").dropdown();
 	    </script>
+        <script type="text/javascript">
+			function sendAdvice(){
+				var advice = document.getElementById("textarea1");
+				var myDate = new Date();
+				var mytime=myDate.toLocaleString();
+				var newAdvice = "";
+				newAdvice += "<div class=\"comment-content\">";
+				newAdvice += "<div class=\"row\">";
+				newAdvice += "<div style=\"width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;\">";
+				newAdvice += "<img class=\"responsive-img\" src=\"./img/user.jpg\"></div>";
+				newAdvice += "<div class=\"test\"style=\"padding-left:10%;\">";
+				newAdvice += "<div style=\"float:left;\">";
+				newAdvice += "Nina Mcintire";
+				newAdvice += "</div><div style=\"text-align:right;padding-right:2%;padding-top:1%;color:grey;font-size:0.75rem;\">";
+				newAdvice += mytime;
+				newAdvice += "</div></div></div><div style=\"margin-left:10%;margin-top:-4%;font-size:0.75rem;\">";
+				newAdvice += advice.value;
+				newAdvice += "</div><div style=\"text-align:right;margin-top:-10px;padding-right:2%;\">";
+				newAdvice += "<a style=\"color:black;\">回复</a></div>";
+				newAdvice += "<div class=\"divider\" style=\"margin-top:1%;\"></div></div>";
+				var list = document.getElementById("list");
+				list.innerHTML = list.innerHTML + newAdvice;
+				advice.value = "";
+			}
+		</script>
 	</body>
 </html>

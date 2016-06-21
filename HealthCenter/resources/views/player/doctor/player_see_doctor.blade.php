@@ -256,8 +256,8 @@
                         <p>陈茂蓬教授从事游泳健康事业二十余年，对溺水、肌肉控制无力等症状的诊断治疗拥有丰富经验。</p>
                         </div>
                         <div class="card-action">
-                        <a class="btn darkblue" style="background-color:#00a7d0; color:#fff;">关注</a>
-                        <a class="btn darkblue" style="background-color:#00a7d0; color:#fff;">问诊</a>
+                        <a class="btn darkblue" style="background-color:#00a7d0; color:#fff;" id="follow" onclick="follow()">关注</a>
+                        <a class="btn darkblue modal-trigger" style="background-color:#00a7d0; color:#fff;" onclick="send()">问诊</a>
                         </div>
                     </div>
                     <hr>
@@ -327,16 +327,43 @@
                     </ul>
                 </div>
             </div>
-            
+    <div id="modal1" class="modal" style="height:270px;">
+    <div class="modal-content">
+      <h4>问题描述</h4>
+      <div class="input-field col s8">
+        <textarea id="field2" class="materialize-textarea"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">发送</a>
+    </div>
+  </div>
+  
         </div>
         </main>
         <script type="text/javascript">
+         var isFollowed = false;
+			function follow(){
+				var btn = document.getElementById("follow");
+				if(!isFollowed){
+					isFollowed = true;
+
+					setTimeout(function(){
+						btn.innerHTML = "已关注";
+						btn.className = "btn disabled";
+					},500);
+					
+				}
+			}
+        function send(){
+            $("#modal1").openModal();
+        }
         $(".button-collapse").sideNav();
             function logout(){
                 $("#logoutTip").openModal();
             }
         </script>
         <script type="text/javascript" src="/js/jquery_min.js"></script>
-        <script type="text/javascript" src="/js/materialize.js"></script>
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
 	</body>
 </html>
