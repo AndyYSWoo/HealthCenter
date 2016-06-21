@@ -104,12 +104,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player_see_doctor.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="player_see_doctor.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/player/doctor/player_see_doctor.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="596">
-              <caret line="339" column="63" selection-start-line="339" selection-start-column="63" selection-end-line="339" selection-end-column="63" />
-              <folding />
+              <caret line="366" column="63" selection-start-line="366" selection-start-column="63" selection-end-line="366" selection-end-column="63" />
+              <folding>
+                <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coach_index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/player/coach_index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
+              <folding>
+                <marker date="1466508598000" expanded="true" signature="18197:18281" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18412:18429" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18466:18477" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18554:18632" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18712:18761" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18835:18886" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="18921:18933" ph="..." />
+                <marker date="1466508598000" expanded="true" signature="19000:19014" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +183,7 @@
         <option value="$PROJECT_DIR$/resources/views/player/health/user_health.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/player/social.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/player/doctor/player_see_doctor.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/player/coach_index.blade.php" />
       </list>
     </option>
   </component>
@@ -265,32 +288,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="player" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthCenter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthCenter" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="player" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doctor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,12 +485,12 @@
       <workItem from="1464621575500" duration="966000" />
       <workItem from="1464623190226" duration="11884000" />
       <workItem from="1465979828333" duration="33000" />
-      <workItem from="1466403085925" duration="12824000" />
+      <workItem from="1466403085925" duration="13168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38544000" />
+    <option name="totallyTimeSpent" value="38888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="128" y="23" width="1280" height="873" extended-state="0" />
@@ -537,13 +534,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RBACController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/AdminPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -974,8 +964,28 @@
     <entry file="file://$PROJECT_DIR$/resources/views/player/doctor/player_see_doctor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
-          <caret line="339" column="63" selection-start-line="339" selection-start-column="63" selection-end-line="339" selection-end-column="63" />
-          <folding />
+          <caret line="366" column="63" selection-start-line="366" selection-start-column="63" selection-end-line="366" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/player/coach_index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
+          <folding>
+            <marker date="1466508598000" expanded="true" signature="18197:18281" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18412:18429" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18466:18477" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18554:18632" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18712:18761" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18835:18886" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="18921:18933" ph="..." />
+            <marker date="1466508598000" expanded="true" signature="19000:19014" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

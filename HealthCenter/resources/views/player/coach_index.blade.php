@@ -245,7 +245,7 @@
 					<div class="profile">
 					<div style="text-align:center">
 					<div >
-						<img src="./img/user.jpg" class="circle responsive-img">
+						<img src="/img/user.jpg" class="circle responsive-img">
 					</div>
 					<div style="font-size:2rem;">Nina Mcintire</div>
 					<div style="color:grey;">健身教练</div>
@@ -480,7 +480,7 @@
                 <div style="background-color:white;margin-right:2%;padding-bottom:2%;border-left:1px solid #ddd;border-right:1px solid #ddd;">
 					<div class="row">
 					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
-						<img class="responsive-img" src="/img/user.jpg">
+						<img class="responsive-img" src="/img/user1.jpg">
 					</div>
 					<div class="input-field col s8">
 					<textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -527,7 +527,7 @@
 				newAdvice += "<div class=\"comment-content\">";
 				newAdvice += "<div class=\"row\">";
 				newAdvice += "<div style=\"width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;\">";
-				newAdvice += "<img class=\"responsive-img\" src=\"./img/user.jpg\"></div>";
+				newAdvice += "<img class=\"responsive-img\" src=\"/img/user1.jpg\"></div>";
 				newAdvice += "<div class=\"test\"style=\"padding-left:10%;\">";
 				newAdvice += "<div style=\"float:left;\">";
 				newAdvice += "Nina Mcintire";
