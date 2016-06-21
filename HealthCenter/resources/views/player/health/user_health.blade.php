@@ -208,7 +208,7 @@
 							</div>
 							<div class="col s8" style="background-color:#20c1ed;color:white;">
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #1a9abe;">身高</div>
-								<div style="font-size:2rem;"><b>{{ $last_height->value }}</b><a style="color:white;font-size:0.75rem;">cm</a>
+								<div style="font-size:2rem;"><b>{{ $last_height==null?0:$last_height->value }}</b><a style="color:white;font-size:0.75rem;">cm</a>
 								<a style="color:white;margin-left:10%;font-size:1rem;"><i class="fa fa-pencil"></i></a>
 								</div>
 							</div>
@@ -221,7 +221,7 @@
 							</div>
 							<div class="col s8" style="background-color:#f39c12;color:white;">
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #c37d0e;">体重</div>
-								<div style="font-size:2rem;"><b>{{ $last_weight->value }}</b><a style="color:white;font-size:0.75rem;">kg</a>
+								<div style="font-size:2rem;"><b>{{ $last_weight == null?0:$last_weight->value }}</b><a style="color:white;font-size:0.75rem;">kg</a>
 								<a style="color:white;margin-left:10%;font-size:1rem;"><i class="fa fa-pencil"></i></a>
 								</div>
 							</div>
@@ -236,7 +236,7 @@
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #13844a;">血压</div>
 								<div class="row" style="margin-bottom:0px;">
 									<div class="col s8"style="padding-left:0;">
-									<div style="font-size:2rem;">{{ round($last_bp->value,0) }}/{{ round($last_bp->value2,0) }}</div>
+									<div style="font-size:2rem;">{{ round($last_bp==null?0:$last_bp->value,0) }}/{{ round($last_bp==null?0:$last_bp->value2,0) }}</div>
 								</div>
 								<div class="col s4" style="padding-bottom:0;">
 									<a style="color:white;font-size:.75rem;">mmHg</a>
@@ -252,7 +252,7 @@
 							</div>
 							<div class="col s8" style="background-color:#db4c3f;color:white;">
 								<div style="margin-top:4%;font-size:1rem;border-bottom:1px solid #af3d32;">心率</div>
-								<div style="font-size:2rem;"><b>{{ round($last_hr->value,0) }}</b><a style="color:white;font-size:0.75rem;">次/分</a>
+								<div style="font-size:2rem;"><b>{{ round($last_hr==null?0:$last_hr->value,0) }}</b><a style="color:white;font-size:0.75rem;">次/分</a>
 								<a style="color:white;margin-left:10%;font-size:1rem;"><i class="fa fa-pencil"></i></a>
 								</div>
 							</div>
@@ -325,7 +325,7 @@
 								</div>
 								<div class="col s6">
 								<div style="font-size:0.75rem;color:green;"><a style="color:green"><i class="fa fa-angle-up"></i></a> 5%</div>
-								<div style="font-size:1.25rem;"><b>{{ $last_weight->value }} KG</b></div>
+								<div style="font-size:1.25rem;"><b>{{ $last_weight==null?0:$last_weight->value }} KG</b></div>
 								</div>
 							</div>
 								</div>
@@ -348,7 +348,7 @@
 		<script type="text/javascript">
 $(function () {
     var g = [];
-    var y = [{{ $last_height->value }},{{ $last_weight->value }},{{ $last_bp->value }},{{ $last_bp->value2 }},{{ $last_hr->value }}];
+    var y = [{{ $last_height==null?0:$last_height->value }},{{ $last_weight==null?0:$last_weight->value }},{{ $last_bp==null?0:$last_bp->value }},{{ $last_bp==null?0:$last_bp->value2 }},{{ $last_hr==null?0:$last_hr->value }}];
     var a = [];
     @for($i =0 ;$i<5;++$i)
         g.push({{ $goods[$i] }});

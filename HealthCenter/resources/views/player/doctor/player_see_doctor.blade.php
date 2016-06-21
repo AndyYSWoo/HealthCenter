@@ -212,7 +212,7 @@
             </div>
         </div>
         <main>	
-		<div  style="">
+		<div  style="" class="container">
 			<div class="row">
                 <div class="col s12">
                     <div class="box box-widget widget-user animated fadeInDown">
@@ -337,6 +337,6 @@
             }
         </script>
         <script type="text/javascript" src="/js/jquery_min.js"></script>
-        <script type="text/javascript" src="/js/materialize.js"></script>
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
 	</body>
 </html>

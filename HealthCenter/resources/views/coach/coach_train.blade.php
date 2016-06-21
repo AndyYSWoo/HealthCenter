@@ -255,6 +255,8 @@
 						</div>
 					</div>
 					</div>
+
+
 				</div>
 				<div class="col s5 add-train" id="add">
 					<div style="border-top:2px solid #408eba;background-color:white;">

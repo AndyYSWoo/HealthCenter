@@ -39,7 +39,7 @@
 		<div class="row">
 			<div class="col-md-4 col-md-offset-8 panel panel-default">
 				
-				<h1 class="margin-base-vertical">Have a healthy day</h1>
+				<h1 class="margin-base-vertical">iHMWA</h1>
 			
 				<p>
 					Thank you, 	
