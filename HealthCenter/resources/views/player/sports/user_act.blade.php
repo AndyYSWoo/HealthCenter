@@ -68,6 +68,14 @@
 				padding-top:2%;
 				background-color: white;
 			}
+            .comment{
+                margin-top:2%;
+                padding-bottom:1%;
+                border-top:2px solid #408eba;
+                border-left:1px solid #ddd;
+                border-right:1px solid #ddd;
+                background-color: white;
+            }
 			input[type=text],input[type=email],input[type=password],input[type=number]{
 				border: 2px solid #ddd;
 				padding: 2%;
@@ -110,7 +118,6 @@
 	</head>
 	<body>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
-@include('layout.player_side')
 <header>
             <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="fa fa-navicon"></i></a></div>
             <ul id="nav-mobile" class="side-nav fixed">
@@ -402,7 +409,52 @@
 					<div class="row">
 						<div class="col s9">
 							<div style="background-color:white;padding-bottom:3%;">
-								<div class="comment-content">
+                                
+                                  <div class="comment" id="list">
+                                <div style="padding:2%;font-size:1.25rem;">教练建议</div>
+                                <div class="divider"></div>
+                                <div class="comment-content">
+                                    <div class="row">
+                                        <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+                                        <img class="responsive-img" src="/img/user1.jpg">
+                                        </div>
+                                        <div class="test"style="padding-left:10%;">
+                                            <div style="float:left;">
+                                                Alexander Pierce
+                                            </div>
+                                            <div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
+                                                2015/11/11 11:11:11
+                                            </div>
+                                        </div>	
+                                    </div>
+                                    <div style="margin-left:10%;margin-top:-6%;font-size:0.75rem;"><br>有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+                                    <div style="text-align:right;margin-top:-0px;padding-right:2%;">
+                                        <a style="color:black;">回复</a>
+                                    </div>
+                                    <div class="divider" style="margin-top:1%;"></div>
+                                </div>
+				                <div class="comment-content">
+                                    <div class="row">
+                                        <div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
+                                        <img class="responsive-img" src="/img/user1.jpg">
+                                        </div>
+                                        <div class="test"style="padding-left:10%;">
+                                            <div style="float:left;">
+                                                Alexander Pierce
+                                            </div>
+                                            <div style="text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;">
+                                                2015/11/11 11:11:11
+                                            </div>
+                                        </div>	
+                                    </div>
+                                    <div style="margin-left:10%;margin-top:-6%;font-size:0.75rem;"><br>有啊，很多年前，我后面跟了十几亿人，要不是我腿快，现在就没我了。</div>
+                                    <div style="text-align:right;margin-top:-0px;padding-right:2%;">
+                                        <a style="color:black;">回复</a>
+                                    </div>
+                                    <div class="divider" style="margin-top:1%;"></div>
+                                </div>
+						        </div>
+								<!--<div class="comment-content">
 									<div class="row">
 										<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;">
 											<img class="responsive-img" src="/img/user1.jpg">
@@ -421,7 +473,7 @@
 										<a style="color:black;cursor:pointer;"onclick="reply(this)">回复</a>
 									</div>
 									<div class="divider" style="margin-top:1%;"></div>
-								</div>
+								</div>-->
 
 								<div class="row">
 								<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
@@ -431,7 +483,7 @@
 									<textarea id="textarea1" class="materialize-textarea"></textarea>
 								</div>
 								<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-1.25%;padding-left:78%;">
-									<a onclick="send()" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
+									<a onclick="sendAdvice()" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
 								</div>
 
 							</div>
@@ -443,6 +495,31 @@
 			</div>
 		</div>
         </main>
+        <script type="text/javascript">
+			function sendAdvice(){
+				var advice = document.getElementById("textarea1");
+				var myDate = new Date();
+				var mytime=myDate.toLocaleString();
+				var newAdvice = "";
+				newAdvice += "<div class=\"comment-content\">";
+				newAdvice += "<div class=\"row\">";
+				newAdvice += "<div style=\"width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;\">";
+				newAdvice += "<img class=\"responsive-img\" src=\"./img/user.jpg\"></div>";
+				newAdvice += "<div class=\"test\"style=\"padding-left:10%;\">";
+				newAdvice += "<div style=\"float:left;\">";
+				newAdvice += "Nina Mcintire";
+				newAdvice += "</div><div style=\"text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;\">";
+				newAdvice += mytime;
+				newAdvice += "</div></div></div><div style=\"margin-left:10%;margin-top:-4%;font-size:0.75rem;\">";
+				newAdvice += advice.value;
+				newAdvice += "</div><div style=\"text-align:right;margin-top:-10px;padding-right:2%;\">";
+				newAdvice += "<a style=\"color:black;\">回复</a></div>";
+				newAdvice += "<div class=\"divider\" style=\"margin-top:1%;\"></div></div>";
+				var list = document.getElementById("list");
+				list.innerHTML = list.innerHTML + newAdvice;
+				advice.value = "";
+			}
+		</script>
          <script type="text/javascript">
          $(".button-collapse").sideNav();
             function logout(){

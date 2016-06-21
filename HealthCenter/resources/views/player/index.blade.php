@@ -405,7 +405,7 @@
           <div>
 					<div class="row">
 						<div class="col s12">
-					       <div class="comment">
+					       <div class="comment" id="field1list">
                                 <div style="padding:2%;font-size:1.25rem;">教练建议</div>
                                 <div class="divider"></div>
                                 <div class="comment-content">
@@ -449,20 +449,21 @@
 						</div>
 					<div class="divider" style="margin-top:1%;"></div>
 				</div>
-				<div>
+				
+				 
+						</div>
+                    <div style="background-color:white;padding-bottom:2%;border-left:1px solid #ddd;border-right:1px solid #ddd;">
 					<div class="row">
 					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
 						<img class="responsive-img" src="/img/user.jpg">
 					</div>
 					<div class="input-field col s8">
-					<textarea id="textarea1" class="materialize-textarea"></textarea>
+					<textarea id="field1" class="materialize-textarea"></textarea>
 					</div>
 					<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-2%;padding-left:80%;">
-						<a class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;">发送</a></div>
+						<a id="field1send" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;" onclick="sendAdvice(this)">发送</a></div>
 				</div>
 				 </div>
-				 
-						</div>
 					    </div>
 					</div>
 				</div>
@@ -523,7 +524,7 @@
                 <div>
                       <div class="row">
 						<div class="col s12">
-					    <div class="comment">
+					    <div class="comment" id="field2list">
                         <div style="padding:2%;font-size:1.25rem;">医生建议</div>
                         <div class="divider"></div>
                        @foreach($health_advices as $health_advice)
@@ -547,20 +548,53 @@
                         </div>
                     @endforeach
 						</div>
+                        <div style="background-color:white;padding-bottom:2%;border-left:1px solid #ddd;border-right:1px solid #ddd;">
+					<div class="row">
+					<div style="width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;margin-top:1.75%;">
+						<img class="responsive-img" src="/img/user.jpg">
+					</div>
+					<div class="input-field col s8">
+					<textarea id="field2" class="materialize-textarea"></textarea>
+					</div>
+					<div class="col s4" style="width:100%;font-size:0.75rem;margin-top:-2%;padding-left:80%;">
+						<a id="field2send" class="waves-effect waves-light btn" style="color:white;height:24px;line-height: 24px;padding: 0 1rem;" onclick="sendAdvice(this)">发送</a></div>
+				</div>
+				 </div>
 					    </div>
 					</div>
                     </div>
 			</div>
 			</div>	
-            
-           
 		</div>
-			
-		
 		</div>
-		
 		</div>
         </main>
+        <script type="text/javascript">
+			function sendAdvice(element){
+                var id = element.id.substring(0,6);
+				var advice = document.getElementById(id);
+				var myDate = new Date();
+				var mytime=myDate.toLocaleString();
+				var newAdvice = "";
+				newAdvice += "<div class=\"comment-content\">";
+				newAdvice += "<div class=\"row\">";
+				newAdvice += "<div style=\"width:36px; height:36px;float:left;border-radius:50%;overflow:hidden;margin-left:4%;\">";
+				newAdvice += "<img class=\"responsive-img\" src=\"./img/user.jpg\"></div>";
+				newAdvice += "<div class=\"test\"style=\"padding-left:15%;\">";
+				newAdvice += "<div style=\"float:left;\">";
+				newAdvice += "Nina Mcintire";
+				newAdvice += "</div><div style=\"text-align:right;padding-right:4%;padding-top:1%;color:grey;font-size:0.75rem;\">";
+				newAdvice += mytime;
+				newAdvice += "</div></div></div><div style=\"margin-left:15%;margin-top:-4%;font-size:0.75rem;\">";
+				newAdvice += advice.value;
+				newAdvice += "</div><div style=\"text-align:right;margin-top:-10px;padding-right:2%;\">";
+				newAdvice += "<a style=\"color:black;\">回复</a></div>";
+				newAdvice += "<div class=\"divider\" style=\"margin-top:1%;\"></div></div>";
+				var list = document.getElementById(id+"list");
+				list.innerHTML = list.innerHTML + newAdvice;
+				advice.value = "";
+			}
+		</script>
         <script type="text/javascript">
          $(".button-collapse").sideNav();
             function logout(){
