@@ -308,6 +308,11 @@
 			
 		</div>
 		<script type="text/javascript">
+			function logout(){
+				$("#logoutTip").openModal();
+			}
+		</script>
+		<script type="text/javascript">
 			  var filePath;
 			  var uploadFile = new Array();
 			  var uploadText = new Array();
@@ -336,7 +341,7 @@
 					subTrain += "</div></div></div>";
 					trainingList.innerHTML = trainingList.innerHTML + subTrain;
 					var img = document.getElementById("preview");
-					img.setAttribute("src","./img/icon_add.png");
+					img.setAttribute("src","/img/icon_add.png");
 					document.getElementById("add").className='col s5 animated slideOutRight';
 					uploadFile.push(filePath);
 					uploadText.push(trainDetail);

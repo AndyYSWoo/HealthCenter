@@ -169,7 +169,7 @@
         </li>
         </header>
         <div id="logoutTip" class="modal">
-            <div class="modal-content" style="text-align:center;">
+            <div class="modal-content" style="text-align:right;">
             <h4>确定要退出该账号？</h4>
             </div>
             <div class="modal-footer">
@@ -189,7 +189,7 @@
 					<div class="divider"></div>
 					<div class="row">
 					{!! Form::open(array('url' => "/player/".Auth::user()->id,'files' => true,'method' => 'put')) !!}
-					<div class="col s3" style="padding-top:4%;text-align:center;">头像</div>
+					<div class="col s3" style="padding-top:4%;text-align:right;">头像</div>
 					<div class="col s8">
 						<div class="col s6">
 						<div class="file-field input-field" id="i_file">
@@ -203,35 +203,35 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>昵称<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>昵称<b></div>
 						<div class="input-field col s5 text">
 							<input  type="text" name="name" value="{{ $user->name }}">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>邮箱<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>邮箱<b></div>
 						<div class="input-field col s5 text">
 							<input  type="email" id="mailaddr" name="email" value="{{ $user->email }}">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>密码<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>密码<b></div>
 						<div class="input-field col s5 text">
 							<input  type="password" id="newPassword1" name="password">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;"><b>确认密码<b></div>
+						<div class="col s3"style="padding-top:3%;text-align:right;"><b>确认密码<b></div>
 						<div class="input-field col s5 text">
 							<input  type="password" id="newPassword2">
 						</div>
 					</div>
 					<div class="divider"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
+						<div class="col s3"style="padding-top:3%;text-align:right;">
 						<div><b>身高</b></div>
 						</div>
 						<div class="input-field col s3 text" >
@@ -251,7 +251,7 @@
 					</div>
 					<div class="divider" style="margin-top:-20px;"></div>
 					<div class="row">
-						<div class="col s3"style="padding-top:3%;text-align:center;">
+						<div class="col s3"style="padding-top:3%;text-align:right;">
 						<div><b>体重</b></div>
 						</div>
 						<div class="input-field col s3 text">

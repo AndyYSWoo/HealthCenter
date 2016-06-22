@@ -212,7 +212,7 @@
 					    <div id="byhand" class="col s12">
 							{!! Form::open(array('url' => "/player/health/data",'method' => 'POST')) !!}
 					    	<div class="row">
-								<div class="col s3"style="padding-top:3%;text-align:right;"><b>体温<b></div>
+								<div class="col s3"style="padding-top:3%;text-align:right;"><b>体温</b></div>
 								<div class="input-field col s4 text">
 									<input onblur="ready()" type="number" id="temp" name="temp">
 								</div>

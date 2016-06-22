@@ -163,7 +163,7 @@
 					    </div>
                         <div class="col s3 offset-s1">
                             <div style="text-align:right;padding-top:5%;padding-bottom:2%;">
-                                <a class="waves-effect waves-light btn" style="width:140px;color:white;height:36px;line-height: 24px;font-size:0.5rem;padding-top:4%;" href="/player/activity/create">创建新活动</a>
+                                <a class="waves-effect waves-light btn" style="width:140px;color:white;height:36px;line-height: 24px;font-size:1rem;padding-top:4%;" href="/player/activity/create">创建新活动</a>
                             </div>
                         </div>
 					</div>
