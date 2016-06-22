@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>coach</title>
-		<link type="text/css" rel="stylesheet" href="custom-font/css/font-awesome.css">
+		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/> 
 		<link type="text/css" rel="stylesheet" href="/css/index.css">
-		<link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="/css/prism.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		<style type="text/css">
@@ -232,7 +232,7 @@
 						已发教程
 					</div>
 					<div style="text-align:right;">
-						23
+						3
 					</div>
 					</div>
 					<div class="divider"></div>
@@ -296,10 +296,10 @@
 					<li>
 						<i class="fa fa-fire"></i>
 						<div class="timeline-item">
-							<span class="time"><i class="fa fa-clock-o"></i>2015/9/01 20:03:12</span>
-							<h3 class="timeline-header">全身训练</h3>
+							<span class="time"><i class="fa fa-clock-o"></i>2016/6/22 14:03:12</span>
+							<h3 class="timeline-header">起跳训练</h3>
 							<div class="timeline-body">
-								全身锻炼可以锻炼到全身各个部位，此锻炼总会让你满意
+								
 								<div>
 									<div class="row" style="margin-top:2%;padding-top:1%;width:64%;background-color:#ddd;margin-left:0%;">
 										<div class="col s4">
@@ -314,12 +314,12 @@
 								</div>
 								<div>
 									<div style="float:left;font-size:0.75rem;color:grey;margin-top:.5%;margin-right:1%;">
-										共有932位学员参加了训练
+										共有0位学员参加了训练
 									</div>
 									<div>
-										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
+										<!--<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
 									    <img src="/img/user1.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
-										...
+										...-->
 									</div>
 								</div>
 							</div>
@@ -349,7 +349,7 @@
 								</div>
 								<div>
 									<div style="float:left;font-size:0.75rem;color:grey;margin-top:.5%;margin-right:1%;">
-										共有932位学员参加了训练
+										共有92位学员参加了训练
 									</div>
 									<div>
 										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
@@ -366,7 +366,7 @@
 					<li>
 						<i class="fa fa-fire"></i>
 						<div class="timeline-item">
-							<span class="time"><i class="fa fa-clock-o"></i>2015/9/01 20:03:12</span>
+							<span class="time"><i class="fa fa-clock-o"></i>2015/4/01 15:23:12</span>
 							<h3 class="timeline-header">全身训练</h3>
 							<div class="timeline-body">
 								全身锻炼可以锻炼到全身各个部位，此锻炼总会让你满意
@@ -384,7 +384,7 @@
 								</div>
 								<div>
 									<div style="float:left;font-size:0.75rem;color:grey;margin-top:.5%;margin-right:1%;">
-										共有932位学员参加了训练
+										共有32位学员参加了训练
 									</div>
 									<div>
 										<img src="/img/user.jpg" class="circle responsive-img" style="width:24px;height:24px;margin-right:1%;">
