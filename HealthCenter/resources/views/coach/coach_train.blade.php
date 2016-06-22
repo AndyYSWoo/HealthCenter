@@ -301,7 +301,7 @@
                 <h4>确定发布该训练?</h4>
                 </div>
                 <div class="modal-footer">
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确定</a>
+                <a href="/coach" class=" modal-action modal-close waves-effect waves-green btn-flat">确定</a>
                 <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">取消</a>
                 </div>
             </div>
