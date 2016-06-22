@@ -6,7 +6,7 @@
 		<link type="text/css" rel="stylesheet" href="/custom-font/css/font-awesome.css">
 		<link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>  
 		<link type="text/css" rel="stylesheet" href="/css/animate/animate.min.css">
-		<link type="text/css" rel="stylesheet" href="css/prism.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="/css/prism.css"  media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<script type="text/javascript" src="/js/jquery_min.js"></script>
 		

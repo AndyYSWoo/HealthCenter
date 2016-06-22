@@ -214,7 +214,7 @@
 					    	<div class="row">
 								<div class="col s3"style="padding-top:3%;text-align:right;"><b>体温<b></div>
 								<div class="input-field col s4 text">
-									<input  type="number" id="temp" name="temp">
+									<input onblur="ready()" type="number" id="temp" name="temp">
 								</div>
 								<div class="col s2" style="padding-top:2%;font-size:1.25rem;">&#8451</div>
 							</div>
@@ -222,7 +222,7 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>心率<b></div>
 						<div class="input-field col s4 text">
-							<input  type="number" id="hr" name="hr">
+							<input onblur="ready()" type="number" id="hr" name="hr">
 						</div>
 						<div class="col s2" style="font-size:1.25rem;padding-top:2%;">次/分</div>
 					</div>
@@ -230,7 +230,7 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>身高<b></div>
 						<div class="input-field col s4 text">
-							<input  type="number" id="height" name="height">
+							<input onblur="ready()" type="number" id="height" name="height">
 						</div>
 						<div class="col s2" style="font-size:1.25rem;padding-top:2%;">cm</div>
 					</div>
@@ -238,7 +238,7 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>体重<b></div>
 						<div class="input-field col s4 text">
-							<input  type="number" id="weight" name="weight">
+							<input onblur="ready()" type="number" id="weight" name="weight">
 						</div>
 						<div class="col s2" style="font-size:1.25rem;padding-top:2%;">kg</div>
 					</div>
@@ -246,11 +246,11 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:2%;text-align:right;"><b>血压<b></div>
 						<div class="input-field col s2 text">
-							<input  type="number" id="bph" name="bph" placeholder="高">
+							<input onblur="ready()" type="number" id="bph" name="bph" placeholder="高">
 						</div>
 						<div class="col s1" style="padding-top:2%;">/</div>
 						<div class="input-field col s2 text">
-							<input  type="number" id="bpl" name="bpl" placeholder="低">
+							<input onblur="ready()" type="number" id="bpl" name="bpl" placeholder="低">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1rem">mmHg</div>
 					</div>
@@ -258,45 +258,45 @@
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>深度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="dh" name="dh">
+							<input onblur="ready()" type="number" id="dh" name="dh">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">h</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="dm" name="dm">
+							<input onblur="ready()" type="number" id="dm" name="dm">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">m</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="ds" name="ds">
+							<input onblur="ready()" type="number" id="ds" name="ds">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">s</div>
 					</div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>中度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="mh" name="mh">
+							<input onblur="ready()" type="number" id="mh" name="mh">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">h</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="mm" name="mm">
+							<input onblur="ready()" type="number" id="mm" name="mm">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">m</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="ms" name="ms">
+							<input onblur="ready()" type="number" id="ms" name="ms">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">s</div>
 					</div>
 					<div class="row">
 						<div class="col s3"style="padding-top:3%;text-align:right;"><b>浅度睡眠时间<b></div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="bh" name="bh">
+							<input onblur="ready()" type="number" id="bh" name="bh">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">h</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="bm" name="bm">
+							<input onblur="ready()" type="number" id="bm" name="bm">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">m</div>
 						<div class="input-field col s1 text" style="padding-top:1%">
-							<input  type="number" id="bs" name="bs">
+							<input onblur="ready()" type="number" id="bs" name="bs">
 						</div>
 						<div class="col s1" style="padding-top:2%;font-size:1.25rem;">s</div>
 					</div>
@@ -321,7 +321,7 @@
 					    </div>
 					    <div class="row">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;padding-top:2%;">
-						<a class="waves-effect waves-light btn" style="width:120px;" onclick="sub()">确定</a>
+						<a id="sendBtn" class="waves-effect waves-light btn disabled" style="width:120px;" onclick="sub()">确定</a>
 						</div>
 						<div class="col s3" style="padding-top:2%;">
 						<a class="waves-effect waves-light btn" style="width:120px;" href="/player/health/data">取消</a>
@@ -338,6 +338,31 @@
             function logout(){
                 $("#logoutTip").openModal();
             }
+            function ready(){
+             
+             if($('input#up_file').val().length ==0){
+                 if($('input#temp').val().length 		==0 
+				 &&$('input#height').val().length 	==0
+				 &&$('input#weight').val().length 	==0
+				 &&$('input#bph').val().length 		==0
+				 &&$('input#bpl').val().length 		==0
+				 &&$('input#dh').val().length 		==0
+				 &&$('input#hr').val().length 		==0
+				 &&$('input#dm').val().length 		==0
+				 &&$('input#ds').val().length 		==0
+				 &&$('input#mh').val().length 		==0
+				 &&$('input#mm').val().length 		==0
+				 &&$('input#ms').val().length 		==0
+				 &&$('input#bh').val().length 		==0
+				 &&$('input#bm').val().length 		==0
+				 &&$('input#bs').val().length 		==0
+				){
+                    
+                }else{
+                    document.getElementById("sendBtn").className = 'waves-effect waves-light btn';
+                }
+             }
+         }
         </script>
 	<script type="text/javascript" src="/js/jquery_min.js"></script>	
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
