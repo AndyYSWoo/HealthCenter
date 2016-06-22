@@ -158,10 +158,10 @@
 					<img src="/img/user.jpg" class="logo-img responsive-img">
 				</li>
 				<li class="no-padding">
-					<ul class="collapsible" data-collapsible="accordion" style="color:black;">
-						<li class="side-title active"><a href="/coach">首页</a></li>
-						<li class="side-title"><a href="/coach/coach_train">发布训练</a></li>
-						<li class="side-title"><a href="#!"class="collapsible-header">学员</a>
+					<ul class="collapsible collapsible-accordion" data-collapsible="accordion" style="color:black;">
+						<li class="active"><a href="/coach">首页</a></li>
+						<li class=""><a href="/coach/coach_train">发布训练</a></li>
+						<li class=""><a href="#!"class="collapsible-header">学员</a>
 							<div class="collapsible-body">
 								<ul>
 									<li><a href="/coach/trainer" style="margin:0;"> <div  style="height:48px;">
@@ -190,7 +190,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="side-title"><a class="collapsible-header modal-trigger waves-effect waves-blue" onclick="logout()">退出</a></li>
+						<li class=""><a class="collapsible-header modal-trigger waves-effect waves-blue" onclick="logout()">退出</a></li>
 					</ul>
 				</li>
 			</ul>
