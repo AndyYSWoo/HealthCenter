@@ -128,6 +128,10 @@
 				width: 480px;
 				height:200px;
 			}
+            #modal1{
+                height: 200px;
+                width: 360px;
+            }
 		</style>
 	</head>
 	<body>
@@ -208,7 +212,7 @@
 					</div>
 					<div class="divider"></div>
 					<div class="row trainlist" id="trainingList">
-						<div class="col s4">
+						<!--<div class="col s4">
 								  <div class="train-content">
 									  <div style="text-align:center;">
 										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
@@ -217,8 +221,8 @@
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
 								  
-						 </div>
-						 <div class="col s4">
+						 </div>-->
+						 <!--<div class="col s4">
 							 <div class="train-content">
 									  <div style="text-align:center;">
 										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
@@ -226,8 +230,8 @@
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
-						 </div>
-						 <div class="col s4">
+						 </div>-->
+						 <!--<div class="col s4">
 							 <div class="train-content">
 									  <div style="text-align:center;">
 										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
@@ -235,8 +239,8 @@
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
-						 </div>
-						 <div class="col s4">
+						 </div>-->
+						 <!--<div class="col s4">
 						 	<div class="train-content">
 									  <div style="text-align:center;">
 										  <img src="/img/train1.jpg" style="width:48%;height:48%;" class="responsive-img">
@@ -244,14 +248,14 @@
 									  <div style="text-align:center;">开合跳</div>
 									  <div style="font-size:0.75rem;">双脚并立，手臂放于两侧。然后开跳，着地时双脚稍比肩宽，同时霜比在头上拍手，最后跳回原处。</div>
 								  </div>
-						 </div>
+						 </div>-->
 					</div>
-					<div class="row">
+					<div class="row" style="padding-bottom:3%;">
 						<div class="col s3 offset-s5" style="margin-bottom:3%;margin-right:3%;">
-						<a class="waves-effect waves-light btn" onclick="release()">发布</a>
+						<a class="waves-effect waves-light btn" style="display:none;">发布</a>
 						</div>
 						<div class="col s3">
-						<a class="waves-effect waves-light btn" >取消</a>
+						<a class="waves-effect waves-light btn" onclick="release()">发布</a>
 						</div>
 					</div>
 					</div>
@@ -292,7 +296,15 @@
 					</div>
 				</div>
 			</div>
-			
+			<div id="modal1" class="modal">
+                <div class="modal-content" style="text-align:center;">
+                <h4>确定发布该训练?</h4>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确定</a>
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+                </div>
+            </div>
 			
 		</div>
 		<script type="text/javascript">
@@ -332,13 +344,14 @@
 				
 			}
 			function release(){
+                $('#modal1').openModal();
 				var title = document.getElementById("trainTitle");
 				var list  = document.getElementById("trainingList");
 				var numOfTrain = $('#trainingList').children().length;
 				if (title.value!="") {
 					for(var i = 0; i < uploadFile.length;i++){
-						alert(uploadFile[i]);
-						alert(uploadText[i]);
+						// alert(uploadFile[i]);
+						// alert(uploadText[i]);
 					}
 				}else{
 					alert("请输入训练名称");
