@@ -195,6 +195,9 @@
         <main>
 		<div style="">
 			<div class="topbar">
+                <div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+                    健康信息
+                </div>
                 <div class="uploadBtn" style="float:right;margin-right:4%;">
                     <a style="color:white;" href="/player/health/data/create"><i class="fa fa-download" style="padding:0 1rem;"></i>数据导入</a>
                 </div>

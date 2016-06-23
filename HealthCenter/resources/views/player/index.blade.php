@@ -347,6 +347,9 @@
         <main>
         <div style="">
 		<nav>
+            <div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        	首页
+        	</div>
 	   </nav>
 			
 		<div class="container">

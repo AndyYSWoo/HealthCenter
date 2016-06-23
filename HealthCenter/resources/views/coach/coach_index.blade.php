@@ -205,7 +205,11 @@
 			</div>
 		</div>
 		<div style="padding-left:16%;">
-			<div class="topbar"></div>
+			<div class="topbar">
+                <div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        	教练主页
+        	</div>
+            </div>
 			<div>
 				<div class="row" style="margin-top:5%;">
 					<div class="col s3">

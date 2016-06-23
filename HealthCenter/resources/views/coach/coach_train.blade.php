@@ -190,7 +190,9 @@
 			</div>
 		</div>
 		<div style="padding-left:16%;">
-			<div class="topbar"></div>
+			<div class="topbar">
+                
+            </div>
 			
 			<div class="row" style="margin-top:4%;margin-left:2%;">
 				<div class="col s7" style="z-index:999;">

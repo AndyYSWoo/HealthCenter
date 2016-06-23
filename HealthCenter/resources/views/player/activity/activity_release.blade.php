@@ -183,8 +183,9 @@
         <main>
         <div style="">
         	<div class="topbar">
-        		<div>
-        		</div>
+        		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        	      活动发布
+        	    </div>
         	</div>
         	<div >
         		<div class="container" >

@@ -129,7 +129,9 @@
 		@include('layout.coach_side');
 		<div style="padding-left:16%;">
 			<div class="topbar">
-				
+				<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        	学员信息
+        	</div>
 			</div>
 			
 			<div>

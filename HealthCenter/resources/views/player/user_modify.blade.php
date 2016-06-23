@@ -180,7 +180,9 @@
         <main>
         <div style="">
         	<div class="topbar">
-        		
+        		<div style="font-size:1.5rem;padding:1%;padding-left:10%;color:white;">
+        	个人信息修改
+        	</div>
         	</div>
         	<div class="container" >
         			<div class="row" style="margin-top:4%;">
