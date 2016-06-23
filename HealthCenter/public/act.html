@@ -315,7 +315,7 @@
 							{!! Form::close() !!}
 						      </div>
 						      <div class="file-path-wrapper" style="width:360px;">
-						        <input class="file-path validate" type="text" id="up_file" name="up_file">
+						        <input onchange="subFileReady()" class="file-path validate" type="text" id="up_file" name="up_file">
 						      </div>
 						    </div>
 					    </div>
@@ -337,6 +337,11 @@
          $(".button-collapse").sideNav();
          
         //  $("#sendBtn").ready();
+         function subFileReady(){
+             if($('input#up_file').val().length != 0){
+                 document.getElementById("sendBtn").className = 'waves-effect waves-light btn';
+             }
+         }
          function ready(){
              
              if($('input#up_file').val().length ==0){
@@ -358,7 +363,7 @@
 				){
                     
                 }else{
-                    document.getElementById("sendBtn").className = 'waves-effect waves-light btn';
+                  document.getElementById("sendBtn").className = 'waves-effect waves-light btn';
                 }
              }
          }
@@ -370,7 +375,7 @@
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script>
 		function sub(){
-			if($('input#up_file').val().length 		==0){// 手动
+			if($('input#up_file').val().length ==0){// 手动
 				if($('input#temp').val().length 		==0 
 				 &&$('input#height').val().length 	==0
 				 &&$('input#weight').val().length 	==0

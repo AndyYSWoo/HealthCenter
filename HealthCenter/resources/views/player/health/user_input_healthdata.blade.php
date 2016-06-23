@@ -315,7 +315,7 @@
 							{!! Form::close() !!}
 						      </div>
 						      <div class="file-path-wrapper" style="width:360px;">
-						        <input class="file-path validate" type="text" id="up_file" name="up_file">
+						        <input onchange="subFileReady()" class="file-path validate" type="text" id="up_file" name="up_file">
 						      </div>
 						    </div>
 					    </div>
@@ -338,6 +338,11 @@
             function logout(){
                 $("#logoutTip").openModal();
             }
+            function subFileReady(){
+             if($('input#up_file').val().length != 0){
+                 document.getElementById("sendBtn").className = 'waves-effect waves-light btn';
+             }
+         }
             function ready(){
              
              if($('input#up_file').val().length ==0){
