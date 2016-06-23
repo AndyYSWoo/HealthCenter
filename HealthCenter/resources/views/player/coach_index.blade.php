@@ -500,7 +500,7 @@
 		</div>
         </main>
         <script type="text/javascript">
-         $(".button-collapse").sideNav();
+         
          var isFollowed = false;
 			function follow(){
 				var btn = document.getElementById("follow");
@@ -520,6 +520,7 @@
         </script>
 		<script type="text/javascript" src="/js/materialize.min.js"></script>
 		<script>
+            $(".button-collapse").sideNav();
 			$(".dropdown-button").dropdown();
 	    </script>
         <script type="text/javascript">

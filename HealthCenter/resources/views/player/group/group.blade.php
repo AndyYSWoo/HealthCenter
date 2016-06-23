@@ -183,13 +183,13 @@
         	</div>
         </div>
         </main>
+        <script type="text/javascript" src="/js/jquery_min.js"></script>	
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
         <script type="text/javascript">
             $(".button-collapse").sideNav();
             function logout(){
                 $("#logoutTip").openModal();
             }
         </script>
-	<script type="text/javascript" src="/js/jquery_min.js"></script>	
-	<script type="text/javascript" src="/js/materialize.min.js"></script>
-</body>
+	</body>
 </html>

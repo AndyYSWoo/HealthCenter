@@ -245,7 +245,6 @@
         </div>
         </main>
         <script type="text/javascript">
-        $(".button-collapse").sideNav();
             function logout(){
                 $("#logoutTip").openModal();
             }
@@ -253,6 +252,7 @@
     <script type="text/javascript" src="/js/jquery_min.js"></script>	
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript">
+    $(".button-collapse").sideNav();
 		var filePath;
 	          $('#i_file').change( function(event) {
 	          filePath = URL.createObjectURL(event.target.files[0]);

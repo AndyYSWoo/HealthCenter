@@ -341,7 +341,9 @@
   
         </div>
         </main>
+        
         <script type="text/javascript">
+        $(".button-collapse").sideNav();
          var isFollowed = false;
 			function follow(){
 				var btn = document.getElementById("follow");
@@ -358,7 +360,7 @@
         function send(){
             $("#modal1").openModal();
         }
-        $(".button-collapse").sideNav();
+        
             function logout(){
                 $("#logoutTip").openModal();
             }
